@@ -1,0 +1,228 @@
+﻿
+<div class="modal fade" id="modalFollowUp" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">متابعات المخيمات</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="card">
+                    <div class="card-header badge-primary">
+                        متابعة المخيمات
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group row">
+                            <div class="col-md-12">
+                                <div class="input-group">
+                                    <select id="ddlPlanCamps" class="custom-select" required></select>
+                                    <div class="input-group-append">
+                                        <label class="input-group-text" data-toggle="tooltip" title="لمتابعة المخيمات وتحديد مدة زمنية لكل مخيم" for="ddlPlanCamps">
+                                            <i class="fa fa-question fa-flip-horizontal fa-lg"></i>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="invalid-feedback"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">متابعة الأدوية</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">متابعة مالية</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">متابعة إدارية</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="container mt-3">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="card m-auto">
+                                        <form class="needs-validation" novalidate>
+                                            <div class="card-header text-center badge-info">
+                                                <p class="lead">متابعة الأدوية وحالتها</p>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <label>الحالة</label>
+                                                            <select id="ddl2" class="form-control" required="required">
+                                                                <option>حالة متابعة الأدوية</option>
+                                                                <option>تم اعتماد الطلبية</option>
+                                                                <option>تحت التجهيز</option>
+                                                                <option>تم الشحن</option>
+                                                                <option>في التخليص الجمركي</option>
+                                                                <option>جاهزة للمخيم</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <div class="input-group">
+                                                                <input type="text" id="txtDrugsDate" required autocomplete="off" placeholder="تاريخ انتهاء المرحلة" class="form-control" />
+                                                                <i class="fa fa-calendar fa-2x"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <label>ملاحظات</label>
+                                                        <div class="form-group">
+                                                            <textarea class="form-control" id="txtRegisteNote" placeholder="ملاحظات"></textarea>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-footer text-center">
+                                                <button type="submit" class="btn btn-success">حفظ</button>
+                                                <button type="reset" id="btnReset" data-toggle="modal" class="btn btn-outline-warning pull-left">مسح</button>
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+
+                            <!--#region end form -->
+
+                            <div class="text-center small mt-3">يجب مراجعة البيانات <a href="javascript:;">قبل الحفظ</a></div>
+                        </div>
+
+                    </div>
+                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                        <div class="container mt-3">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="card m-auto">
+                                        <form class="needs-validation" novalidate>
+                                            <div class="card-header text-center badge-danger">
+                                                <p class="lead">متابعة مالية وحالتها</p>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <label>نوع العملية</label>
+                                                            <select id="ddl1" class="form-control" required="required">
+                                                                <option>مبلغ مستحق</option>
+                                                                <option>دين</option>
+                                                                <option>مبلغ مستلم</option>
+                                                                <option>تكاليف</option>
+
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="input-group">
+                                                            <input type="text" id="txtFinanceDate" required autocomplete="off" placeholder="تاريخ انتهاء المرحلة" class="form-control" />
+                                                            <i class="fa fa-calendar fa-2x"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <label>ملاحظات</label>
+                                                        <div class="form-group">
+                                                            <textarea class="form-control" id="txtRegisteNote2" placeholder="ملاحظات المتابعة المالية"></textarea>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-footer text-center">
+                                                <button type="submit" class="btn btn-success">حفظ</button>
+                                                <button type="reset" id="btnReset2" data-toggle="modal" class="btn btn-outline-warning pull-left">مسح</button>
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--#region end form -->
+
+                            <div class="text-center small mt-3">يجب مراجعة البيانات <a href="javascript:;">قبل الحفظ</a></div>
+                        </div>
+
+                    </div>
+                    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                        <div class="container mt-3">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="card m-auto">
+                                        <form class="needs-validation" novalidate>
+                                            <div class="card-header text-center badge-primary">
+                                                <p class="lead">متابعة التأشيرات</p>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <label>الحالة</label>
+                                                            <select id="ddl3" class="form-control" required="required">
+                                                                <option>حالة التأشيرة</option>
+                                                                <option>تحت الاجراء</option>
+                                                                <option>تم الانتهاء</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <div class="input-group">
+                                                                <input type="text" id="txtVisaDate" required autocomplete="off" placeholder="تاريخ انتهاء المرحلة" class="form-control" />
+                                                                <i class="fa fa-calendar fa-2x"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <label>ملاحظات</label>
+                                                        <div class="form-group">
+                                                            <textarea class="form-control" id="txtRegisteNote3" placeholder="ملاحظات"></textarea>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-footer text-center">
+                                                <button type="submit" class="btn btn-success">حفظ</button>
+                                                <button type="reset" id="btnReset3" data-toggle="modal" class="btn btn-outline-warning pull-left">مسح</button>
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+
+                            <!--#region end form -->
+
+                            <div class="text-center small mt-3">يجب مراجعة البيانات <a href="javascript:;">قبل الحفظ</a></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">اغلاق</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+

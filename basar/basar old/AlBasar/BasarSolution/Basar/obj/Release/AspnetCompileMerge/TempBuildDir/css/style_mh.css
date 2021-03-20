@@ -1,0 +1,83 @@
+﻿body {
+    font-family: 'GE SS Two Bold', DINNEXTLTARABIC-LIGHT, DroidKufi-Regular;
+}
+
+@font-face {
+    font-family: 'GE SS Two Bold';
+    src: url('../fonts/GE SS Two Bold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'DroidKufi-Regular';
+    src: url('../fonts/DroidKufi-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'DINNEXTLTARABIC-LIGHT';
+    src: url('../fonts/DINNEXTLTARABIC-LIGHT.ttf') format('truetype');
+}
+.login_header {
+    /*font-family: Tahoma;*/
+    font-weight: bold;
+}
+
+.form-horizontal .control-label {
+    text-align: right;
+}
+
+.login_header_color {
+    font-family: Tahoma;
+    font-weight: bold;
+    color: #000000;
+}
+
+.div_padding {
+    padding-top: 20px;
+}
+
+.div_padding {
+    padding-top: 20px;
+}
+
+.div_padding_label {
+    padding-top: 5px;
+}
+
+.div_shadow {
+    -webkit-box-shadow: 11px 13px 0px -5px rgba(159,170,191,1);
+    -moz-box-shadow: 11px 13px 0px -5px rgba(159,170,191,1);
+    box-shadow: 11px 13px 0px -5px rgba(159,170,191,1);
+}
+
+.gridview_mh {
+    border-spacing: 3px;
+    border-collapse: separate;
+}
+
+    .gridview_mh > tbody > tr > th,
+    .gridview_mh > tbody > tr > td {
+        border: 2px ridge black;
+        padding: 3px;
+    }
+
+.label_red {
+    font-weight: bold;
+    color: #ff0000;
+}
+.td-txt-number{
+    width:80px;
+
+}
+.td-txt-memo {
+    width: 100%;
+}
+tr.highlight{
+    background-color:#ff6a00;
+}
+.grpTextBox {
+     
+}
+
+.highlight_row {
+    background-color: #ff6a00;
+    color: #000;
+}

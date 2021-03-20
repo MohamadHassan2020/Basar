@@ -1,0 +1,42 @@
+﻿.nav-link img {
+    margin: 0 -8px;
+    float: right;
+    margin-left: 10px;
+}
+
+.navbar .navbar-brand i {
+   
+    margin-left: 5px;
+}
+
+.search-box input {
+    padding-left: 35px;
+}
+.search-box .input-group-addon {
+    left: 0;
+}
+
+.navbar .badge {
+    padding: 4px 0 0 6px;
+}
+.navbar ul.nav li a.notifications, .navbar ul.nav li a.messages {
+    margin-left: 10px;
+}
+
+.navbar ul.nav li a.messages {
+    margin-left: 20px;
+}
+
+.navbar a.notifications .badge {
+    margin-right: -8px;
+}
+
+.navbar a.messages .badge {
+    margin-right: -4px;
+}
+
+@media (min-width: 1200px) {
+    .form-inline .input-group {
+        margin-right: 30px;
+    }
+}

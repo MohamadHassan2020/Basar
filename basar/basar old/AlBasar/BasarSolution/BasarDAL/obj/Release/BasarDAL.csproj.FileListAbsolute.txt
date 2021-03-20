@@ -1,0 +1,17 @@
+D:\Sites\Private\AlBasar\BasarSolution\BasarDAL\bin\Release\BasarDAL.dll
+D:\Sites\Private\AlBasar\BasarSolution\BasarDAL\bin\Release\BasarDAL.pdb
+D:\Sites\Private\AlBasar\BasarSolution\BasarDAL\obj\Release\BasarDAL.csprojResolveAssemblyReference.cache
+D:\Sites\Private\AlBasar\BasarSolution\BasarDAL\obj\Release\BasarDAL.dll
+D:\Sites\Private\AlBasar\BasarSolution\BasarDAL\obj\Release\BasarDAL.pdb
+E:\Sites\Private\AlBasar\BasarSolution\BasarDAL\bin\Release\BasarDAL.dll
+E:\Sites\Private\AlBasar\BasarSolution\BasarDAL\bin\Release\BasarDAL.pdb
+E:\Sites\Private\AlBasar\BasarSolution\BasarDAL\obj\Release\BasarDAL.csproj.CoreCompileInputs.cache
+E:\Sites\Private\AlBasar\BasarSolution\BasarDAL\obj\Release\BasarDAL.dll
+E:\Sites\Private\AlBasar\BasarSolution\BasarDAL\obj\Release\BasarDAL.pdb
+E:\Sites\Private\AlBasar\BasarSolution\BasarDAL\obj\Release\BasarDAL.csprojAssemblyReference.cache
+D:\Data\Programar\Projects\Private\sites\basar\basar old\AlBasar\BasarSolution\BasarDAL\bin\Release\BasarDAL.dll
+D:\Data\Programar\Projects\Private\sites\basar\basar old\AlBasar\BasarSolution\BasarDAL\bin\Release\BasarDAL.pdb
+D:\Data\Programar\Projects\Private\sites\basar\basar old\AlBasar\BasarSolution\BasarDAL\obj\Release\BasarDAL.csprojAssemblyReference.cache
+D:\Data\Programar\Projects\Private\sites\basar\basar old\AlBasar\BasarSolution\BasarDAL\obj\Release\BasarDAL.csproj.CoreCompileInputs.cache
+D:\Data\Programar\Projects\Private\sites\basar\basar old\AlBasar\BasarSolution\BasarDAL\obj\Release\BasarDAL.dll
+D:\Data\Programar\Projects\Private\sites\basar\basar old\AlBasar\BasarSolution\BasarDAL\obj\Release\BasarDAL.pdb

@@ -1,0 +1,57 @@
+﻿<h2>Upload Files</h2>
+<div>
+    <div class="form-group">
+        <div id="updatePanelFile" class="alert" role="alert" style="display:none"></div>
+        <div class="form-group">
+             <input type="file" id="file1" multiple />
+        </div>
+        <input id="btnPostFile" class="btn btn-default"  type="button" value="upload"/>
+    </div>
+</div>
+
+
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+<script>
+    $(function () {
+        $("#btnPostFile").on('click', function () {
+            if ($('#file1').val()=='') {
+                alert('please select file');
+            }
+            var formData = new FormData();
+            var file = $('#file1')[0];
+            //single image
+            formData.append('file', file.files[0]);
+            //multi image
+            for (var i = 0; i < file.files.length; i++) {
+                formData.append('file', file.files[i]);
+            }
+            
+            $.ajax({
+                //url: 'api/Upload/',
+                url: 'basar/upload/',
+                type: 'post',
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: function (d) {
+                    //single file
+                   //$('#updatePanelFile').addClass('alert-success').append('<strong> Success! <a href="' + d + '" target="_blank" >Open File </a> </strong>').show(); 
+
+                    //multi files
+                    $('#updatePanelFile').addClass('alert-success');
+                    $('#updatePanelFile').html('');
+                    $.each(d, function (i,value) {
+                        $('#updatePanelFile').append('<strong> Success! <a href="' + value + '" target="_blank" >Open File </a> </strong> <br />');
+                    });
+                    $('#updatePanelFile').show();
+                },
+                error: function () {
+                    alert('please try again');
+                }
+
+
+            });
+
+        });
+    });
+</script>

@@ -1,0 +1,43 @@
+﻿/*
+    Name :speedline 
+    ver 2232020
+    by spline
+*/
+
+/*#region Elements*/
+
+body {
+    overflow: hidden; /*befor loading after loading = auto*/
+    font-family: 'Cairo', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cairo', sans-serif;
+    font-weight: 900;
+}
+
+p, span, a, li {
+    font-family: 'Cairo', sans-serif;
+    /*font-family: 'Amiri', serif;*/
+}
+
+/*#endregion Elements*/
+
+/*#region LOADING-OVERLAY*/
+
+.loading-overlay {
+    position: fixed; /*only window size or fixed or full screen*/
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+}
+
+/*#endregion LOADING-OVERLAY*/
+
+
+
+
+
+

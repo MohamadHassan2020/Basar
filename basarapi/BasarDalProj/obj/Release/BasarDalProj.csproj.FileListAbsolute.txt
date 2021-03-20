@@ -1,0 +1,12 @@
+D:\Data\Programar\Projects\API\basar\basarapi\BasarDalProj\bin\Release\BasarDalProj.dll
+D:\Data\Programar\Projects\API\basar\basarapi\BasarDalProj\bin\Release\BasarDalProj.pdb
+D:\Data\Programar\Projects\API\basar\basarapi\BasarDalProj\obj\Release\BasarDalProj.csprojAssemblyReference.cache
+D:\Data\Programar\Projects\API\basar\basarapi\BasarDalProj\obj\Release\BasarDalProj.csproj.CoreCompileInputs.cache
+D:\Data\Programar\Projects\API\basar\basarapi\BasarDalProj\obj\Release\BasarDalProj.dll
+D:\Data\Programar\Projects\API\basar\basarapi\BasarDalProj\obj\Release\BasarDalProj.pdb
+D:\projects\src\basarapi\BasarDalProj\bin\Release\BasarDalProj.dll
+D:\projects\src\basarapi\BasarDalProj\bin\Release\BasarDalProj.pdb
+D:\projects\src\basarapi\BasarDalProj\obj\Release\BasarDalProj.csprojAssemblyReference.cache
+D:\projects\src\basarapi\BasarDalProj\obj\Release\BasarDalProj.csproj.CoreCompileInputs.cache
+D:\projects\src\basarapi\BasarDalProj\obj\Release\BasarDalProj.dll
+D:\projects\src\basarapi\BasarDalProj\obj\Release\BasarDalProj.pdb

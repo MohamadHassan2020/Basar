@@ -1,0 +1,569 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Basar" Class="BasarLinqDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.;Initial Catalog=Basar;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="BasarConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tblPlanConfig" Member="PlanConfigModels">
+    <Type Name="PlanConfigModel">
+      <Column Name="PlanConfigId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PlanConfigIdNumber" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PlanConfigOrder" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PlanConfigYear" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="TourId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="TeamId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CountryId" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="CampId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="SponsorId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="PlanConfigStartDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="PlanConfigEndDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="PlanConfigAddBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="PlanConfigUpdatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="PlanConfigDateIn" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="PlanConfigUpdatedDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="PlanConfigStatus" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="PlanConfigRemark" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="PreliminaryStatus" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CampStatusId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="PlanConfigIsClosed" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblCamps" Member="CampModels">
+    <Type Name="CampModel">
+      <Column Name="CampId" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CountryId" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="CampDsecAr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CampDsecEn" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CreationDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="CreationBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="UpdatedDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="UpdatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="CampOrder" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CampStatus" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblCountries" Member="CountryModels">
+    <Type Name="CountryModel">
+      <Column Name="CountryId" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CountryDsecAr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CountryDsecEn" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CreationDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="CreationBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="UpdatedDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="UpdatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="CountryOrder" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="CountryStatus" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblSponsors" Member="SponsorModels">
+    <Type Name="SponsorModel">
+      <Column Name="SponsorId" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SponsorDsecAr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SponsorDsecEn" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CreationDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="CreationBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="UpdatedDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="UpdatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="SponsorOrder" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="SponsorStatus" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblTour" Member="TourModels">
+    <Type Name="TourModel">
+      <Column Name="TourId" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TourDsecAr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TourDsecEn" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CreationDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="CreationBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="UpdatedDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="UpdatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="TourOrder" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="TourStatus" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TourDescHint" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblYears" Member="YearModels">
+    <Type Name="YearModel">
+      <Column Name="YearId" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="YearNameAr" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="YearNameEn" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CreationDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="YearStatus" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="YearOrder" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="YearDesc" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CreationBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="UpdatedDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="UpdatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblTeam" Member="TeamModels">
+    <Type Name="TeamModel">
+      <Column Name="TeamId" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TeamDsecAr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TeamDsecEn" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CreationDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="CreationBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="UpdatedDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="UpdatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="TeamOrder" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="TeamStatus" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TeamFlag" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblCampStatus" Member="CampStatusModels">
+    <Type Name="CampStatusModel">
+      <Column Name="CampStatusId" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CampStatusDescAR" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CampStatusDescEN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CreationDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="CampStatusEnabled" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AddBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="UpdatedDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="UpdatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="CampStatusOrder" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CampStatusImage" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblCampStatsSummary" Member="CampStatsSummaryModels">
+    <Type Name="CampStatsSummaryModel">
+      <Column Name="PlanConfigId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PlanConfigYear" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="TourId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="TeamId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CountryId" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="CampId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="SponsorId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CampStatusId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="OPDCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ORCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GlassesCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CampStatsSummaryNote" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="CampStatsSummaryDateIn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CampStatsSummaryAddBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="CampStatsSummaryUpdatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CampStatsSummaryUpdatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="CampStatsSummaryStatus" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CampStatsSummaryIsClosed" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblFollowUpStatus" Member="FollowUpStatusModels">
+    <Type Name="FollowUpStatusModel">
+      <Column Name="FollowUpStatusId" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FollowUpStatusDescAR" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FollowUpStatusDescEN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CreationDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="FollowUpStatusEnabled" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="FollowUpStatusAddBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="FollowUpStatusUpdatedDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="FollowUpStatusUpdatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="FollowUpStatusOrder" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="FollowUpStatusImage" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="FollowUpStatusIsFollow" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="FollowUpStatusDivider" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="FollowUpStatusClassName" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblCampFollowUpDrugs" Member="CampFollowUpDrugModels">
+    <Type Name="CampFollowUpDrugModel">
+      <Column Name="PlanConfigId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FollowUpStatusId" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CampFollowUpDrugsDate" Type="System.DateTime" DbType="Date NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CampFollowUpDrugsNote" Type="System.String" DbType="NVarChar(200) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PlanConfigYear" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="TourId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="TeamId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CountryId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CampId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="SponsorId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CampStatusId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CampFollowUpDrugsDateIn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CampFollowUpDrugsAddBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="CampFollowUpDrugsUpdatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CampFollowUpDrugsUpdatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="CampFollowUpDrugsStatus" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CampFollowUpDrugsIsClosed" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblRoleExtend" Member="RoleExtendModels">
+    <Type Name="RoleExtendModel">
+      <Column Name="RoleId" Type="System.String" DbType="NVarChar(128) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RoleDescEN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RoleDescAR" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RoleDateIn" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="RoleAddBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblRoleGroup" Member="RoleGroupModels">
+    <Type Name="RoleGroupModel">
+      <Column Name="RoleGroupId" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RoleGroupDescAR" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RoleGroupDescEN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RoleGroupDateIn" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="RoleGroupStatus" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="RoleGroupAddBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="RoleGroupUpdatedDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="RoleGroupUpdatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="RoleGroupOrder" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblRoleDivider" Member="RoleDividerModels">
+    <Type Name="RoleDividerModel">
+      <Column Name="RoleDividerId" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RoleDividerDescAR" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RoleDividerDescEN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RoleDividerDateIn" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="RoleDividerStatus" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="RoleDividerOrder" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="RoleDividerAddBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="RoleDividerUpdatedDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="RoleDividerUpdatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblRoleClassDivider" Member="RoleClassDividerModels">
+    <Type Name="RoleClassDividerModel">
+      <Column Name="RoleId" Type="System.String" DbType="NVarChar(128) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RoleDividerId" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RoleClassDateIn" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="RoleClassAddBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblRoleGroupDivider" Member="RoleGroupDividerModels">
+    <Type Name="RoleGroupDividerModel">
+      <Column Name="RoleId" Type="System.String" DbType="NVarChar(128) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RoleGroupId" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RoleDividerId" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RoleGroupDividerDateIn" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="RoleGroupDividerAddBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblAttachment" Member="AttachmentModels">
+    <Type Name="AttachmentModel">
+      <Column Name="AttachmentName" Type="System.String" DbType="NVarChar(128) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AttachmentExtension" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="AttachmentDateIn" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="AttachmentAddBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vwGetRoleGroupDivider" Member="vwGetRoleGroupDividerModels">
+    <Type Name="vwGetRoleGroupDividerModel">
+      <Column Name="RoleId" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="RoleGroupId" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="RoleGroupDescAR" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RoleDividerId" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="RoleDividerDescAR" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RoleDividerDescEN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="RoleDescEN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RoleDescAR" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblUserGroups" Member="UserGroupModels">
+    <Type Name="UserGroupModel">
+      <Column Name="RoleGroupId" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserId" Type="System.String" DbType="NVarChar(128) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserGroupDateIn" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="UserGroupAddBy" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AspNetUserRoles" Member="AspNetUserRoleModels">
+    <Type Name="AspNetUserRoleModel">
+      <Column Name="UserId" Type="System.String" DbType="NVarChar(128) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RoleId" Type="System.String" DbType="NVarChar(128) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vwGetCampFollowUpDrugsWithAttachment" Member="vwGetCampFollowUpDrugsWithAttachmentModels">
+    <Type Name="vwGetCampFollowUpDrugsWithAttachmentModel">
+      <Column Name="PlanConfigId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FollowUpStatusId" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="CampFollowUpDrugsDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="CampFollowUpDrugsNote" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="PlanConfigYear" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="TourId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="TeamId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CountryId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CampId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="SponsorId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CampStatusId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CampFollowUpDrugsDateIn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CampFollowUpDrugsAddBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="CampFollowUpDrugsUpdatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CampFollowUpDrugsUpdatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="CampFollowUpDrugsStatus" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CampFollowUpDrugsIsClosed" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AttachmentDrugId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AttachmentName" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="AttachmentCampFollowUpDrugsDateIn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AttachmentCampFollowUpDrugsAddBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblAttachmentCampFollowUpDrugs" Member="AttachmentCampFollowUpDrugModels">
+    <Type Name="AttachmentCampFollowUpDrugModel">
+      <Column Name="AttachmentDrugId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AttachmentName" Type="System.String" DbType="NVarChar(128) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PlanConfigId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FollowUpStatusId" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="CampFollowUpDrugsDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="CampFollowUpDrugsNote" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="PlanConfigYear" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="TourId" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="TeamId" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="CountryId" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="CampId" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="SponsorId" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="CampStatusId" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="AttachmentCampFollowUpDrugsDateIn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AttachmentCampFollowUpDrugsAddBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblSponsorShip" Member="SponsorShipModels">
+    <Type Name="SponsorShipModel">
+      <Column Name="SponsorShipId" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SponsorId" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="SponsorShipName" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="SponsorShipNameEN" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="SponsorShipStatus" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SponsorShipOrder" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="SponsorShipAddBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="SponsorShipDateIn" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="SponsorShipUpdatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="SponsorShipUpdatedDateIn" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblCampFollowUpFinancial" Member="CampFollowUpFinancialModels">
+    <Type Name="CampFollowUpFinancialModel">
+      <Column Name="PlanConfigId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FollowUpStatusId" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CampFollowUpFinancialDate" Type="System.DateTime" DbType="Date NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CampFollowUpFinancialNote" Type="System.String" DbType="NVarChar(200) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CampFollowUpFinancialAmmount" Type="System.Decimal" DbType="Money NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PlanConfigYear" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="TourId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="TeamId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CountryId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CampId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="SponsorId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CampStatusId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CampFollowUpFinancialDateIn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CampFollowUpFinancialAddBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="CampFollowUpFinancialUpdatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CampFollowUpFinancialUpdatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="CampFollowUpFinancialStatus" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CampFollowUpFinancialIsClosed" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblAttachmentCampFollowUpFinancial" Member="AttachmentCampFollowUpFinancialModels">
+    <Type Name="AttachmentCampFollowUpFinancialModel">
+      <Column Name="AttachmentFinancialId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AttachmentName" Type="System.String" DbType="NVarChar(128) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PlanConfigId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FollowUpStatusId" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="CampFollowUpFinancialDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="CampFollowUpFinancialAmmount" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="CampFollowUpFinancialNote" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="PlanConfigYear" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="TourId" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="TeamId" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="CountryId" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="CampId" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="SponsorId" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="CampStatusId" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="AttachmentCampFollowUpFinancialDateIn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AttachmentCampFollowUpFinancialAddBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vwGetCampFollowUpFinancialWithAttachment" Member="vwGetCampFollowUpFinancialWithAttachmentModels">
+    <Type Name="vwGetCampFollowUpFinancialWithAttachmentModel">
+      <Column Name="PlanConfigId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FollowUpStatusId" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="CampFollowUpFinancialDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="CampFollowUpFinancialNote" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="PlanConfigYear" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="TourId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="TeamId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CountryId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CampId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="SponsorId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CampStatusId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CampFollowUpFinancialDateIn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CampFollowUpFinancialAddBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="CampFollowUpFinancialUpdatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CampFollowUpFinancialUpdatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="CampFollowUpFinancialStatus" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CampFollowUpFinancialIsClosed" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AttachmentFinancialId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AttachmentName" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="CampFollowUpFinancialAmmount" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblCampFollowUpAdministrative" Member="CampFollowUpAdministrativeModels">
+    <Type Name="CampFollowUpAdministrativeModel">
+      <Column Name="PlanConfigId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FollowUpStatusId" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CampFollowUpAdministrativeDate" Type="System.DateTime" DbType="Date NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CampFollowUpAdministrativeNote" Type="System.String" DbType="NVarChar(200) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PlanConfigYear" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="TourId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="TeamId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CountryId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CampId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="SponsorId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CampStatusId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CampFollowUpAdministrativeDateIn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CampFollowUpAdministrativeAddBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="CampFollowUpAdministrativeUpdatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CampFollowUpAdministrativeUpdatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="CampFollowUpAdministrativeStatus" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CampFollowUpAdministrativeIsClosed" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CampFollowUpAdministrativeIsSignature" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblAttachmentCampFollowUpAdministrative" Member="AttachmentCampFollowUpAdministrativeModels">
+    <Type Name="AttachmentCampFollowUpAdministrativeModel">
+      <Column Name="AttachmentAdministrativeId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AttachmentName" Type="System.String" DbType="NVarChar(128) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PlanConfigId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FollowUpStatusId" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="CampFollowUpAdministrativeDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="CampFollowUpAdministrativeNote" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="CampFollowUpAdministrativeIsSignature" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CampFollowUpAdministrativeIsClosed" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="PlanConfigYear" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="TourId" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="TeamId" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="CountryId" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="CampId" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="SponsorId" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="CampStatusId" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="AttachmentCampFollowUpAdministrativeDateIn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AttachmentCampFollowUpAdministrativeAddBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vwGetCampFollowUpAdministrativeWithAttachment" Member="vwGetCampFollowUpAdministrativeWithAttachmentModels">
+    <Type Name="vwGetCampFollowUpAdministrativeWithAttachmentModel">
+      <Column Name="PlanConfigId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FollowUpStatusId" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="CampFollowUpAdministrativeDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="CampFollowUpAdministrativeNote" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="PlanConfigYear" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="TourId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="TeamId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CountryId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CampId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="SponsorId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CampStatusId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CampFollowUpAdministrativeDateIn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CampFollowUpAdministrativeAddBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="CampFollowUpAdministrativeUpdatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CampFollowUpAdministrativeUpdatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="CampFollowUpAdministrativeStatus" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CampFollowUpAdministrativeIsClosed" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AttachmentAdministrativeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AttachmentName" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="CampFollowUpAdministrativeIsSignature" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblAttachmentCampFollowUpMedia" Member="AttachmentCampFollowUpMediaModels">
+    <Type Name="AttachmentCampFollowUpMediaModel">
+      <Column Name="AttachmentMediaId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AttachmentName" Type="System.String" DbType="NVarChar(128) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PlanConfigId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FollowUpStatusId" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="CampFollowUpMediaDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="CampFollowUpMediaNote" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="CampFollowUpMediaDropboxLink" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="CampFollowUpMediaIsClosed" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="PlanConfigYear" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="TourId" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="TeamId" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="CountryId" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="CampId" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="SponsorId" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="CampStatusId" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="AttachmentCampFollowUpMediaDateIn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AttachmentCampFollowUpMediaAddBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblCampFollowUpMedia" Member="CampFollowUpMediaModels">
+    <Type Name="CampFollowUpMediaModel">
+      <Column Name="PlanConfigId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FollowUpStatusId" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CampFollowUpMediaDate" Type="System.DateTime" DbType="Date NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CampFollowUpMediaNote" Type="System.String" DbType="NVarChar(200) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CampFollowUpMediaDropboxLink" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="PlanConfigYear" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="TourId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="TeamId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CountryId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CampId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="SponsorId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CampStatusId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CampFollowUpMediaDateIn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CampFollowUpMediaAddBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="CampFollowUpMediaUpdatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CampFollowUpMediaUpdatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="CampFollowUpMediaStatus" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CampFollowUpMediaIsClosed" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vwGetCampFollowUpMediaWithAttachment" Member="vwGetCampFollowUpMediaWithAttachmentModels">
+    <Type Name="vwGetCampFollowUpMediaWithAttachmentModel">
+      <Column Name="PlanConfigId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FollowUpStatusId" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="CampFollowUpMediaDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="CampFollowUpMediaNote" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="PlanConfigYear" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="TourId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="TeamId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CountryId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CampId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="SponsorId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CampStatusId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CampFollowUpMediaDateIn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CampFollowUpMediaAddBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="CampFollowUpMediaUpdatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CampFollowUpMediaUpdatedBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="CampFollowUpMediaStatus" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CampFollowUpMediaIsClosed" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AttachmentMediaId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AttachmentName" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="CampFollowUpMediaDropboxLink" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblPlanConfigSponsorShip" Member="PlanConfigSponsorShipModels">
+    <Type Name="PlanConfigSponsorShipModel">
+      <Column Name="PlanConfigId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SponsorShipId" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SponsorId" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PlanConfigSponsorShipAddBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="PlanConfigSponsorShipDateIn" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vwGetPlanConfigSponsorShipLast" Member="vwGetPlanConfigSponsorShipLastModels">
+    <Type Name="vwGetPlanConfigSponsorShipLastModel">
+      <Column Name="PlanConfigId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SponsorShipId" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="SponsorId" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="PlanConfigSponsorShipAddBy" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="PlanConfigSponsorShipDateIn" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vwGetAxis" Member="xzxes">
+    <Type Name="xzx">
+      <Column Name="AxisId" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="AxisCategoryId" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="AxisDescAR" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="AxisDescEN" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="AxisDateIn" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="AxisStatus" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AxisOrder" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vwGetAxis" Member="vwGetAxisModels">
+    <Type Name="vwGetAxisModel">
+      <Column Name="AxisId" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="AxisCategoryId" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="AxisDescAR" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="AxisDescEN" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="AxisDateIn" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="AxisStatus" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AxisOrder" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="AxisClassName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

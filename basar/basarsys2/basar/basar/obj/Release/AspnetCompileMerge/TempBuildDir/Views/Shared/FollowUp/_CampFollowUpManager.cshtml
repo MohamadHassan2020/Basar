@@ -1,0 +1,106 @@
+﻿<div class="row">
+    <div class="col-md-6">
+        <div class="card m-auto">
+            <form class="needs-validation" novalidate>
+                <div class="card-header text-center badge-warning">
+                    <p class="lead">متابعة إدارية</p>
+                </div>
+                <div class="card-body">
+                    <div class="form-group row  mt-3">
+                        <div class="col-md-12">
+                            <div class="input-group">
+                                <select id="ddlPlanCampsManager" class="custom-select select-option" required></select>
+                                <div class="input-group-append">
+                                    <label class="input-group-text" data-toggle="tooltip" title="لمتابعة المخيمات وتحديد مدة زمنية لكل مخيم" for="ddlPlanCampsManager">
+                                        <i class="fa fa-question fa-flip-horizontal fa-lg fa-border"></i>
+                                    </label>
+                                    <label class="input-group-text" data-toggle="tooltip" title="اضافة مخيم جديد" for="ddlPlanCampsManager">
+                                        <i class="fa fa-plus fa-lg fa-border"></i>
+
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="invalid-feedback"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>الحالة</label>
+                                <select id="ddlFollowUpStatusManager" class="form-control" required="required"></select>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input type="text" id="txtVisaDate" required autocomplete="off" placeholder="تاريخ انتهاء المرحلة" class="form-control" />
+                                    <i class="fa fa-calendar fa-2x"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <label>ملاحظات</label>
+                            <div class="form-group">
+                                <textarea class="form-control" id="txtCampFollowUpAdministrativeNote" placeholder="ملاحظات"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-12 mt-2">
+                            <div class="form-group">
+                                <div class="custom-control custom-checkbox mr-sm-2">
+                                    <input type="checkbox" class="custom-control-input" id="cbCampFollowUpAdministrativeIsClosed">
+                                    <label class="custom-control-label text-primary h4" for="cbCampFollowUpAdministrativeIsClosed">تم الانتهاء من اجراءات متابعة الادارية</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 mt-2">
+                            <div class="form-group">
+                                <div class="custom-control custom-checkbox mr-sm-2">
+                                    <input type="checkbox" class="custom-control-input" id="cbCampFollowUpAdministrativeIsSignature">
+                                    <label class="custom-control-label text-danger h4" for="cbCampFollowUpAdministrativeIsSignature">تم توقيع العقد</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer text-center">
+                    <button class="btn btn-outline-success" id="btnSaveAdministrative" type="button">حفظ</button>
+
+                    <button class="btn btn-outline-dark pull-left" id="btnResetAdministrative" type="reset">مسح</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="file-loading">
+            <input id="inputmanager" name="inputmanager" type="file"  accept="image">
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-12">
+        <table class="table table-bordered table-striped" id="tblFollowupAdministrative">
+            <thead class="table-dark">
+                <tr>
+                    <th>#</th>
+                    <th>تاريخ التسجيل</th>
+                    <th>المرحلة</th>
+                    <th>تاريخ الانتهاء</th>
+                    <th>حالة العقد</th>
+                    <th>ملاحظات</th>
+                    <th>المستخدم</th>
+                    <th class="text-center">المرفقات</th>
+                </tr>
+            </thead>
+            <tbody class="campfollowupadministrativetbody"></tbody>
+        </table>
+        <p id="click-response"></p>
+
+    </div>
+
+</div>
+
+<!--#region end form -->
+
+<div class="text-center small mt-3">يجب مراجعة البيانات <a href="javascript:;">قبل الحفظ</a></div>
+

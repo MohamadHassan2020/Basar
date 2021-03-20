@@ -1,0 +1,422 @@
+﻿<link href="~/css/bootstrap-datepicker.css" rel="stylesheet" />
+
+
+<style type="text/css">
+    body {
+        color: #999;
+        background: #e2e2e2;
+    }
+
+    .form-control {
+        min-height: 41px;
+        box-shadow: none;
+        border-color: #e1e1e1;
+    }
+
+        .form-control:focus {
+            border-color: #19aa8d;
+        }
+
+    .form-control, .btn {
+        border-radius: 3px;
+    }
+
+    .form-header {
+        margin: -30px -30px 20px;
+        padding: 30px 30px 10px;
+        text-align: center;
+        background: #19aa8d;
+        border-bottom: 1px solid #eee;
+        color: #fff;
+    }
+
+        .form-header h2 {
+            font-size: 34px;
+            font-weight: bold;
+            margin: 0 0 10px;
+        }
+
+        .form-header p {
+            margin: 20px 0 15px;
+            font-size: 17px;
+            line-height: normal;
+        }
+
+    .signup-form {
+        margin: 0 auto;
+        padding: 30px 0;
+    }
+
+        .signup-form form {
+            color: #999;
+            border-radius: 3px;
+            margin-bottom: 15px;
+            background: #f0f0f0;
+            box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+            padding: 30px;
+        }
+
+        .signup-form .form-group {
+            margin-bottom: 20px;
+        }
+
+        .signup-form label {
+            font-weight: normal;
+            font-size: 13px;
+        }
+
+        .signup-form input[type="checkbox"] {
+            margin-top: 2px;
+        }
+
+        .signup-form .btn {
+            font-size: 16px;
+            font-weight: bold;
+            background: #19aa8d;
+            border: none;
+            min-width: 200px;
+        }
+
+            .signup-form .btn:hover, .signup-form .btn:focus {
+                background: #00b073 !important;
+                outline: none;
+            }
+
+        .signup-form a {
+            color: #19aa8d;
+        }
+
+            .signup-form a:hover {
+                text-decoration: underline;
+            }
+
+
+    table tr {
+        cursor: pointer
+    }
+    /*#region calender*/
+    .datepicker-dropdown {
+        top: 0;
+        left: 0;
+        padding: 4px;
+        background-color: #2C6E8E;
+        border-radius: 10px;
+    }
+
+    .datepicker table {
+        margin: 0;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+        .datepicker table tr td,
+        .datepicker table tr th {
+            text-align: center;
+            width: 30px;
+            height: 30px;
+            border-radius: 4px;
+            border: none;
+            color: #FFFFFF;
+        }
+
+            .datepicker table tr td.day:hover,
+            .datepicker table tr td.focused {
+                background: #555555;
+                cursor: pointer;
+            }
+
+            .datepicker table tr td.old,
+            .datepicker table tr td.new {
+                color: #FF8000;
+            }
+
+            .datepicker table tr td.today {
+                color: #000000;
+                background-color: #FFA953;
+                border-color: #FFB76F;
+            }
+
+                .datepicker table tr td.today:hover {
+                    color: #FFFFFF;
+                    background-color: #884400;
+                    border-color: #f59e00;
+                }
+
+            .datepicker table tr td.active:active,
+            .datepicker table tr td.active.highlighted:active,
+            .datepicker table tr td.active.active,
+            .datepicker table tr td.active.highlighted.active,
+            .open > .dropdown-toggle.datepicker table tr td.active,
+            .open > .dropdown-toggle.datepicker table tr td.active.highlighted {
+                color: #ffffff;
+                background-color: #419841;
+                border-color: #285e8e;
+            }
+
+
+                .datepicker table tr td.active:active:hover,
+                .datepicker table tr td.active.highlighted:active:hover,
+                .datepicker table tr td.active.active:hover,
+                .datepicker table tr td.active.highlighted.active:hover,
+                .open > .dropdown-toggle.datepicker table tr td.active:hover,
+                .open > .dropdown-toggle.datepicker table tr td.active.highlighted:hover,
+                .datepicker table tr td.active:active:focus,
+                .datepicker table tr td.active.highlighted:active:focus,
+                .datepicker table tr td.active.active:focus,
+                .datepicker table tr td.active.highlighted.active:focus,
+                .open > .dropdown-toggle.datepicker table tr td.active:focus,
+                .open > .dropdown-toggle.datepicker table tr td.active.highlighted:focus,
+                .datepicker table tr td.active:active.focus,
+                .datepicker table tr td.active.highlighted:active.focus,
+                .datepicker table tr td.active.active.focus,
+                .datepicker table tr td.active.highlighted.active.focus,
+                .open > .dropdown-toggle.datepicker table tr td.active.focus,
+                .open > .dropdown-toggle.datepicker table tr td.active.highlighted.focus {
+                    color: #ffffff;
+                    background-color: #285e8e;
+                    border-color: #193c5a;
+                }
+
+                .datepicker table tr td.active:active,
+                .datepicker table tr td.active.highlighted:active,
+                .datepicker table tr td.active.active,
+                .datepicker table tr td.active.highlighted.active,
+                .open > .dropdown-toggle.datepicker table tr td.active,
+                .open > .dropdown-toggle.datepicker table tr td.active.highlighted {
+                    color: #ffffff;
+                    background-color: #3071a9;
+                    border-color: #285e8e;
+                }
+
+                    .datepicker table tr td.active:active:hover,
+                    .datepicker table tr td.active.highlighted:active:hover,
+                    .datepicker table tr td.active.active:hover,
+                    .datepicker table tr td.active.highlighted.active:hover,
+                    .open > .dropdown-toggle.datepicker table tr td.active:hover,
+                    .open > .dropdown-toggle.datepicker table tr td.active.highlighted:hover,
+                    .datepicker table tr td.active:active:focus,
+                    .datepicker table tr td.active.highlighted:active:focus,
+                    .datepicker table tr td.active.active:focus,
+                    .datepicker table tr td.active.highlighted.active:focus,
+                    .open > .dropdown-toggle.datepicker table tr td.active:focus,
+                    .open > .dropdown-toggle.datepicker table tr td.active.highlighted:focus,
+                    .datepicker table tr td.active:active.focus,
+                    .datepicker table tr td.active.highlighted:active.focus,
+                    .datepicker table tr td.active.active.focus,
+                    .datepicker table tr td.active.highlighted.active.focus,
+                    .open > .dropdown-toggle.datepicker table tr td.active.focus,
+                    .open > .dropdown-toggle.datepicker table tr td.active.highlighted.focus {
+                        color: #ffffff;
+                        background-color: #285e8e;
+                        border-color: #193c5a;
+                    }
+
+    .datepicker .datepicker-switch {
+        width: 145px;
+    }
+
+        .datepicker .datepicker-switch:hover,
+        .datepicker .prev:hover,
+        .datepicker .next:hover,
+        .datepicker tfoot tr th:hover {
+            background: #50A2C9;
+        }
+
+    /*#endregion calender*/
+
+    .clear-cache {
+        margin-bottom: 8px;
+        background-color: #eee
+    }
+
+    /*select 2*/
+    .select2-container--bootstrap4 .select2-selection--single .select2-selection__arrow {
+        left: 0;
+    }
+
+    .select2-search--dropdown .select2-search__field {
+        text-align: right;
+        background-color: #f8f9fa
+    }
+</style>
+
+@Html.Partial("Common/_Nav")
+
+<div class="container">
+    <div class="signup-form">
+        <form class="needs-validation" novalidate>
+            <div class="form-header">
+                <h2>الخطة السنوية</h2>
+                <p>اعداد وتجهيز الخطة السنوية للمخيمات</p>
+            </div>
+            <!--#region start form -->
+
+            <div class="row">
+                <div class="col-md-6 col-sm-12">
+                    <div class="form-group">
+                        <select id="ddlPlanConfigYear" class="form-control" required="required"></select>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <div class="form-group">
+                        <select id="ddlTour" class="form-control select-option"></select>
+                    </div>
+                </div>
+                <!--#region form group by-->
+                <!--
+        <div class="col-md-6 col-sm-12">
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-prepend mr-1">
+                        <select id="ddlTour" class="form-control"></select>
+                    </div>
+                    <input type="text" tabindex="-1" class="form-control" placeholder="وصف الجولة" aria-label="Example text with button addon" aria-describedby="ddlTour">
+                    <div class="input-group-append ml-1 mt-1">
+                        <i class="material-icons fa-2x" data-toggle="tooltip" title=" اضافة جديد">&#xe05c;</i>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+            -->
+                <!--#endregion form group by-->
+                <div class="col-md-6 col-sm-12">
+                    <div class="form-group">
+                        <select id="ddlCountry" class="form-control select-option" required="required"></select>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-sm-12">
+                    <div class="form-group">
+                        <select id="ddlCamp" class="form-control select-option"></select>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <div class="form-group">
+                        <select id="ddlTeam" class="form-control select-option" required="required"></select>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="form-group">
+                        <select id="ddlSponsor" class="form-control select-option"></select>
+                    </div>
+                </div>  
+                <div class="col-md-3 col-sm-6">
+                    <div class="form-group">
+                        <select id="ddlSponsorShip" class="form-control select-option"></select>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <div class="form-group">
+                        <select id="ddlCampStatus" class="form-control select-option"></select>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input type="text" id="txtPlanConfigStartDate" required autocomplete="off" placeholder="بداية المخيم" class="form-control" />
+                            <i class="fa fa-calendar fa-2x"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input type="text" id="txtPlanConfigEndDate" required autocomplete="off" placeholder="نهاية المخيم" class="form-control" />
+                            <i class="fa fa-calendar fa-2x"></i>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-md-2 col-sm-4">
+                    <div class="form-group">
+                        <div class="custom-control custom-checkbox mr-sm-2">
+                            <input type="checkbox" class="custom-control-input" id="cbPreliminaryStatus">
+                            <label class="custom-control-label" for="cbPreliminaryStatus">الزيارة التحضيرية</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-4">
+                    <div class="form-group">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" id="cbPlanConfigStatus">
+                            <label class="custom-control-label" for="cbPlanConfigStatus">اولوية</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-4">
+                    <div class="form-group">
+                        <div class="custom-control custom-checkbox mr-sm-2">
+                            <input type="checkbox" class="custom-control-input" id="cbPlanConfigIsClosed">
+                            <label class="custom-control-label" for="cbPlanConfigIsClosed">البيانات نهائية</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6  col-sm-12">
+                    <div class="form-group">
+                        <textarea id="txtPlanConfigRemark" class="form-control" rows="2" cols="20"></textarea>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="form-group text-center">
+                        <button type="submit" class="btn btn-primary  btn-lg mb-2">حفظ</button>
+                        <button type="button" id="btnSearch" class="btn btn-primary btn-lg mb-2">بحث</button>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text clear-cache">
+                                <input type="checkbox" id="cbClearCache" aria-label="Checkbox for following text input">
+                            </div>
+                        </div>
+                        <button type="reset" id="btnReset" data-toggle="modal" class="btn btn-primary btn-lg mb-2">مسح</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!--#region end form -->
+            <!--#region Modal-->
+
+            @Html.Partial("Common/_PlanCamps")
+
+            <!--#endregion Modal-->
+
+        </form>
+        <div class="text-center small">يجب مراجعة البيانات <a href="#">قبل الحفظ</a></div>
+    </div>
+
+</div>
+
+@section scripts{
+
+    @Scripts.Render("~/bundles/datepicker")
+
+
+    @Scripts.Render("~/bundles/planconfig")
+
+
+
+
+    @*<script src="~/js/select2.js"></script>*@
+    <script>
+
+
+        $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+
+
+    </script>
+}
+

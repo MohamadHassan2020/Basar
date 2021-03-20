@@ -1,0 +1,131 @@
+﻿
+@{
+    ViewBag.Title = "Role Divider";
+}
+
+
+<style>
+    table tbody tr {
+        cursor: pointer
+    }
+
+    .custom-control-label::after {
+        right: -0.6rem;
+    }
+</style>
+@Html.Partial("Common/_Nav")
+
+<div class="container mt-3">
+
+    <div class="row">
+        <div class="col-md-6 offset-md-3 offset-sm-0">
+            <div class="card m-auto">
+                <form class="needs-validation" novalidate>
+                    <div class="card-header text-center badge-info">
+                        <h2>فئة الصلاحيات</h2>
+                        <p class="text-muted">تسجيل فئة الصلاحية  أو التعديل</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input type="text" id="txtRoleDividerDescEN" placeholder="Roles Divider Desc EN" maxlength="50" required class="form-control" />
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input type="text" id="txtRoleDividerDescAR" placeholder="فئة الصلاحية عربي" maxlength="50" required class="form-control" />
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <input type="number" id="txtRoleDividerOrder" min="0" step="1" placeholder="Roles Divider Order" required class="form-control" />
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <div class="custom-control custom-switch">
+                                        <input type="checkbox" checked class="custom-control-input" id="cbRoleDividerStatus">
+                                        <label class="custom-control-label" for="cbRoleDividerStatus">نشط</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-footer text-center">
+                        <button type="button" id="btnSave" class="btn btn-outline-success">حفظ</button>
+                        <button type="button" id="btnSearch" data-toggle="modal" data-target="#modalTable" class="btn btn-outline-primary">بحث</button>
+                        <button type="reset" id="btnReset" data-toggle="modal" class="btn btn-outline-warning pull-left">مسح</button>
+
+                    </div>
+                </form>
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+
+
+
+    <!--#region end form -->
+    <!--#region Modal-->
+    <div class="modal fade" id="modalTable" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-xl" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">بحث</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!--#region search-->
+
+                    <div class="form-group">
+                        <table id="tblDataExists" class="table table-hover table-bordered" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th> م </th>
+                                    <th>مجموعة الصلاحية عربي</th>
+                                    <th> Roles Group Desc </th>
+                                    <th>تاريخ التسجيل</th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                    <!--#region-->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">اغلاق</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--#endregion Modal-->
+    <div class="text-center small mt-3">يجب مراجعة البيانات <a href="javascript:;">قبل الحفظ</a></div>
+</div>
+
+
+
+@section scripts{
+
+    @Scripts.Render("~/bundles/helper")
+    <script src="~/js/jsProj/roledivider.js"></script>
+    <script>
+
+
+
+        $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+
+
+    </script>
+}

@@ -1,0 +1,6 @@
+D:\Data\Programar\Projects\API\basar\basarapi\BasarDalProj\bin\Debug\BasarDalProj.dll
+D:\Data\Programar\Projects\API\basar\basarapi\BasarDalProj\bin\Debug\BasarDalProj.pdb
+D:\Data\Programar\Projects\API\basar\basarapi\BasarDalProj\obj\Debug\BasarDalProj.csproj.CoreCompileInputs.cache
+D:\Data\Programar\Projects\API\basar\basarapi\BasarDalProj\obj\Debug\BasarDalProj.dll
+D:\Data\Programar\Projects\API\basar\basarapi\BasarDalProj\obj\Debug\BasarDalProj.pdb
+D:\Data\Programar\Projects\API\basar\basarapi\BasarDalProj\obj\Debug\BasarDalProj.csprojAssemblyReference.cache

@@ -1,0 +1,196 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="الاهتمام بتقديم الخدمات العلاجية مجانا لخدمات البصر">
+    <meta name="keywords" content="دول  ,البصر العالمية ,الرعاة ,مخيم , مدينة ,جولة">
+
+    <title>البصر العالمية ل طب العيون</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cairo&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="~/css/bootstrap.css" rel="stylesheet" />
+
+    <link href="~/css/bootstrap-rtl.css" rel="stylesheet" />
+
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
+    @*<link href="~/css/select2.css" rel="stylesheet" />*@
+    <link href="~/css/select2-bootstrap4.css" rel="stylesheet" />
+
+    <link href="~/css/navbar.css" rel="stylesheet" />
+
+
+    <link href="~/css/navbar-rtl.css" rel="stylesheet" />
+    <link href="~/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="~/css/responsive.dataTables.min.css" rel="stylesheet" />
+    <link href="~/css/all.css" rel="stylesheet" />
+
+    <!--#region sweet alert-->
+    @Styles.Render("~/Content/sweetalert2")
+
+    @Styles.Render("~/Content/fileinput")
+    @Styles.Render("~/Content/explorertheme")
+
+    <!--#endregion sweet alert-->
+
+    <style>
+        body,
+        h1, h2, h3, h4, h5, h6,
+        p, span, a, ul, i, li, button,
+        input {
+            font-family: 'Cairo', sans-serif;
+        }
+
+        input, textarea, select {
+            resize: none;
+        }
+
+        .label-txt-control {
+            color: #237ac5;
+            font-size: 22px;
+            font-weight: 600;
+        }
+        .label-txt-control-warning {
+            color: #ff6a00;
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        .tooltip {
+            font-family: 'Cairo', sans-serif;
+            /*font-size: 14px;
+            font-style: normal;
+            font-weight: normal;
+            line-height: 1.42857143;
+            text-align: left;
+            text-align: start;
+            text-decoration: none;
+            text-shadow: none;
+            text-transform: none;
+            letter-spacing: normal;
+            word-break: normal;
+            word-spacing: normal;
+            word-wrap: normal;
+            white-space: normal;*/
+            /* ... */
+        }
+
+        /*.tooltip-inner {
+            max-width: 200px;
+            padding: 3px 8px;
+            color: #fff;
+            font-weight: bold;
+            text-align: center;
+            background-color: #ff6a00;
+            border-radius: 4px;
+        }*/
+
+
+        input:focus, textarea:focus, select:focus {
+            background-color: #e1e1e1;
+        }
+
+        .navbar-light .navbar-nav .nav-link {
+            color: rgba(32, 175, 142, 0.5);
+            font-size: 22px;
+            font-weight: 900;
+        }
+
+            .navbar-light .navbar-nav .nav-link:active {
+                color: rgba(249, 3, 3, 0.9);
+            }
+        /*#region LockOn*/
+        .LockOn {
+            display: block;
+            visibility: visible;
+            position: absolute;
+            z-index: 99999;
+            top: 0px;
+            left: 0px;
+            width: 105%;
+            height: 105%;
+            background-color: white;
+            vertical-align: bottom;
+            padding-top: 20%;
+            filter: alpha(opacity=75);
+            opacity: 0.75;
+            font-size: large;
+            color: blue;
+            font-style: italic;
+            font-weight: 400;
+            background-image: url("../../img/loader.gif");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+        }
+        /*#endregion LockOn*/
+        /*#region resolve datpicker*/
+        .datepicker-dropdown {
+            max-width: 300px;
+        }
+
+        .datepicker {
+            float: right
+        }
+
+            .datepicker.dropdown-menu {
+                right: auto
+            }
+        /*#end region resolve datpicker*/
+    </style>
+
+</head>
+<body>
+
+
+    <!--#region start div overlay-->
+
+    <div id="loading" class="LockOn">
+    </div>
+
+    <!--#region start div overlay-->
+
+    @RenderBody()
+    <!--#region msg div-->
+    @*<div id="partialView"></div>*@
+    <!--#endregion msg div -->
+    <!--#region change password-->
+    @Html.Partial("Common/_ChangePassword")
+    <!--#endregion change password-->
+
+    @Scripts.Render("~/bundles/jquery")
+
+    <script src="~/js/popper.min.js"></script>
+    <script src="~/js/bootstrap.js"></script>
+
+    <!--#region sweet alert js -->
+    @Scripts.Render("~/bundles/sweetalert2")
+    <!--#endregion sweet alert js -->
+    <!--#region datatable-->
+
+    @Scripts.Render("~/bundles/dataTables")
+    <!--#end region datatable-->
+
+    @Scripts.Render("~/bundles/piexif")
+    @Scripts.Render("~/bundles/fileinput")
+    @Scripts.Render("~/bundles/explorertheme")
+
+
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
+
+    <script src="~/js/main.js"></script>
+    <script src="~/js/jsProj/admin.js"></script>
+    <script src="~/js/jsProj/checkauthrights.js"></script>
+    @Scripts.Render("~/bundles/helper")
+
+
+    @RenderSection("scripts", required: false)
+
+
+
+</body>
+</html>

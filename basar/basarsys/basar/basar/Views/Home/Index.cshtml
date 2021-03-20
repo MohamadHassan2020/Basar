@@ -1,0 +1,496 @@
+﻿
+@{
+    ViewBag.Title = "احصائية المخيمات والمدن";
+}
+
+<link href="~/css/Chart.css" rel="stylesheet" />
+
+<style>
+    .nav .nav-item a {
+        color: #1a3e63;
+        font-size: 20px;
+        text-decoration: none
+    }
+
+    .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+        color: #b81fd4;
+        background-color: transparent;
+    }
+
+
+    .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+        border-bottom: 2px solid #f00;
+    }
+
+    .tab-content .tab-pane .card .card-header {
+        font-size: 22px;
+    }
+
+    .card-scroll {
+        max-height: 300px;
+        min-height: 300px;
+        overflow-y: auto;
+    }
+
+    .card {
+        border: 1px solid #2fa3ff;
+        border-radius: 10px;
+    }
+
+        .card ul li,
+        .card-header span {
+            cursor: pointer
+        }
+
+            .card ul li:nth-child(even) {
+                /*background-color: #51b7a9;
+        color: #fff*/
+                background-color: #f8f9fa;
+                color: #000000
+            }
+
+            .card ul li:nth-child(odd) {
+            }
+
+    canvas {
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        border: 1px dotted red;
+    }
+
+
+    .chart-container {
+        position: relative;
+        margin: auto;
+        height: 80vh;
+        width: 80vw;
+    }
+
+    ul .list-group-item .tab-number,
+    .card-header span.tab-number {
+        margin-right: 20px;
+        min-width: 15%
+    }
+    /* start tbody scroll*/
+    table.tableBodyScroll tbody {
+        display: block;
+        max-height: 300px;
+        /*overflow-y: scroll;*/
+        overflow-y: auto;
+    }
+
+    table tbody tr {
+        cursor: pointer
+    }
+
+    table.tableBodyScroll thead, table.tableBodyScroll tbody tr {
+        display: table;
+        width: 100%;
+        table-layout: fixed;
+    }
+
+
+    /* end tbody scroll*/
+
+    /***/
+    .w-5 {
+        width: 5%;
+    }
+
+    .w-10 {
+        width: 10%;
+    }
+
+    .w-20 {
+        width: 20%;
+    }
+
+    .w-30 {
+        width: 30%;
+    }
+
+    .w-40 {
+        width: 40%;
+    }
+
+    .w-50 {
+        width: 50%;
+    }
+
+    .w-55 {
+        width: 55%;
+    }
+
+    .w-60 {
+        width: 60%;
+    }
+    /***/
+    div.col-md-12,
+    div.col-lg-6 {
+        padding: 0
+    }
+
+    span.badge {
+        font-size: 1em;
+    }
+</style>
+
+
+@Html.Partial("Common/_Nav")
+
+
+<div class="container-fluid mt-4">
+    <ul class="nav nav-pills mb-4" id="pills-tab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">
+                <i class="fa fa-home"> </i> أرقام
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">مخططات</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">حالات</a>
+        </li>
+
+    </ul>
+    <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+            <div class="container-fluid">
+                @*
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card border-info  mb-3">
+                                <div class="card-header allstatscamps">
+                                    <span class="tab-number">العيادات</span>
+                                    <span class="tab-number">عمليات</span>
+                                    <span class="tab-number">نظارات</span>
+                                </div>
+                                <div class="card-scroll">
+                                    <ul class="list-group list-group-flush yearplan"></ul>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card border-info mb-3">
+                                <div class="card-header allstatscamps">
+                                    مدن المخيمات
+
+                                </div>
+                                <div class="card-scroll">
+                                    <ul class="list-group list-group-flush campplan"></ul>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card border-info mb-3">
+                                <div class="card-header allstatscamps">
+                                    حالة المخيم
+                                </div>
+                                <div class="card-scroll">
+                                    <ul class="list-group list-group-flush campstatusplan"></ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card border-info mb-3">
+                                <div class="card-header allstatscamps">
+                                    الدول
+
+                                </div>
+                                <div class="card-scroll">
+                                    <ul class="list-group list-group-flush countryplan"></ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card border-info mb-3">
+                                <div class="card-header allstatscamps">
+                                    الرعاة
+
+                                </div>
+                                <div class="card-scroll">
+                                    <ul class="list-group list-group-flush sponsorplan"></ul>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card  border-info mb-3">
+                                <div class="card-header allstatscamps">
+                                    الفرق
+
+                                </div>
+                                <div class="card-scroll">
+                                    <ul class="list-group list-group-flush teamplan"></ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                *@
+                <div class="row">
+                    <div class="col-md-12 col-lg-6">
+                        <div class="card mb-5">
+                            <h3 class="text-center text-primary">
+                                <span class="badge badge-pill badge-success" id="spanPlanYears"></span>
+                                سنة من العطاء
+                            </h3>
+                            <table class="table table-bordered table-striped table-responsive tableBodyScroll">
+
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th scope="col" class="text-center">
+                                            العام
+                                            <span data-toggle="tooltip" title="الاجمالي" class="badge badge-light" id="iPlanCamps">25</span>
+                                        </th>
+                                        <th scope="col" class="text-center">
+                                            <i data-toggle="tooltip" title="" class="fas fa-users fa-lg"> الاحصائيات</i>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody id="yearsStatsTbody"></tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-6">
+                        <div class="card  mb-5">
+                            <h3 class="text-center text-primary">
+                                وصلت فرقنا إلى
+                                <span data-toggle="tooltip" title="عدد مدن المخيم" class="badge badge-pill badge-danger" id="spanPlanCities"></span>
+                                مدينة
+                            </h3>
+                            <table class="table table-bordered table-striped tableBodyScroll">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th scope="col" class="text-center">
+                                            المدينة
+                                        </th>
+                                        <th scope="col" class="text-center">
+                                            <i data-toggle="tooltip" title="" class="fas fa-users fa-lg">الاحصائيات</i>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody id="campsStatsTbody"></tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-6">
+                        <div class="card mb-5">
+                            <h3 class="text-center text-primary">
+                                <span class="badge badge-pill badge-warning" id="spanPlanSponsors"></span>
+                                شركائنا في النجاح
+                            </h3>
+
+                            <table class="table table-bordered table-striped tableBodyScroll">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th scope="col" class="text-center">
+                                            الرعاة
+                                        </th>
+                                        <th scope="col" class="text-center">
+                                        </th>
+                                        <th scope="col" class="text-center">
+                                            <i data-toggle="tooltip" title="" class="fas fa-users fa-lg">الاحصائيات</i>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody id="sponsorStatsTbody"></tbody>
+                            </table>
+
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="col-md-12 col-lg-6">
+                        <div class="card mb-5">
+                            <h3 class="text-center text-primary">
+                                نتواجد في
+                                <span class="badge badge-pill badge-danger" id="spanPlanCountries"></span>
+                                دولة
+                            </h3>
+                            <table class="table table-bordered table-striped tableBodyScroll">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th scope="col" class="text-center">
+                                            الدولة
+                                        </th>
+                                        <th scope="col" class="text-center">
+
+                                        </th>
+                                        <th scope="col" class="text-center">
+                                            <i data-toggle="tooltip" title="" class="fas fa-users fa-lg">الاحصائيات</i>
+                                        </th>
+
+                                    </tr>
+                                </thead>
+                                <tbody id="countryStatsTbody"></tbody>
+                            </table>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 col-lg-6">
+                        <div class="card mb-5">
+                            <h3 class="text-center text-primary">
+                                حالة المخيم
+                            </h3>
+                            <table class="table table-bordered table-striped tableBodyScroll">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th scope="col" class="text-center">
+                                            الحالة
+                                        </th>
+                                        <th scope="col" class="text-center">
+                                        </th>
+                                        <th scope="col" class="text-center">
+                                            <i data-toggle="tooltip" title="" class="fas fa-users fa-lg">الاحصائيات</i>
+                                        </th>
+
+                                    </tr>
+                                </thead>
+                                <tbody id="statusCampStatsTbody"></tbody>
+                            </table>
+
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-12 col-lg-6">
+                        <div class="card mb-5">
+                            <h3 class="text-center text-primary">
+                                <span class="badge badge-pill badge-warning" id="spanPlanTeams"></span>الفرق الطبية
+                            </h3>
+                            <table class="table table-bordered table-striped tableBodyScroll">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th scope="col" class="text-center">
+                                            الفريق
+                                        </th>
+                                        <th scope="col" class="text-center">
+                                        </th>
+                                        <th scope="col" class="text-center">
+                                            <i data-toggle="tooltip" title="" class="fas fa-users fa-lg">الاحصائيات</i>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody id="teamStatsTbody"></tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="chart-container">
+                        <canvas id="canvas"></canvas>
+                    </div>
+                </div>
+
+
+                <div class="card">
+                    <div class="chart-container">
+                        <canvas id="canvasTeam"></canvas>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+        </div>
+        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+            <div class="container-fluid">
+
+
+                <div class="card-deck">
+                    <div class="card">
+                        <h4 class="card-header"> الاجمالي   </h4>
+                        <!--<img class="card-img-top" src="..." alt="Card image cap">-->
+                        <div class="card-body">
+                            <div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+                            <h5 class="card-title">دول المخيم</h5>
+                            <canvas id="ctxGender" style="display: block; width: 568px; height: 284px;" width="568" height="284" class="chartjs-render-monitor"></canvas>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted">3 mins ago</small>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h4 class="card-header"> الاجمالي   </h4>
+                        <!--<img class="card-img-top" src="..." alt="Card image cap">-->
+                        <div class="card-body">
+                            <div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+                            <h5 class="card-title">عام الخطة</h5>
+                            <canvas id="ctxGender2" height="568" width="568" class="chartjs-render-monitor" style="display: block; width: 568px; height: 568px;"></canvas>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted">Last updated 3 mins ago</small>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <!--<img class="card-img-top" src="..." alt="Card image cap">-->
+                        <h4 class="card-header"> الاجمالي   </h4>
+                        <div class="card-body">
+                            <div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+                            <h5 class="card-title">الرعاة</h5>
+                            <canvas id="ctxGender3" height="568" width="568" class="chartjs-render-monitor" style="display: block; width: 568px; height: 568px;"></canvas>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted">Last updated 3 mins ago</small>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+        <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+            <div class="container">
+                comming soon
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--#region Modal-->
+
+@Html.Partial("Common/_PlanCamps")
+
+<!--#endregion Modal-->
+@*@Html.Partial("Common/_PlanDetails")
+    @section scripts{
+        <script>
+            $(document).ready(function () {
+                $('[data-toggle="tooltip"]').tooltip();
+                $('.fa-search').tooltip();
+            });
+        </script>
+    }*@
+
+@section scripts{
+    <script src="~/js/jsProj/checkauthrights.js"></script>
+    <script src="~/js/Chart.js"></script>
+    <script src="~/js/jscharttest.js"></script>
+    <script src="~/js/utils.js"></script>
+    <script src="~/js/jsProj/planstats.js"></script>
+
+    <script>
+        $(function () {
+            $("body").tooltip({
+                selector: '[data-toggle=tooltip]',
+                'data-placement': "bottom"
+            });
+
+        });
+    </script>
+
+}

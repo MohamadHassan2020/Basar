@@ -1,0 +1,292 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="css/bootstrap.css" rel="stylesheet" />
+
+    <title>DashBoard</title>
+    <style>
+        .container {
+            margin-top: 10px;
+        }
+
+        .card-body ul li {
+            border: none
+        }
+
+        .card-header span {
+            font-size: 18px;
+            font-weight: 900;
+        }
+
+        .card-columns {
+            columns: 4
+        }
+
+        .my-card-columns {
+            columns: 2
+        }
+    </style>
+</head>
+<body>
+    <!--start container-->
+    <div class="container-fluid mt-4">
+        <div class="row" id="myDiv">
+            
+            <!--temp  
+            <div class="col">
+                <div class="card border-primary mb-3">
+                    <div class="card-header bg-transparent border-primary text-center">
+                        <span><a href="javascript;;" role="button" class="btn btn-outline-primary btn-block">2019</a></span>
+
+                    </div>
+                    <div class="card-body text-primary">
+                        <h6 class="card-title">Total Camps <span class="badge badge-primary">85</span></h6>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Tour <span class="badge badge-primary">17</span></li>
+                            <li class="list-group-item">Team <span class="badge badge-primary">5</span></li>
+                            <li class="list-group-item">Sponsor <span class="badge badge-primary">10</span></li>
+                            <li class="list-group-item">Country <span class="badge badge-primary">24</span></li>
+                        </ul>
+                    </div>
+                    <div class="card-footer bg-transparent border-primary">
+                        <button type="button" class="btn btn-outline-primary btn-sm btn-block">More...</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card border-secondary mb-3">
+                    <div class="card-header bg-transparent border-secondary text-center">
+                        <span><a href="javascript;;" role="button" class="btn btn-outline-secondary btn-block">2018</a></span>
+                    </div>
+                    <div class="card-body text-secondary">
+                        <h6 class="card-title">Total Camps <span class="badge badge-secondary">78</span></h6>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Tour <span class="badge badge-secondary">17</span></li>
+                            <li class="list-group-item">Team <span class="badge badge-secondary">5</span></li>
+                            <li class="list-group-item">Sponsor <span class="badge badge-secondary">8</span></li>
+                            <li class="list-group-item">Country <span class="badge badge-secondary">20</span></li>
+                        </ul>
+                    </div>
+                    <div class="card-footer bg-transparent border-secondary">
+                        <button type="button" class="btn btn-outline-secondary btn-sm btn-block">More...</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card border-info mb-3">
+                    <div class="card-header bg-transparent border-info text-center">
+                        <span><a href="javascript;;" role="button" class="btn btn-outline-info btn-block">2018</a></span>
+                    </div>
+                    <div class="card-body text-info">
+                        <h6 class="card-title">Total Camps <span class="badge badge-info">79</span></h6>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Tour <span class="badge badge-info">16</span></li>
+                            <li class="list-group-item">Team <span class="badge badge-info">4</span></li>
+                            <li class="list-group-item">Sponsor <span class="badge badge-info">11</span></li>
+                            <li class="list-group-item">Country <span class="badge badge-info">27</span></li>
+                        </ul>
+                    </div>
+                    <div class="card-footer bg-transparent border-info">
+                        <button type="button" class="btn btn-outline-info btn-sm btn-block">More...</button>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card border-dark mb-3">
+                    <div class="card-header bg-transparent border-dark text-center">
+                        <span><a href="javascript;;" role="button" class="btn btn-outline-dark btn-block">2017</a></span>
+                    </div>
+                    <div class="card-body text-dark">
+                        <h6 class="card-title">Total Camps <span class="badge badge-dark">92</span></h6>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Tour <span class="badge badge-dark">19</span></li>
+                            <li class="list-group-item">Team <span class="badge badge-dark">8</span></li>
+                            <li class="list-group-item">Sponsor <span class="badge badge-dark">14</span></li>
+                            <li class="list-group-item">Country <span class="badge badge-dark">31</span></li>
+                        </ul>
+                    </div>
+                    <div class="card-footer bg-transparent border-dark">
+                        <button type="button" class="btn btn-outline-dark btn-sm btn-block">More...</button>
+
+                    </div>
+                </div>
+            </div>
+            -->
+
+        </div>
+        <!--start-->
+        <div class="card-columns ">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title text-center">
+                        <span><a href="javascript;;" role="button" class="btn btn-outline-info btn-block">Countries 2020 <span class="badge badge-light">25</span></a></span>
+                    </h5>
+                </div>
+                <!--<img src="img/dash4.jpg" class="card-img-top" alt="...">-->
+                <canvas id="myChart" width="150" height="150"></canvas>
+                <div class="card-body">
+                    <div class="btn-group float-right" role="group" aria-label="Third group">
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title text-center">
+                        <span><a href="javascript;;" role="button" class="btn btn-outline-info btn-block">Tour 2020 <span class="badge badge-light">5</span></a></span>
+                    </h5>
+                </div>
+                <!--<img src="img/dash8.jpg" class="card-img-top" alt="...">-->
+                <canvas id="myChartLine" width="150" height="150"></canvas>
+                <div class="card-body">
+
+                    <div class="btn-group float-right" role="group" aria-label="Third group">
+
+                    </div>
+                    <p class="card-text sr-only">This card has supporting text below as a natural lead-in to additional content.</p>
+                    <p class="card-text sr-only"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title text-center">
+                        <span><a href="javascript;;" role="button" class="btn btn-outline-info btn-block">Team 2020 <span class="badge badge-light">16</span></a></span>
+                    </h5>
+                </div>
+                <!--<img src="img/dash7.jpg" class="card-img-top" alt="...">-->
+                <canvas id="myChartDoughnut" width="150" height="150"></canvas>
+                <div class="card-body">
+                    <div class="btn-group float-right" role="group" aria-label="Third group">
+                    </div>
+                    <p class="card-text sr-only">Tour Details .</p>
+                    <p class="card-text sr-only"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title text-center">
+                        <span><a href="javascript;;" role="button" class="btn btn-outline-info btn-block">Sponsor 2020 <span class="badge badge-light">25</span></a></span>
+                    </h5>
+                </div>
+                <!--<img src="img/dash4.jpg" class="card-img-top" alt="...">-->
+                <canvas id="sponsorChart" width="100" height="100"></canvas>
+                <div class="card-body">
+                    <div class="btn-group float-right" role="group" aria-label="Third group">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--end-->
+        <div class="my-card-columns">
+            <div class="card">
+                <div class="card-header">
+                    Camps
+                </div>
+                <div class="card-body">
+                    <table class="table table-sm">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Camp</th>
+                                <th scope="col">Start Date</th>
+                                <th scope="col">End Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="table-info">
+                                <th scope="row">1</th>
+                                <td>ABSHI</td>
+                                <td>1-1-2020</td>
+                                <td>10-1-2020</td>
+                            </tr>
+                            <tr class="table-danger">
+                                <th scope="row">2</th>
+                                <td>Ouagadougou</td>
+                                <td>11-1-2020</td>
+                                <td>13-1-2020</td>
+                            </tr>
+                            <tr class="table-dark">
+                                <th scope="row">3</th>
+                                <td>Aljinind</td>
+                                <td>14-1-2020</td>
+                                <td>17-1-2020</td>
+                            </tr>
+                            <tr class="table-warning">
+                                <th scope="row">4</th>
+                                <td>Aldamazin</td>
+                                <td>18-1-2020</td>
+                                <td>22-1-2020</td>
+                            </tr>
+                            <tr class="sr-only">
+                                <th scope="row">3</th>
+                                <td colspan="2">Larry the Bird</td>
+                                <td>@twitter</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    Camps
+                </div>
+                <div class="card-body">
+                    <table class="table table-sm">
+                        <thead>
+                            <tr class="table-info">
+                                <th scope="col">#</th>
+                                <th scope="col">Camp</th>
+                                <th scope="col">Start Date</th>
+                                <th scope="col">End Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>ABSHI</td>
+                                <td>1-1-2020</td>
+                                <td>10-1-2020</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Ouagadougou</td>
+                                <td>11-1-2020</td>
+                                <td>13-1-2020</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>Aljinind</td>
+                                <td>14-1-2020</td>
+                                <td>17-1-2020</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">4</th>
+                                <td>Aldamazin</td>
+                                <td>18-1-2020</td>
+                                <td>22-1-2020</td>
+                            </tr>
+                            <tr class="sr-only">
+                                <th scope="row">3</th>
+                                <td colspan="2">Larry the Bird</td>
+                                <td>@twitter</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end container-->
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/Chart.js"></script>
+    <script src="libsys/datachart-js.js"></script>
+    <script src="lib/lib-js.js"></script>
+    <script src="libsys/dashboard-js.js"></script>
+</body>
+</html>

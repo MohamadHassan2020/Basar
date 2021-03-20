@@ -1,0 +1,510 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{316A2677-D7CD-4CB6-BA11-122A6AC3C25D}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Basar</RootNamespace>
+    <AssemblyName>Basar</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=15.1.2.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\alamry\AlamryProjectSolution\AlamryPL\bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=B03F5F7F11D50A3A, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=B03F5F7F11D50A3A, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=B03F5F7F11D50A3A, processorArchitecture=MSIL" />
+    <!--
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+	-->
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.0.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.0.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.0.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.0.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.0.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.0.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AdminForm\frmCamp.aspx" />
+    <Content Include="AdminForm\frmSponsor.aspx" />
+    <Content Include="AdminForm\frmTeam.aspx" />
+    <Content Include="AdminForm\frmTour.aspx" />
+    <Content Include="AdminForm\frmUser.aspx" />
+    <Content Include="AdminForm\frmCountry.aspx" />
+    <Content Include="BasarService\uploads.txt" />
+    <Content Include="calendercontent\css\base.css" />
+    <Content Include="calendercontent\css\bootstrap-datetimepicker.css" />
+    <Content Include="calendercontent\css\fonts\font-awesome.min.css" />
+    <Content Include="calendercontent\css\prettify-1.0.css" />
+    <Content Include="calendercontent\js\bootstrap-datetimepicker.js" />
+    <Content Include="calendercontent\js\bootstrap-datetimepicker.min.js" />
+    <Content Include="calendercontent\js\bootstrap.min.js" />
+    <Content Include="calendercontent\js\jquery-2.1.1.min.js" />
+    <Content Include="calendercontent\js\moment-with-locales.js" />
+    <Content Include="css\style_mh.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="frmLogin.aspx" />
+    <Content Include="Home\frmHome.aspx" />
+    <Content Include="images\archivepng.png" />
+    <Content Include="images\bang.png" />
+    <Content Include="images\logo_1.jpeg" />
+    <Content Include="images\logo_3.jpg" />
+    <Content Include="images\logo_4.JPG" />
+    <Content Include="images\nig.png" />
+    <Content Include="images\pak.png" />
+    <Content Include="images\sa.png" />
+    <Content Include="images\sud.png" />
+    <Content Include="images\yam.png" />
+    <Content Include="images\yes.png" />
+    <Content Include="js\hightlightrow.js" />
+    <Content Include="js\jquery-ui.min.css" />
+    <Content Include="js\jquery-ui.min.js" />
+    <Content Include="js\jsCalender.js" />
+    <Content Include="js\jsUploadFiles.js" />
+    <Content Include="js\only-Numbers.js" />
+    <Content Include="packages.config" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Master\SiteAdmin.Master" />
+    <Content Include="Master\WideAdmin.Master" />
+    <Content Include="fonts\DroidKufi-Regular.ttf" />
+    <Content Include="fonts\GE SS Two Bold.otf" />
+    <Content Include="BasarService\BannerUpload.ashx" />
+    <Content Include="BasarService\ArchiveUpload.ashx" />
+    <Content Include="css\fonts\DroidKufi-Regular.ttf" />
+    <Content Include="css\fonts\GE SS Two Bold.otf" />
+    <Content Include="fonts\DINNEXTLTARABIC-LIGHT.ttf" />
+    <None Include="Properties\PublishProfiles\basar.pubxml" />
+    <Content Include="Web.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web2.Debug.config">
+      <DependentUpon>Web2.config</DependentUpon>
+    </None>
+    <None Include="Web2.Release.config">
+      <DependentUpon>Web2.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Global.asax" />
+    <Content Include="PreparationForm\frmArchive.aspx" />
+    <Content Include="PreparationForm\frmClinicalReport.aspx" />
+    <Content Include="PreparationForm\frmBanner.aspx" />
+    <Content Include="PreparationForm\frmCampMedicines.aspx" />
+    <Content Include="PreparationForm\frmCampEquipments.aspx" />
+    <Content Include="PreparationForm\frmCampProcedure.aspx" />
+    <Content Include="PreparationForm\frmCooperator.aspx" />
+    <Content Include="PreparationForm\frmHospital.aspx" />
+    <Content Include="PreparationForm\frmCampMembers.aspx" />
+    <Content Include="PreparationForm\frmPreparationReport.aspx" />
+    <Content Include="PreparationForm\frmPreparation.aspx" />
+    <Content Include="PreparationForm\frmTourCountry.aspx" />
+    <Content Include="PreparationForm\frmTeamMembers.aspx" />
+    <Content Include="PreparationForm\frmSupportAssistance.aspx" />
+    <Content Include="PreparationForm\frmPreliminary.aspx" />
+    <Content Include="PreparationForm\frmSponsors.aspx" />
+    <Content Include="PreparationForm\frmSurveyCategory.aspx" />
+    <Content Include="PreparationForm\frmIndicator.aspx" />
+    <Content Include="PreparationForm\frmViewFile.aspx" />
+    <Content Include="RPT\frmViewReports.aspx" />
+    <Content Include="scripts\ai.0.22.9-build00167.js" />
+    <Content Include="scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="Styles\newcss\assets\global\plugins\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Styles\newcss\assets\global\plugins\simple-line-icons\simple-line-icons.min.css" />
+    <Content Include="test.html" />
+    <Content Include="Web2.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdminForm\frmCamp.aspx.cs">
+      <DependentUpon>frmCamp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminForm\frmCamp.aspx.designer.cs">
+      <DependentUpon>frmCamp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminForm\frmSponsor.aspx.cs">
+      <DependentUpon>frmSponsor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminForm\frmSponsor.aspx.designer.cs">
+      <DependentUpon>frmSponsor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminForm\frmTeam.aspx.cs">
+      <DependentUpon>frmTeam.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminForm\frmTeam.aspx.designer.cs">
+      <DependentUpon>frmTeam.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminForm\frmTour.aspx.cs">
+      <DependentUpon>frmTour.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminForm\frmTour.aspx.designer.cs">
+      <DependentUpon>frmTour.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminForm\frmUser.aspx.cs">
+      <DependentUpon>frmUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminForm\frmUser.aspx.designer.cs">
+      <DependentUpon>frmUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminForm\frmCountry.aspx.cs">
+      <DependentUpon>frmCountry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminForm\frmCountry.aspx.designer.cs">
+      <DependentUpon>frmCountry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BasarClass\SharedClass.cs" />
+    <Compile Include="BasarService\ArchiveUpload.ashx.cs">
+      <DependentUpon>ArchiveUpload.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="BasarService\BannerUpload.ashx.cs">
+      <DependentUpon>BannerUpload.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.aspx.cs">
+      <DependentUpon>frmLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmLogin.aspx.designer.cs">
+      <DependentUpon>frmLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Home\frmHome.aspx.cs">
+      <DependentUpon>frmHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home\frmHome.aspx.designer.cs">
+      <DependentUpon>frmHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\WideAdmin.Master.cs">
+      <DependentUpon>WideAdmin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\WideAdmin.Master.designer.cs">
+      <DependentUpon>WideAdmin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Master\SiteAdmin.Master.cs">
+      <DependentUpon>SiteAdmin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\SiteAdmin.Master.designer.cs">
+      <DependentUpon>SiteAdmin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AnnualPlanReportModel.cs" />
+    <Compile Include="PreparationForm\frmArchive.aspx.cs">
+      <DependentUpon>frmArchive.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PreparationForm\frmArchive.aspx.designer.cs">
+      <DependentUpon>frmArchive.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PreparationForm\frmClinicalReport.aspx.cs">
+      <DependentUpon>frmClinicalReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PreparationForm\frmClinicalReport.aspx.designer.cs">
+      <DependentUpon>frmClinicalReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PreparationForm\frmBanner.aspx.cs">
+      <DependentUpon>frmBanner.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PreparationForm\frmBanner.aspx.designer.cs">
+      <DependentUpon>frmBanner.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PreparationForm\frmCampMedicines.aspx.cs">
+      <DependentUpon>frmCampMedicines.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PreparationForm\frmCampMedicines.aspx.designer.cs">
+      <DependentUpon>frmCampMedicines.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PreparationForm\frmCampEquipments.aspx.cs">
+      <DependentUpon>frmCampEquipments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PreparationForm\frmCampEquipments.aspx.designer.cs">
+      <DependentUpon>frmCampEquipments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PreparationForm\frmCampProcedure.aspx.cs">
+      <DependentUpon>frmCampProcedure.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PreparationForm\frmCampProcedure.aspx.designer.cs">
+      <DependentUpon>frmCampProcedure.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PreparationForm\frmCooperator.aspx.cs">
+      <DependentUpon>frmCooperator.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PreparationForm\frmCooperator.aspx.designer.cs">
+      <DependentUpon>frmCooperator.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PreparationForm\frmHospital.aspx.cs">
+      <DependentUpon>frmHospital.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PreparationForm\frmHospital.aspx.designer.cs">
+      <DependentUpon>frmHospital.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PreparationForm\frmCampMembers.aspx.cs">
+      <DependentUpon>frmCampMembers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PreparationForm\frmCampMembers.aspx.designer.cs">
+      <DependentUpon>frmCampMembers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PreparationForm\frmPreparationReport.aspx.cs">
+      <DependentUpon>frmPreparationReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PreparationForm\frmPreparationReport.aspx.designer.cs">
+      <DependentUpon>frmPreparationReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PreparationForm\frmPreparation.aspx.cs">
+      <DependentUpon>frmPreparation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PreparationForm\frmPreparation.aspx.designer.cs">
+      <DependentUpon>frmPreparation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PreparationForm\frmTourCountry.aspx.cs">
+      <DependentUpon>frmTourCountry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PreparationForm\frmTourCountry.aspx.designer.cs">
+      <DependentUpon>frmTourCountry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PreparationForm\frmTeamMembers.aspx.cs">
+      <DependentUpon>frmTeamMembers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PreparationForm\frmTeamMembers.aspx.designer.cs">
+      <DependentUpon>frmTeamMembers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PreparationForm\frmSupportAssistance.aspx.cs">
+      <DependentUpon>frmSupportAssistance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PreparationForm\frmSupportAssistance.aspx.designer.cs">
+      <DependentUpon>frmSupportAssistance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PreparationForm\frmPreliminary.aspx.cs">
+      <DependentUpon>frmPreliminary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PreparationForm\frmPreliminary.aspx.designer.cs">
+      <DependentUpon>frmPreliminary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PreparationForm\frmSponsors.aspx.cs">
+      <DependentUpon>frmSponsors.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PreparationForm\frmSponsors.aspx.designer.cs">
+      <DependentUpon>frmSponsors.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PreparationForm\frmSurveyCategory.aspx.cs">
+      <DependentUpon>frmSurveyCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PreparationForm\frmSurveyCategory.aspx.designer.cs">
+      <DependentUpon>frmSurveyCategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PreparationForm\frmIndicator.aspx.cs">
+      <DependentUpon>frmIndicator.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PreparationForm\frmIndicator.aspx.designer.cs">
+      <DependentUpon>frmIndicator.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PreparationForm\frmViewFile.aspx.cs">
+      <DependentUpon>frmViewFile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PreparationForm\frmViewFile.aspx.designer.cs">
+      <DependentUpon>frmViewFile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RPT\crAnnualPlanSponsor.cs">
+      <DependentUpon>crAnnualPlanSponsor.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="RPT\crAnnualPlan.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crAnnualPlan.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RPT\frmViewReports.aspx.cs">
+      <DependentUpon>frmViewReports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RPT\frmViewReports.aspx.designer.cs">
+      <DependentUpon>frmViewReports.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Uploads\ArchiveFiles\" />
+    <Folder Include="Uploads\Banners\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BasarBLL\BasarBLL.csproj">
+      <Project>{cd550d47-24db-42fe-91bf-0a63e6ccbe5a}</Project>
+      <Name>BasarBLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BasarBO\BasarBO.csproj">
+      <Project>{d1d3505d-9b83-4b9a-a5c1-8dc51de232a6}</Project>
+      <Name>BasarBO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="RPT\crAnnualPlanSponsor.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crAnnualPlanSponsor.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPT\crAnnualPlan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crAnnualPlan.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50106</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/Basar</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

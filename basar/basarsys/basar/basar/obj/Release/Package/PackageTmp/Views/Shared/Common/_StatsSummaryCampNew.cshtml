@@ -1,0 +1,358 @@
+﻿
+@{
+    ViewBag.Title = "احصائيات المخيم";
+}
+<style>
+    input[type="checkbox"] {
+        height: 25px;
+        width: 25px
+    }
+
+        input[type="checkbox"]:not(:checked) {
+            height: 25px;
+            width: 25px
+        }
+
+        input[type="checkbox"]:checked {
+            height: 25px;
+            width: 25px
+        }
+
+    .select2-container--bootstrap .select2-selection--single {
+        height: 46px;
+        line-height: 2.5em;
+        padding: 6px 24px 6px 12px;
+        font-size: 17px;
+    }
+
+    .select2-container--bootstrap .select2-search--dropdown .select2-search__field {
+        color: #0a7aca;
+        font-size: 22px;
+    }
+
+    .select2-container--bootstrap .select2-results__option {
+        font-size: 22px;
+        color: #ff6a00
+    }
+
+    .select2-container--bootstrap[dir=rtl] .select2-selection--single .select2-selection__rendered {
+        font-size: 24px;
+        color: #0a63a3;
+        line-height: 33px;
+    }
+
+    table#tableAxis thead tr th {
+        text-align: center
+    }
+
+    table#tableAxis tbody tr td {
+        text-align: center
+    }
+
+        table#tableAxis tbody tr td input {
+            text-align: center
+        }
+
+    /*#region calender*/
+    .datepicker-dropdown {
+        top: 0;
+        left: 0;
+        padding: 4px;
+        background-color: #2C6E8E;
+        border-radius: 10px;
+    }
+
+    .datepicker table {
+        margin: 0;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+        .datepicker table tr td,
+        .datepicker table tr th {
+            text-align: center;
+            width: 30px;
+            height: 30px;
+            border-radius: 4px;
+            border: none;
+            color: #FFFFFF;
+        }
+
+            .datepicker table tr td.day:hover,
+            .datepicker table tr td.focused {
+                background: #555555;
+                cursor: pointer;
+            }
+
+            .datepicker table tr td.old,
+            .datepicker table tr td.new {
+                color: #FF8000;
+            }
+
+            .datepicker table tr td.today {
+                color: #000000;
+                background-color: #FFA953;
+                border-color: #FFB76F;
+            }
+
+                .datepicker table tr td.today:hover {
+                    color: #FFFFFF;
+                    background-color: #884400;
+                    border-color: #f59e00;
+                }
+
+            .datepicker table tr td.active:active,
+            .datepicker table tr td.active.highlighted:active,
+            .datepicker table tr td.active.active,
+            .datepicker table tr td.active.highlighted.active,
+            .open > .dropdown-toggle.datepicker table tr td.active,
+            .open > .dropdown-toggle.datepicker table tr td.active.highlighted {
+                color: #ffffff;
+                background-color: #419841;
+                border-color: #285e8e;
+            }
+
+
+                .datepicker table tr td.active:active:hover,
+                .datepicker table tr td.active.highlighted:active:hover,
+                .datepicker table tr td.active.active:hover,
+                .datepicker table tr td.active.highlighted.active:hover,
+                .open > .dropdown-toggle.datepicker table tr td.active:hover,
+                .open > .dropdown-toggle.datepicker table tr td.active.highlighted:hover,
+                .datepicker table tr td.active:active:focus,
+                .datepicker table tr td.active.highlighted:active:focus,
+                .datepicker table tr td.active.active:focus,
+                .datepicker table tr td.active.highlighted.active:focus,
+                .open > .dropdown-toggle.datepicker table tr td.active:focus,
+                .open > .dropdown-toggle.datepicker table tr td.active.highlighted:focus,
+                .datepicker table tr td.active:active.focus,
+                .datepicker table tr td.active.highlighted:active.focus,
+                .datepicker table tr td.active.active.focus,
+                .datepicker table tr td.active.highlighted.active.focus,
+                .open > .dropdown-toggle.datepicker table tr td.active.focus,
+                .open > .dropdown-toggle.datepicker table tr td.active.highlighted.focus {
+                    color: #ffffff;
+                    background-color: #285e8e;
+                    border-color: #193c5a;
+                }
+
+                .datepicker table tr td.active:active,
+                .datepicker table tr td.active.highlighted:active,
+                .datepicker table tr td.active.active,
+                .datepicker table tr td.active.highlighted.active,
+                .open > .dropdown-toggle.datepicker table tr td.active,
+                .open > .dropdown-toggle.datepicker table tr td.active.highlighted {
+                    color: #ffffff;
+                    background-color: #3071a9;
+                    border-color: #285e8e;
+                }
+
+                    .datepicker table tr td.active:active:hover,
+                    .datepicker table tr td.active.highlighted:active:hover,
+                    .datepicker table tr td.active.active:hover,
+                    .datepicker table tr td.active.highlighted.active:hover,
+                    .open > .dropdown-toggle.datepicker table tr td.active:hover,
+                    .open > .dropdown-toggle.datepicker table tr td.active.highlighted:hover,
+                    .datepicker table tr td.active:active:focus,
+                    .datepicker table tr td.active.highlighted:active:focus,
+                    .datepicker table tr td.active.active:focus,
+                    .datepicker table tr td.active.highlighted.active:focus,
+                    .open > .dropdown-toggle.datepicker table tr td.active:focus,
+                    .open > .dropdown-toggle.datepicker table tr td.active.highlighted:focus,
+                    .datepicker table tr td.active:active.focus,
+                    .datepicker table tr td.active.highlighted:active.focus,
+                    .datepicker table tr td.active.active.focus,
+                    .datepicker table tr td.active.highlighted.active.focus,
+                    .open > .dropdown-toggle.datepicker table tr td.active.focus,
+                    .open > .dropdown-toggle.datepicker table tr td.active.highlighted.focus {
+                        color: #ffffff;
+                        background-color: #285e8e;
+                        border-color: #193c5a;
+                    }
+
+    .datepicker .datepicker-switch {
+        width: 145px;
+    }
+
+        .datepicker .datepicker-switch:hover,
+        .datepicker .prev:hover,
+        .datepicker .next:hover,
+        .datepicker tfoot tr th:hover {
+            background: #50A2C9;
+        }
+
+    /*#endregion calender*/
+
+    /*
+    table {
+        width: 100%
+    }
+
+        table thead {
+            background-color: #ff6a00;
+            color: #fff;
+        }
+
+            table thead tr {
+                height: 60px;
+                border: 2px solid #000;
+                font-size: 1.4em
+            }
+
+                table thead tr th {
+                    border: 1px double #000;
+                    border-spacing: 5px;
+                    border-collapse: collapse;
+                    text-align: center
+                }
+
+                    table thead tr th i.fas {
+                        cursor: pointer
+                    }
+
+        table#tableAxis tbody {
+            border: 1px solid #000
+        }
+
+            table#tableAxis tbody tr {
+                height: 60px;
+                font-size: 1.5em;
+                padding-top: 5px;
+                cursor: default
+            }
+
+                table#tableAxis tbody tr:nth-child(2n+1) {
+                    background-color: #eee
+                }
+
+                table#tableAxis tbody tr td:first-child {
+                    background-color: #f2ddcf
+                }
+
+                table#tableAxis tbody tr td {
+                    border: 1px double #000;
+                    text-align: center
+                }
+                */
+</style>
+<div class="card m-auto">
+    <form class="needs-validation campstatssummary" novalidate>
+        <div class="card-header text-center badge-primary">
+            <p class="lead">احصائيات المخيم</p>
+        </div>
+        <div class="card-body">
+            <div class="form-group row  mt-3">
+                <div class="col-sm-12 col-md-6">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <select id="ddlStatsSummaryCampsNew" class="custom-select select-option" required></select>
+                            <div class="input-group-append">
+                                <label class="input-group-text" data-toggle="tooltip" title="لاختيار المخيم وتسجيل احصائية مجمعة" for="ddlPlanCampsManager">
+                                    <i class="fa fa-question fa-flip-horizontal fa-lg fa-border"></i>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input type="text" id="txtFirstFollowUpDate2" required placeholder="رئيس الجراحين" class="form-control" />
+                            <i class="fas fa-user-md fa-2x"></i>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-sm-12 col-md-6">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input type="text" id="txtFirstFollowUpDate3" required placeholder="مدير المخيم" class="form-control" />
+                            <i class="fas fa-user-md fa-2x"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input type="text" id="txtFirstFollowUpDate4" required placeholder="مكان المخيم" class="form-control" />
+                            <i class="fas fa-map-marker-alt fa-2x text-danger"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input type="text" id="txtFirstFollowUpDate5" required placeholder="الجهة الداعمة" class="form-control" />
+                            <i class="fas fa-globe-americas fa-2x text-info"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input type="text" id="txtFirstFollowUpDate6" required placeholder="الجهة المتعاونة محليا" class="form-control" />
+                            <i class="fas fa-globe-asia fa-2x text-info"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input type="text" id="txtFirstFollowUpDate" required autocomplete="off" placeholder="تاريخ المتابعة الأولى" class="form-control" />
+                            <i class="far fa-calendar-alt fa-2x"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input type="text" id="txtSecondFollowUpDate" required autocomplete="off" placeholder="تاريخ المتابعة الثانية" class="form-control" />
+                            <i class="far fa-calendar-alt fa-2x"></i>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <table id="tableAxis" class="table table-bordered table-striped mt-5">
+            <thead class="thead-dark">
+                <tr>
+                    <th><i id="addnew" data-toggle="tooltip" title="" class="fas fa-minus fa-2x"></i></th>
+                    <th>الاجراء</th>
+                    <th>ذكر</th>
+                    <th>أنثى</th>
+                    <th>المجموع</th>
+
+                </tr>
+            </thead>
+            <tbody id="tbodyAxis"></tbody>
+        </table>
+
+        <h4 class="text-center mt-2 text-primary">اجمالي عدد المرضى <span id="spanTotalOpd" class="badge badge-warning"></span> </h4>
+        <h4 class="text-center ">Total OPD</h4>
+        <h4 class="text-center mt-2 text-primary">اجمالي عمليات الماء الأبيض بزراعة عدسة <span id="spanOrWhiteWater" class="badge badge-warning"></span> </h4>
+        <h4 class="text-center">TOTAL IOLS IMPLANTED ( Phaco Included )</h4>
+        <h4 class="text-center mt-2 text-primary"> عمليات الفاكو <span id="spanPhaco" class="badge badge-warning"></span> </h4> 
+        <h4 class="text-center">PHACO SURGREIES</h4><!--phaco-->
+        <h4 class="text-center mt-2 text-primary">اجمالي العمليات <span id="spanOrTotal" class="badge badge-warning"></span></h4>
+        <h4 class="text-center">TOTAL SURGERY</h4>
+        <h4 class="text-center mt-2 text-primary">اجمالي النظارات <span id="spanGlasses" class="badge badge-warning"></span></h4>
+        <h4 class="text-center">
+            GLASSES DISTRIBUTED
+        </h4>
+        <div class="card-footer text-center">
+            <button class="btn btn-outline-success" type="button" id="btnSave">حفظ</button>
+            <button class="btn btn-outline-info" id="btnCampStatsSummarySearch" type="button">بحث</button>
+            <button class="btn btn-outline-dark pull-left" id="btnReset" type="reset">مسح</button>
+        </div>
+    </form>
+</div>
+
+

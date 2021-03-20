@@ -1,0 +1,155 @@
+﻿
+@{
+    ViewBag.Title = "Roles Group";
+}
+
+
+<style>
+    table tbody tr {
+        cursor: pointer
+    }
+
+    div.custom-control.custom-switch
+    label.custom-control-label::after {
+        right: -0.6rem;
+    }
+
+    .input-group-text {
+        color: #17a2b8;
+        background-color: #ffffff;
+        border: none
+    }
+</style>
+@Html.Partial("Common/_Nav")
+
+<div class="container mt-3">
+
+    <div class="row">
+
+        <div class="col-md-4">
+            <div class="card m-auto">
+                <form class="needs-validation" novalidate>
+                    <div class="card-header text-center badge-info">
+                        <h2>مجموعات الصلاحيات</h2>
+                        <p class="text-muted">تسجيل مجموعة الصلاحية  أو التعديل</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group row">
+                            <div class="col-md-12">
+                                <div class="input-group">
+                                    <select id="ddlRoleDivider" class="custom-select select-option" required></select>
+                                    <div class="input-group-append">
+                                        <label class="input-group-text" data-toggle="tooltip" title="لتقسيم الصلاحيات على حسب فئة محدده" for="ddlRoleDivider">
+                                            <i class="fa fa-question fa-flip-horizontal fa-lg fa-border"></i>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="invalid-feedback"></div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input type="text" id="txtRoleGroupDescEN" placeholder="Roles Group Desc EN" maxlength="50" required class="form-control" />
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input type="text" id="txtRoleGroupDescAR" placeholder="مجموعة الصلاحية عربي" maxlength="50" required class="form-control" />
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <input type="number" id="txtRoleGroupOrder" min="0" step="1" placeholder="Roles Group Order" required class="form-control" />
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <div class="custom-control custom-switch">
+                                        <input type="checkbox" checked class="custom-control-input" id="cbRoleGroupStatus">
+                                        <label class="custom-control-label" for="cbRoleGroupStatus">نشط</label>
+                                    </div>
+                                </div>
+                            </div>
+                          
+                        </div>
+                    </div>
+
+                    <div class="card-footer text-center">
+                        <button type="button" id="btnSave" class="btn btn-outline-success">حفظ</button>
+                        <button type="button" id="btnSearch" data-toggle="modal" data-target="#modalTable" class="btn btn-outline-primary">بحث</button>
+                        <button type="reset" id="btnReset" data-toggle="modal" class="btn btn-outline-warning pull-left">مسح</button>
+
+                    </div>
+                </form>
+            </div>
+
+
+        </div>
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-title">اضافة الصلاحية</div>
+                    <div class="col-md-12">
+                        <div id="chkRolesContainer"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+    <!--#region end form -->
+    <!--#region Modal-->
+    <div class="modal fade" id="modalTable" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-xl" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">بحث</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!--#region search-->
+
+                    <div class="form-group">
+                        <table id="tblDataExists" class="table table-hover table-bordered" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th> م </th>
+                                    <th>مجموعة الصلاحية عربي</th>
+                                    <th> Roles Group Desc </th>
+                                    <th>تاريخ التسجيل</th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                    <!--#region-->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">اغلاق</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--#endregion Modal-->
+    <div class="text-center small mt-3">يجب مراجعة البيانات <a href="javascript:;">قبل الحفظ</a></div>
+</div>
+
+
+
+@section scripts{
+
+    @Scripts.Render("~/bundles/helper")
+    <script src="~/js/jsProj/rolesgroup.js"></script>
+ }

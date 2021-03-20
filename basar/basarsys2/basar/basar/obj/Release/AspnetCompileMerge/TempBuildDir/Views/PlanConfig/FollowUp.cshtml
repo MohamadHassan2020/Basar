@@ -1,0 +1,290 @@
+﻿
+@{
+    ViewBag.Title = "المتابعات";
+}
+
+<link href="~/css/bootstrap-datepicker.css" rel="stylesheet" />
+<link href="~/css/font-awesome.css" rel="stylesheet" />
+
+<style type="text/css">
+    .input-group-text {
+        color: #17a2b8;
+        background-color: #ffffff;
+        border: none
+    }
+
+    .tooltip {
+        font-family: 'Cairo', sans-serif;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: normal;
+        line-height: 1.42857143;
+        text-align: left;
+        text-align: start;
+        text-decoration: none;
+        text-shadow: none;
+        text-transform: none;
+        letter-spacing: normal;
+        word-break: normal;
+        word-spacing: normal;
+        word-wrap: normal;
+        white-space: normal;
+        /* ... */
+    }
+
+    .tooltip-inner {
+        max-width: 200px;
+        padding: 3px 8px;
+        color: #fff;
+        text-align: center;
+        background-color: #000000;
+        border-radius: 4px;
+    }
+
+    table tr.tr-cursor {
+        cursor: pointer
+    }
+    /*#region calender*/
+    .datepicker-dropdown {
+        top: 0;
+        left: 0;
+        padding: 4px;
+        background-color: #2C6E8E;
+        border-radius: 10px;
+    }
+
+    .datepicker table {
+        margin: 0;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+        .datepicker table tr td,
+        .datepicker table tr th {
+            text-align: center;
+            width: 30px;
+            height: 30px;
+            border-radius: 4px;
+            border: none;
+            color: #FFFFFF;
+        }
+
+            .datepicker table tr td.day:hover,
+            .datepicker table tr td.focused {
+                background: #555555;
+                cursor: pointer;
+            }
+
+            .datepicker table tr td.old,
+            .datepicker table tr td.new {
+                color: #FF8000;
+            }
+
+            .datepicker table tr td.today {
+                color: #000000;
+                background-color: #FFA953;
+                border-color: #FFB76F;
+            }
+
+                .datepicker table tr td.today:hover {
+                    color: #FFFFFF;
+                    background-color: #884400;
+                    border-color: #f59e00;
+                }
+
+            .datepicker table tr td.active:active,
+            .datepicker table tr td.active.highlighted:active,
+            .datepicker table tr td.active.active,
+            .datepicker table tr td.active.highlighted.active,
+            .open > .dropdown-toggle.datepicker table tr td.active,
+            .open > .dropdown-toggle.datepicker table tr td.active.highlighted {
+                color: #ffffff;
+                background-color: #419841;
+                border-color: #285e8e;
+            }
+
+
+                .datepicker table tr td.active:active:hover,
+                .datepicker table tr td.active.highlighted:active:hover,
+                .datepicker table tr td.active.active:hover,
+                .datepicker table tr td.active.highlighted.active:hover,
+                .open > .dropdown-toggle.datepicker table tr td.active:hover,
+                .open > .dropdown-toggle.datepicker table tr td.active.highlighted:hover,
+                .datepicker table tr td.active:active:focus,
+                .datepicker table tr td.active.highlighted:active:focus,
+                .datepicker table tr td.active.active:focus,
+                .datepicker table tr td.active.highlighted.active:focus,
+                .open > .dropdown-toggle.datepicker table tr td.active:focus,
+                .open > .dropdown-toggle.datepicker table tr td.active.highlighted:focus,
+                .datepicker table tr td.active:active.focus,
+                .datepicker table tr td.active.highlighted:active.focus,
+                .datepicker table tr td.active.active.focus,
+                .datepicker table tr td.active.highlighted.active.focus,
+                .open > .dropdown-toggle.datepicker table tr td.active.focus,
+                .open > .dropdown-toggle.datepicker table tr td.active.highlighted.focus {
+                    color: #ffffff;
+                    background-color: #285e8e;
+                    border-color: #193c5a;
+                }
+
+                .datepicker table tr td.active:active,
+                .datepicker table tr td.active.highlighted:active,
+                .datepicker table tr td.active.active,
+                .datepicker table tr td.active.highlighted.active,
+                .open > .dropdown-toggle.datepicker table tr td.active,
+                .open > .dropdown-toggle.datepicker table tr td.active.highlighted {
+                    color: #ffffff;
+                    background-color: #3071a9;
+                    border-color: #285e8e;
+                }
+
+                    .datepicker table tr td.active:active:hover,
+                    .datepicker table tr td.active.highlighted:active:hover,
+                    .datepicker table tr td.active.active:hover,
+                    .datepicker table tr td.active.highlighted.active:hover,
+                    .open > .dropdown-toggle.datepicker table tr td.active:hover,
+                    .open > .dropdown-toggle.datepicker table tr td.active.highlighted:hover,
+                    .datepicker table tr td.active:active:focus,
+                    .datepicker table tr td.active.highlighted:active:focus,
+                    .datepicker table tr td.active.active:focus,
+                    .datepicker table tr td.active.highlighted.active:focus,
+                    .open > .dropdown-toggle.datepicker table tr td.active:focus,
+                    .open > .dropdown-toggle.datepicker table tr td.active.highlighted:focus,
+                    .datepicker table tr td.active:active.focus,
+                    .datepicker table tr td.active.highlighted:active.focus,
+                    .datepicker table tr td.active.active.focus,
+                    .datepicker table tr td.active.highlighted.active.focus,
+                    .open > .dropdown-toggle.datepicker table tr td.active.focus,
+                    .open > .dropdown-toggle.datepicker table tr td.active.highlighted.focus {
+                        color: #ffffff;
+                        background-color: #285e8e;
+                        border-color: #193c5a;
+                    }
+
+    .datepicker .datepicker-switch {
+        width: 145px;
+    }
+
+        .datepicker .datepicker-switch:hover,
+        .datepicker .prev:hover,
+        .datepicker .next:hover,
+        .datepicker tfoot tr th:hover {
+            background: #50A2C9;
+        }
+
+
+    /*#endregion calender*/
+
+
+
+    .nav .nav-item a {
+        text-decoration: none;
+        color: #27a7a7;
+        font-size: 24px
+    }
+
+    .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+        font-weight: 900;
+    }
+
+    .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+        border-color: #f50f4e #dee2e6 #fff;
+    }
+
+    .nav-tabs .nav-link {
+        border: 2px solid transparent;
+    }
+
+
+    .clear-cache {
+        margin-bottom: 8px;
+        background-color: #eee
+    }
+
+    /*select 2*/
+    .select2-container--bootstrap4 .select2-selection--single .select2-selection__arrow {
+        left: 0;
+    }
+
+    .select2-search--dropdown .select2-search__field {
+        text-align: right;
+        background-color: #f8f9fa
+    }
+</style>
+
+@Html.Partial("Common/_Nav")
+
+<div class="container-fluid">
+
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" data-permission="followupsdrugsmenu" >
+            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">متابعة الأدوية</a>
+        </li>
+        <li class="nav-item" data-permission="followupsfinancial">
+            <a class="nav-link"  id="profile-tab"  data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">متابعة مالية</a>
+        </li>
+        <li class="nav-item" data-permission="followupsadministrative" >
+            <a class="nav-link" id="contact-tab"  data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">متابعة إدارية</a>
+        </li>
+        <li class="nav-item" data-permission="followupsmedia">
+            <a class="nav-link" id="contact-tab"   data-toggle="tab" href="#followmedia" role="tab" aria-controls="contact" aria-selected="false">متابعة اعلامية</a>
+        </li>
+    </ul>
+
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" data-permission="followupsdrugsmenu" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <div class="container-fluid mt-3">
+                @Html.Partial("FollowUp/_CampFollowUpDrugs")
+            </div>
+
+        </div>
+        <div class="tab-pane fade"   data-permission="followupsfinancial" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+            <div class="container-fluid mt-3">
+                <!--#region end form -->
+                @Html.Partial("FollowUp/_CampFollowUpFinance")
+
+            </div>
+
+        </div>
+        <div class="tab-pane fade" data-permission="followupsadministrative" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+            <div class="container-fluid mt-3">
+                @Html.Partial("FollowUp/_CampFollowUpManager")
+
+            </div>
+
+        </div>
+        <div class="tab-pane fade" data-permission="followupsmedia"  id="followmedia" role="tabpanel" aria-labelledby="contact-tab">
+            <div class="container-fluid mt-3">
+                @Html.Partial("FollowUp/_CampFollowUpMedia")
+            </div>
+
+        </div>
+    </div>
+
+ 
+    <!--#endregion card-->
+    <!--#region Eligibility-->
+    <!--#endregion Eligibility-->
+
+
+
+    
+
+
+
+</div>
+
+<script src="~/js/jquery-3.4.1.js"></script>
+@section scripts{
+    @Scripts.Render("~/bundles/datepicker")
+
+    <script src="~/js/jsProj/followup.js"></script>
+    <script src="~/js/jsProj/followupfinancial.js"></script>
+    <script src="~/js/jsProj/followupAdministrative.js"></script>
+    <script src="~/js/jsProj/followupmedia.js"></script>
+
+}

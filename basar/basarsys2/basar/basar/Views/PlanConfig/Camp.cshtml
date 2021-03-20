@@ -1,0 +1,263 @@
+﻿
+<link href="~/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="~/css/responsive.dataTables.min.css" rel="stylesheet" />
+
+<link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
+@*<link href="~/css/select2.css" rel="stylesheet" />*@
+<link href="~/css/select2-bootstrap4.css" rel="stylesheet" />
+
+
+<style type="text/css">
+    body {
+        color: #999;
+        background: #e2e2e2;
+        direction: rtl;
+    }
+
+    .form-control {
+        min-height: 41px;
+        box-shadow: none;
+        border-color: #e1e1e1;
+    }
+
+        .form-control:focus {
+            border-color: #19aa8d;
+        }
+
+    .form-control, .btn {
+        border-radius: 3px;
+    }
+
+    .form-header {
+        margin: -30px -30px 20px;
+        padding: 30px 30px 10px;
+        text-align: center;
+        background: #19aa8d;
+        border-bottom: 1px solid #eee;
+        color: #fff;
+    }
+
+        .form-header h2 {
+            font-size: 34px;
+            font-weight: bold;
+            margin: 0 0 10px;
+        }
+
+        .form-header p {
+            margin: 20px 0 15px;
+            font-size: 17px;
+            line-height: normal;
+        }
+
+    .signup-form {
+        margin: 0 auto;
+        padding: 30px 0;
+    }
+
+        .signup-form form {
+            color: #999;
+            border-radius: 3px;
+            margin-bottom: 15px;
+            background: #f0f0f0;
+            box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+            padding: 30px;
+        }
+
+        .signup-form .form-group {
+            margin-bottom: 20px;
+        }
+
+        .signup-form label {
+            font-weight: normal;
+            font-size: 13px;
+        }
+
+        .signup-form input[type="checkbox"] {
+            margin-top: 2px;
+        }
+
+        .signup-form .btn {
+            font-size: 16px;
+            font-weight: bold;
+            background: #19aa8d;
+            border: none;
+            min-width: 200px;
+        }
+
+            .signup-form .btn:hover, .signup-form .btn:focus {
+                background: #00b073 !important;
+                outline: none;
+            }
+
+        .signup-form a {
+            color: #19aa8d;
+        }
+
+            .signup-form a:hover {
+                text-decoration: underline;
+            }
+
+    .tooltip {
+        font-family: 'Cairo', sans-serif;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: normal;
+        line-height: 1.42857143;
+        text-align: left;
+        text-align: start;
+        text-decoration: none;
+        text-shadow: none;
+        text-transform: none;
+        letter-spacing: normal;
+        word-break: normal;
+        word-spacing: normal;
+        word-wrap: normal;
+        white-space: normal;
+        /* ... */
+    }
+
+    .tooltip-inner {
+        max-width: 200px;
+        padding: 3px 8px;
+        color: #fff;
+        text-align: center;
+        background-color: #000000;
+        border-radius: 4px;
+    }
+
+    table tr {
+        cursor: pointer
+    }
+
+    .custom-control-label::after {
+        right: -0.6rem;
+    }
+
+    /*select 2*/
+    .select2-container--bootstrap4 .select2-selection--single .select2-selection__arrow {
+        left: 0;
+    }
+
+    .select2-search--dropdown .select2-search__field {
+        text-align: right;
+        background-color: #f8f9fa
+    }
+</style>
+@Html.Partial("Common/_Nav")
+
+<div class="container">
+    <div class="signup-form">
+        <form class="needs-validation" novalidate>
+            <div class="form-header">
+                <h2>المدن</h2>
+                <p>تسجيل المدينة</p>
+            </div>
+            <!--#region start form -->
+
+            <div class="row">
+                <div class="col-md-6 col-sm-12">
+                    <div class="form-group">
+                        <select id="ddlCountry" class="form-control select-option" required="required"></select>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-sm-12">
+                    <div class="form-group">
+                        <input type="text" id="txtCampDsecAr" placeholder="المدينة أو المخيم" maxlength="50" required class="form-control" />
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <div class="form-group">
+                        <input type="text" id="txtCampDsecEn" placeholder=" City Or Camp" maxlength="50" required class="form-control" />
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-sm-12">
+                    <div class="form-group">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" checked class="custom-control-input" id="cbCampStatus">
+                            <label class="custom-control-label" for="cbCampStatus">نشط</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group text-center">
+                    <button type="submit" class="btn btn-primary  btn-lg mb-2">حفظ</button>
+                    <button type="button" id="btnSearch" data-toggle="modal" data-target="#modalTable" class="btn btn-primary btn-lg mb-2">بحث</button>
+                    <button type="reset" id="btnReset" data-toggle="modal" class="btn btn-primary btn-lg mb-2">مسح</button>
+                </div>
+            </div>
+
+
+
+
+            <!--#region end form -->
+            <!--#region Modal-->
+            <div class="modal fade" id="modalTable" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable modal-xl" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">بحث</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <!--#region search-->
+
+                            <div class="form-group">
+                                <table id="tblDataExists" class="table table-hover table-bordered" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th> م </th>
+                                            <th> الدولة </th>
+                                            <th> المدينة</th>
+                                            <th> City</th>
+                                            <th>تاريخ التسجيل</th>
+                                            <th></th>
+
+
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                            <!--#region-->
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">اغلاق</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--#endregion Modal-->
+
+        </form>
+        <div class="text-center small">يجب مراجعة البيانات <a href="#">قبل الحفظ</a></div>
+    </div>
+
+</div>
+
+@section scripts{
+    <script src="~/js/jquery.dataTables.min.js"></script>
+    <script src="~/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
+
+    @*<script src="~/js/select2.js"></script>*@
+
+
+    @Scripts.Render("~/bundles/helper")
+    @Scripts.Render("~/bundles/camp")
+
+    <script>
+
+
+
+        $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+
+
+    </script>
+}
+

@@ -1,0 +1,145 @@
+﻿/*default theme*/
+/*#region LOADING-OVERLAY*/
+
+.loading-overlay,
+.testimonials .overlay,
+.slider .carousel-inner .overlay {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+}
+
+/*#endregion LOADING-OVERLAY*/
+
+/*#region  UPPER-BAR */
+
+.upper-bar {
+    background-color: #003d56;
+    color: #bfc6c9;
+}
+
+    .upper-bar .get-quote {
+        border: 1px solid #b61217;
+    }
+
+
+.slider {
+    background-color: #989898;
+}
+
+    .slider .carousel-inner h1 {
+        color: #fff;
+    }
+
+
+/*#endregion END SLIDER */
+/*#region START FEATURES*/
+
+.features h2,
+.features h3,
+.overview h2,
+.featured-work h2,
+.latest-post h2,
+.latest-post .card .card-title,
+.pricing-table h2,
+.pricing-table .card .card-title,
+.stats,
+.footer .site-info h2 span:first-child,
+.footer .site-info a,
+.footer .helpfull-links h2,
+.footer .contact-info h2
+ {
+    color: #003d56;
+}
+
+
+.features p,
+.copyright .copytext:last-child ul li a,
+.overview p,
+.overview h4,
+.featured-work p,
+.latest-post .section-description,
+.latest-post .card .card-text,
+.pricing-table .section-description,
+.pricing-table .list-group-item,
+.footer .site-info p {
+    color: #989898;
+}
+
+/*#endregion END FEATURES*/
+/*#region START OVERVIEW*/
+
+.overview {
+    background-color: rgba(0,0,0,.1);
+}
+
+
+/*#endregion END OVERVIEW*/
+/*#region START FEATURED WORK */
+
+
+.featured-work ul li {
+    color: #003d56;
+    border: 2px solid #003d56;
+}
+
+    .featured-work ul li.active,
+    .featured-work ul li:hover {
+        background-color: #b61217;
+        color: #fff;
+        border: 2px solid #b61217
+    }
+
+.latest-post .card .card-link,
+.stats p,
+.footer .site-info h2 span:last-child
+ {
+    color: #b61217;
+}
+
+.features i,
+.pricing-table .card.corporate .card-link
+{
+    color: #fff;
+    background-color: #b61217;
+}
+
+
+
+
+.pricing-table .card .card-text {
+    color: #003d56;
+    background-color: rgba(0,0,0,.1);
+}
+
+
+.pricing-table .card .card-link,
+.pricing-table .card.corporate .card-text,
+.contact-us,
+.choose-us .read-more,
+.overview button,
+.slider .carousel-inner h1 span {
+    background-color: #b61217;
+    color: #fff;
+}
+
+
+/*#endregion END PRICING TABLE */
+/*#region STRAT CHOOSE-US */
+
+.choose-us .chooseus-img:last-child {
+    background-color: #003d56;
+    color: #fff;
+}
+
+
+
+.contact-us a {
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+
+
+.copyright {
+    border-top: 1px solid #989898;
+}

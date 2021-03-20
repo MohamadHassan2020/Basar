@@ -1,0 +1,111 @@
+﻿
+
+<h2>Upload Files</h2>
+<div>
+    <div class="form-group">
+        <div id="updatePanelFile" class="alert" role="alert" style="display:none"></div>
+        <div class="form-group">
+
+            <div class="file-loading">
+                <input id="file1" name="inputfinance[]" type="file" multiple accept="image">
+            </div>
+        </div>
+
+
+    </div>
+    <div class="form-group">
+        <input type="button" id="btnUpload" value="Upload Files" />
+
+    </div>
+</div>
+
+@section scripts {
+
+    <script>
+
+        var file1 = $("#file1"),
+            fixedUrl = getUrl() + "/uploadfiles/",
+
+            initial = [
+                fixedUrl + '07e772af-068b-45af-8e2b-0e9f6fc5f3b4.jpg'
+            ];
+        getFileInputjsPreview(file1, '');
+        //test2
+        $('#btnUpload').click(function () {
+
+            // Checking whether FormData is available in browser
+            if (window.FormData !== undefined) {
+
+                //var fileUpload = $("#FileUpload1").get(0);
+                var fileUpload = file1.get(0);
+                var files = fileUpload.files;
+
+                // Create FormData object
+                var fileData = new FormData();
+
+                // Looping over all files and add it to FormData object
+                for (var i = 0; i < files.length; i++) {
+                    fileData.append(files[i].name, files[i]);
+                }
+
+                // Adding one more key to FormData object
+                fileData.append('username', "Manas");
+
+                $.ajax({
+                    url: '/Home/UploadFiles',
+                    type: "POST",
+                    contentType: false, // Not to set any content header
+                    processData: false, // Not to process data
+                    data: fileData,
+                    success: function (result) {
+                        alert(result);
+                    },
+                    error: function (err) {
+                        alert(err.statusText);
+                    }
+                });
+            } else {
+                alert("FormData is not supported.");
+            }
+        });
+
+        /* */
+
+        function addExtraComplaintByElementText() {
+            var self = this, $el = self.$element, $cont, t, tmp;
+            inputid = $el.attr('id');
+            complaintNumber = $el.attr('id');
+            formid = $el.closest("form").attr('id');
+            return {
+                id: '2210213902',
+                complaintNumber: '2020',
+                form: formid,
+                t: 'userfile'
+            };
+        }
+        //
+        function uploadFileInput(file, url, addExtraFunc) {
+            $(file).fileinput({
+                uploadUrl: url,
+                language: 'ar',
+                maxFileCount: 1,
+                allowedFileExtensions: ['PDF', 'pdf'],
+                showBrowse: true,
+                browseOnZoneClick: true,
+                uploadExtraData: addExtraFunc
+            });
+
+            /*function getInitialPreview() {
+                return ['<object data="../Uploads/2210213925/252001/468c9216-6b44-48d4-9e44-32c728b0590d.pdf" type="application/pdf"></object>']
+
+            }*/
+        }
+
+
+
+
+        
+
+
+    </script>
+}

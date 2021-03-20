@@ -1,0 +1,100 @@
+E:\Sites\Private\AlBasar\BasarSolution\Basar\bin\ApplicationInsights.config
+E:\Sites\Private\AlBasar\BasarSolution\Basar\bin\roslyn\csc.exe
+E:\Sites\Private\AlBasar\BasarSolution\Basar\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\Sites\Private\AlBasar\BasarSolution\Basar\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\Sites\Private\AlBasar\BasarSolution\Basar\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\Sites\Private\AlBasar\BasarSolution\Basar\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\Sites\Private\AlBasar\BasarSolution\Basar\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\Sites\Private\AlBasar\BasarSolution\Basar\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\Sites\Private\AlBasar\BasarSolution\Basar\bin\roslyn\System.Collections.Immutable.dll
+E:\Sites\Private\AlBasar\BasarSolution\Basar\bin\roslyn\System.Reflection.Metadata.dll
+E:\Sites\Private\AlBasar\BasarSolution\Basar\bin\roslyn\vbc.exe
+E:\Sites\Private\AlBasar\BasarSolution\Basar\bin\roslyn\VBCSCompiler.exe
+E:\Sites\Private\AlBasar\BasarSolution\Basar\bin\roslyn\VBCSCompiler.exe.config
+E:\Sites\Private\AlBasar\BasarSolution\Basar\bin\Basar.dll.config
+E:\Sites\Private\AlBasar\BasarSolution\Basar\bin\Basar.dll
+E:\Sites\Private\AlBasar\BasarSolution\Basar\bin\Basar.pdb
+E:\Sites\Private\AlBasar\BasarSolution\Basar\bin\BasarBLL.dll
+E:\Sites\Private\AlBasar\BasarSolution\Basar\bin\BasarBO.dll
+E:\Sites\Private\AlBasar\BasarSolution\Basar\bin\CrystalDecisions.CrystalReports.Engine.dll
+E:\Sites\Private\AlBasar\BasarSolution\Basar\bin\CrystalDecisions.ReportSource.dll
+E:\Sites\Private\AlBasar\BasarSolution\Basar\bin\CrystalDecisions.Shared.dll
+E:\Sites\Private\AlBasar\BasarSolution\Basar\bin\Microsoft.AI.Agent.Intercept.dll
+E:\Sites\Private\AlBasar\BasarSolution\Basar\bin\Microsoft.AI.DependencyCollector.dll
+E:\Sites\Private\AlBasar\BasarSolution\Basar\bin\Microsoft.AI.PerfCounterCollector.dll
+E:\Sites\Private\AlBasar\BasarSolution\Basar\bin\Microsoft.AI.ServerTelemetryChannel.dll
+E:\Sites\Private\AlBasar\BasarSolution\Basar\bin\Microsoft.AI.Web.dll
+E:\Sites\Private\AlBasar\BasarSolution\Basar\bin\Microsoft.AI.WindowsServer.dll
+E:\Sites\Private\AlBasar\BasarSolution\Basar\bin\Microsoft.ApplicationInsights.dll
+E:\Sites\Private\AlBasar\BasarSolution\Basar\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\Sites\Private\AlBasar\BasarSolution\Basar\bin\BasarDAL.dll
+E:\Sites\Private\AlBasar\BasarSolution\Basar\bin\CrystalDecisions.ReportAppServer.DataDefModel.dll
+E:\Sites\Private\AlBasar\BasarSolution\Basar\bin\CrystalDecisions.ReportAppServer.ClientDoc.dll
+E:\Sites\Private\AlBasar\BasarSolution\Basar\bin\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+E:\Sites\Private\AlBasar\BasarSolution\Basar\bin\CrystalDecisions.ReportAppServer.Controllers.dll
+E:\Sites\Private\AlBasar\BasarSolution\Basar\bin\CrystalDecisions.ReportAppServer.CommLayer.dll
+E:\Sites\Private\AlBasar\BasarSolution\Basar\bin\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+E:\Sites\Private\AlBasar\BasarSolution\Basar\bin\CrystalDecisions.ReportAppServer.Prompting.dll
+E:\Sites\Private\AlBasar\BasarSolution\Basar\bin\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+E:\Sites\Private\AlBasar\BasarSolution\Basar\bin\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+E:\Sites\Private\AlBasar\BasarSolution\Basar\bin\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+E:\Sites\Private\AlBasar\BasarSolution\Basar\bin\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+E:\Sites\Private\AlBasar\BasarSolution\Basar\bin\CrystalDecisions.ReportAppServer.CommonControls.dll
+E:\Sites\Private\AlBasar\BasarSolution\Basar\bin\stdole.dll
+E:\Sites\Private\AlBasar\BasarSolution\Basar\bin\BasarBLL.pdb
+E:\Sites\Private\AlBasar\BasarSolution\Basar\bin\BasarBO.pdb
+E:\Sites\Private\AlBasar\BasarSolution\Basar\bin\Microsoft.AI.DependencyCollector.xml
+E:\Sites\Private\AlBasar\BasarSolution\Basar\bin\Microsoft.AI.ServerTelemetryChannel.xml
+E:\Sites\Private\AlBasar\BasarSolution\Basar\bin\Microsoft.AI.Web.xml
+E:\Sites\Private\AlBasar\BasarSolution\Basar\bin\Microsoft.AI.WindowsServer.xml
+E:\Sites\Private\AlBasar\BasarSolution\Basar\bin\Microsoft.ApplicationInsights.xml
+E:\Sites\Private\AlBasar\BasarSolution\Basar\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\Sites\Private\AlBasar\BasarSolution\Basar\bin\BasarDAL.pdb
+E:\Sites\Private\AlBasar\BasarSolution\Basar\obj\Release\Basar.csprojAssemblyReference.cache
+E:\Sites\Private\AlBasar\BasarSolution\Basar\obj\Release\Basar.csproj.CoreCompileInputs.cache
+E:\Sites\Private\AlBasar\BasarSolution\Basar\obj\Release\Basar.csproj.CopyComplete
+E:\Sites\Private\AlBasar\BasarSolution\Basar\obj\Release\Basar.dll
+E:\Sites\Private\AlBasar\BasarSolution\Basar\obj\Release\Basar.pdb
+E:\Sites\Private\AlBasar\BasarSolution\Basar\bin\AjaxControlToolkit.dll
+D:\Data\Programar\Projects\Private\sites\basar\basar old\AlBasar\BasarSolution\Basar\bin\ApplicationInsights.config
+D:\Data\Programar\Projects\Private\sites\basar\basar old\AlBasar\BasarSolution\Basar\bin\roslyn\csc.exe
+D:\Data\Programar\Projects\Private\sites\basar\basar old\AlBasar\BasarSolution\Basar\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Data\Programar\Projects\Private\sites\basar\basar old\AlBasar\BasarSolution\Basar\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Data\Programar\Projects\Private\sites\basar\basar old\AlBasar\BasarSolution\Basar\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Data\Programar\Projects\Private\sites\basar\basar old\AlBasar\BasarSolution\Basar\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Data\Programar\Projects\Private\sites\basar\basar old\AlBasar\BasarSolution\Basar\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Data\Programar\Projects\Private\sites\basar\basar old\AlBasar\BasarSolution\Basar\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Data\Programar\Projects\Private\sites\basar\basar old\AlBasar\BasarSolution\Basar\bin\roslyn\System.Collections.Immutable.dll
+D:\Data\Programar\Projects\Private\sites\basar\basar old\AlBasar\BasarSolution\Basar\bin\roslyn\System.Reflection.Metadata.dll
+D:\Data\Programar\Projects\Private\sites\basar\basar old\AlBasar\BasarSolution\Basar\bin\roslyn\vbc.exe
+D:\Data\Programar\Projects\Private\sites\basar\basar old\AlBasar\BasarSolution\Basar\bin\roslyn\VBCSCompiler.exe
+D:\Data\Programar\Projects\Private\sites\basar\basar old\AlBasar\BasarSolution\Basar\bin\roslyn\VBCSCompiler.exe.config
+D:\Data\Programar\Projects\Private\sites\basar\basar old\AlBasar\BasarSolution\Basar\bin\Basar.dll.config
+D:\Data\Programar\Projects\Private\sites\basar\basar old\AlBasar\BasarSolution\Basar\bin\Basar.dll
+D:\Data\Programar\Projects\Private\sites\basar\basar old\AlBasar\BasarSolution\Basar\bin\Basar.pdb
+D:\Data\Programar\Projects\Private\sites\basar\basar old\AlBasar\BasarSolution\Basar\bin\AjaxControlToolkit.dll
+D:\Data\Programar\Projects\Private\sites\basar\basar old\AlBasar\BasarSolution\Basar\bin\BasarBLL.dll
+D:\Data\Programar\Projects\Private\sites\basar\basar old\AlBasar\BasarSolution\Basar\bin\BasarBO.dll
+D:\Data\Programar\Projects\Private\sites\basar\basar old\AlBasar\BasarSolution\Basar\bin\Microsoft.AI.Agent.Intercept.dll
+D:\Data\Programar\Projects\Private\sites\basar\basar old\AlBasar\BasarSolution\Basar\bin\Microsoft.AI.DependencyCollector.dll
+D:\Data\Programar\Projects\Private\sites\basar\basar old\AlBasar\BasarSolution\Basar\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\Data\Programar\Projects\Private\sites\basar\basar old\AlBasar\BasarSolution\Basar\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\Data\Programar\Projects\Private\sites\basar\basar old\AlBasar\BasarSolution\Basar\bin\Microsoft.AI.Web.dll
+D:\Data\Programar\Projects\Private\sites\basar\basar old\AlBasar\BasarSolution\Basar\bin\Microsoft.AI.WindowsServer.dll
+D:\Data\Programar\Projects\Private\sites\basar\basar old\AlBasar\BasarSolution\Basar\bin\Microsoft.ApplicationInsights.dll
+D:\Data\Programar\Projects\Private\sites\basar\basar old\AlBasar\BasarSolution\Basar\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Data\Programar\Projects\Private\sites\basar\basar old\AlBasar\BasarSolution\Basar\bin\BasarDAL.dll
+D:\Data\Programar\Projects\Private\sites\basar\basar old\AlBasar\BasarSolution\Basar\bin\BasarBLL.pdb
+D:\Data\Programar\Projects\Private\sites\basar\basar old\AlBasar\BasarSolution\Basar\bin\BasarBO.pdb
+D:\Data\Programar\Projects\Private\sites\basar\basar old\AlBasar\BasarSolution\Basar\bin\Microsoft.AI.DependencyCollector.xml
+D:\Data\Programar\Projects\Private\sites\basar\basar old\AlBasar\BasarSolution\Basar\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\Data\Programar\Projects\Private\sites\basar\basar old\AlBasar\BasarSolution\Basar\bin\Microsoft.AI.Web.xml
+D:\Data\Programar\Projects\Private\sites\basar\basar old\AlBasar\BasarSolution\Basar\bin\Microsoft.AI.WindowsServer.xml
+D:\Data\Programar\Projects\Private\sites\basar\basar old\AlBasar\BasarSolution\Basar\bin\Microsoft.ApplicationInsights.xml
+D:\Data\Programar\Projects\Private\sites\basar\basar old\AlBasar\BasarSolution\Basar\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Data\Programar\Projects\Private\sites\basar\basar old\AlBasar\BasarSolution\Basar\bin\BasarDAL.pdb
+D:\Data\Programar\Projects\Private\sites\basar\basar old\AlBasar\BasarSolution\Basar\obj\Release\Basar.csprojAssemblyReference.cache
+D:\Data\Programar\Projects\Private\sites\basar\basar old\AlBasar\BasarSolution\Basar\obj\Release\Basar.csproj.CoreCompileInputs.cache
+D:\Data\Programar\Projects\Private\sites\basar\basar old\AlBasar\BasarSolution\Basar\obj\Release\Basar.csproj.CopyComplete
+D:\Data\Programar\Projects\Private\sites\basar\basar old\AlBasar\BasarSolution\Basar\obj\Release\Basar.dll
+D:\Data\Programar\Projects\Private\sites\basar\basar old\AlBasar\BasarSolution\Basar\obj\Release\Basar.pdb

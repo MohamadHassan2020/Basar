@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 14.25, 23.25" name="BasarLinq">
+  <DataContextMoniker Name="/BasarLinqDataContext" />
+  <nestedChildShapes>
+    <classShape Id="5caaa137-56d2-4a5e-b640-c88fb3dcfc6c" isExpanded="false" absoluteBounds="5.625, 1.75, 2, 0.45">
+      <DataClassMoniker Name="/BasarLinqDataContext/PlanConfigModel" />
+      <nestedChildShapes>
+        <elementListCompartment Id="704ca2af-03a2-4cd6-b680-44e29d956f6b" absoluteBounds="5.6400000000000006, 2.21, 1.9700000000000002, 4.095418294270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="663d5654-0562-4289-ab1b-46653843f467" isExpanded="false" absoluteBounds="11.75, 1.75, 2, 0.45">
+      <DataClassMoniker Name="/BasarLinqDataContext/CampModel" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f0472193-739a-4744-a6e7-906db8e20ee4" absoluteBounds="11.765, 2.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fe207eb5-8e6c-4eec-b963-60534fdc6840" isExpanded="false" absoluteBounds="8.625, 2, 2, 0.45">
+      <DataClassMoniker Name="/BasarLinqDataContext/CountryModel" />
+      <nestedChildShapes>
+        <elementListCompartment Id="90748249-255b-43ff-906c-c45960e4a77e" absoluteBounds="8.64, 2.46, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b8c161cd-963d-4abf-9d22-3add95eab350" isExpanded="false" absoluteBounds="11.75, 2.375, 2, 0.45">
+      <DataClassMoniker Name="/BasarLinqDataContext/SponsorModel" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0a511e41-144f-433c-bad4-d4d11a09d20a" absoluteBounds="11.765, 2.835, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d552c168-acbe-4f55-bbde-5176ca7d4977" isExpanded="false" absoluteBounds="8.5, 1.375, 2, 0.45">
+      <DataClassMoniker Name="/BasarLinqDataContext/TourModel" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ef00df62-c6b3-4469-80b3-767736abb003" absoluteBounds="8.515, 1.835, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1d6867d0-0aec-4450-a4ac-a8836ccc1b7f" isExpanded="false" absoluteBounds="11.75, 1.125, 2, 0.45">
+      <DataClassMoniker Name="/BasarLinqDataContext/YearModel" />
+      <nestedChildShapes>
+        <elementListCompartment Id="57b73e43-4fd5-48a4-8a46-db3b54993e23" absoluteBounds="11.765, 1.585, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c7c71fd0-e3e6-4ac1-966c-315e6882c2ac" isExpanded="false" absoluteBounds="8.375, 0.75, 2, 0.45">
+      <DataClassMoniker Name="/BasarLinqDataContext/TeamModel" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9a6ad190-8bbc-4cbd-8d83-4da6eb33d193" absoluteBounds="8.39, 1.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="87537662-8844-455a-8aa3-117d1e659fd7" isExpanded="false" absoluteBounds="5.75, 1.125, 2, 0.45">
+      <DataClassMoniker Name="/BasarLinqDataContext/CampStatusModel" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2caa9a50-7c51-4912-8c8a-0c8858a1762f" absoluteBounds="5.765, 1.585, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4ab3488b-0f69-4e9d-9c18-dc3220d2d52d" isExpanded="false" absoluteBounds="1.375, 0.75, 2, 0.45">
+      <DataClassMoniker Name="/BasarLinqDataContext/CampStatsSummaryModel" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8f52c22f-7b17-46d4-83d5-867095cd5745" absoluteBounds="1.3900000000000006, 1.21, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8a8a7650-6a4e-4205-8376-f3654b7989f3" isExpanded="false" absoluteBounds="1.125, 1.375, 2, 0.45">
+      <DataClassMoniker Name="/BasarLinqDataContext/FollowUpStatusModel" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c411315e-226c-4d81-8127-e58020e6ee15" absoluteBounds="1.1399999999999997, 1.835, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b4b1b946-71ff-46fc-80c9-08e9d398e572" isExpanded="false" absoluteBounds="1.125, 2, 2, 0.45">
+      <DataClassMoniker Name="/BasarLinqDataContext/CampFollowUpDrugModel" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0072a349-fb24-4a3f-9ff7-acdc1923a1d5" absoluteBounds="1.1399999999999997, 2.46, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="28d6913f-199a-409a-87da-de2a66a0d7d5" isExpanded="false" absoluteBounds="1.125, 3.875, 2, 0.45">
+      <DataClassMoniker Name="/BasarLinqDataContext/RoleExtendModel" />
+      <nestedChildShapes>
+        <elementListCompartment Id="95cfa82b-451e-429c-8a50-abc8ad5f0d9b" absoluteBounds="1.1399999999999997, 4.3350000000000009, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="be746d62-a8b1-4289-8c2a-6a8fe99691e7" isExpanded="false" absoluteBounds="1.125, 3.25, 2, 0.45">
+      <DataClassMoniker Name="/BasarLinqDataContext/RoleGroupModel" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d8f83f39-9b84-489a-bbeb-cfb7400c8e53" absoluteBounds="1.1400000000000006, 3.7100000000000009, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b17360db-bd73-486e-811a-091d41615624" isExpanded="false" absoluteBounds="1.125, 2.625, 2, 0.45">
+      <DataClassMoniker Name="/BasarLinqDataContext/RoleDividerModel" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ced64b5b-b978-4f7d-b111-f4b9aa9af743" absoluteBounds="1.1400000000000001, 3.0850000000000009, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="862529ba-17b6-4c64-9cf0-7f03e8ccd527" isExpanded="false" absoluteBounds="5.875, 8.375, 2, 0.45">
+      <DataClassMoniker Name="/BasarLinqDataContext/RoleClassDividerModel" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a71cfbf2-e823-4d59-bf2f-908ae5606a01" absoluteBounds="5.89, 8.835, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4b830540-a9c8-4c01-b76e-7d30acb3c9f1" isExpanded="false" absoluteBounds="8.375, 8.5, 2, 0.45">
+      <DataClassMoniker Name="/BasarLinqDataContext/RoleGroupDividerModel" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a722faf0-e8f0-4cf3-9929-87e4549b2695" absoluteBounds="8.39, 8.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8ee41a8a-fe10-47b6-af51-a307c9269009" isExpanded="false" absoluteBounds="8.875, 10.5, 2, 0.45">
+      <DataClassMoniker Name="/BasarLinqDataContext/AttachmentModel" />
+      <nestedChildShapes>
+        <elementListCompartment Id="74d8e725-e877-43d5-84fe-7cd4150282ff" absoluteBounds="8.89, 10.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="532d3296-d3e1-417d-af9a-5ff2b78b8d13" absoluteBounds="5.75, 20.5, 2, 2.5401025390625">
+      <DataClassMoniker Name="/BasarLinqDataContext/vwGetRoleGroupDividerModel" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8bf86a9b-3172-49d7-b616-4b32ee85803a" absoluteBounds="5.765, 20.96, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b4d1fb8b-6087-428e-9915-7d37a2308914" absoluteBounds="1.5, 19.375, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/BasarLinqDataContext/UserGroupModel" />
+      <nestedChildShapes>
+        <elementListCompartment Id="613068f0-f784-40ca-b28a-a0951aea5c06" absoluteBounds="1.5150000000000001, 19.835, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f2443cb3-cc09-4ced-8893-2820ccd0a817" absoluteBounds="9.5, 21.75, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/BasarLinqDataContext/AspNetUserRoleModel" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a7b7f2cf-8499-4c16-8cc2-f34cfb9a7c47" absoluteBounds="9.515, 22.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b6a55ff3-2aa1-463d-95d6-79ddba67d103" isExpanded="false" absoluteBounds="0.5, 9, 3.625, 0.45">
+      <DataClassMoniker Name="/BasarLinqDataContext/vwGetCampFollowUpDrugsWithAttachmentModel" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4485db46-5a30-42d3-8166-327b063d69d6" absoluteBounds="0.51499999999999968, 9.46, 3.5949999999999998, 4.2877197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ff0afb82-0ef7-4456-aced-4947e8cb78ca" isExpanded="false" absoluteBounds="4.625, 9.75, 2.625, 0.45">
+      <DataClassMoniker Name="/BasarLinqDataContext/AttachmentCampFollowUpDrugModel" />
+      <nestedChildShapes>
+        <elementListCompartment Id="412972c6-e168-4def-8b99-71b0ffcec235" absoluteBounds="4.6400000000000006, 10.21, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="27b1cfce-46d8-4dad-84d6-57764689830c" isExpanded="false" absoluteBounds="2.25, 9.875, 2, 0.45">
+      <DataClassMoniker Name="/BasarLinqDataContext/SponsorShipModel" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fa9c4850-827f-43cb-878c-e205bd305d79" absoluteBounds="2.265, 10.335, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="898dfac4-76ea-41ef-85b8-1ed8f05b8db6" isExpanded="false" absoluteBounds="0.5, 11, 2, 0.45">
+      <DataClassMoniker Name="/BasarLinqDataContext/CampFollowUpFinancialModel" />
+      <nestedChildShapes>
+        <elementListCompartment Id="43df664f-871a-4c89-a2e7-8c48382be512" absoluteBounds="0.51500000000000012, 11.46, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2f656415-de27-4c77-b856-4aeff522db76" isExpanded="false" absoluteBounds="0.5, 11.625, 3.25, 0.45">
+      <DataClassMoniker Name="/BasarLinqDataContext/AttachmentCampFollowUpFinancialModel" />
+      <nestedChildShapes>
+        <elementListCompartment Id="033edda5-4bee-468f-9d56-e96cb12f589a" absoluteBounds="0.51500000000000012, 12.085, 3.2199999999999998, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5455cccd-377e-4cac-b404-22f9e704cc8f" isExpanded="false" absoluteBounds="7.875, 13.625, 4, 0.45">
+      <DataClassMoniker Name="/BasarLinqDataContext/vwGetCampFollowUpFinancialWithAttachmentModel" />
+      <nestedChildShapes>
+        <elementListCompartment Id="58bb956c-8fbb-41d7-9ffa-0c69e0841b29" absoluteBounds="7.8900000000000006, 14.085, 3.9699999999999998, 4.095418294270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7d1a235d-41dc-42f1-af3d-df1f47164a40" isExpanded="false" absoluteBounds="0.5, 12.25, 2, 0.45">
+      <DataClassMoniker Name="/BasarLinqDataContext/CampFollowUpAdministrativeModel" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d68db9d1-56f9-4735-a496-1d345ea107f9" absoluteBounds="0.51500000000000012, 12.71, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="65f22c4d-46ce-4954-9f67-126589cd662f" isExpanded="false" absoluteBounds="0.5, 12.75, 2, 0.45">
+      <DataClassMoniker Name="/BasarLinqDataContext/AttachmentCampFollowUpAdministrativeModel" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cd3b305a-5dfb-43c5-8a7c-3df61cc9b97a" absoluteBounds="0.51499999999999968, 13.21, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="786c69e3-e569-4ffb-b6de-38b7c63ceecf" isExpanded="false" absoluteBounds="0.5, 13.375, 3.25, 0.45">
+      <DataClassMoniker Name="/BasarLinqDataContext/vwGetCampFollowUpAdministrativeWithAttachmentModel" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6534b16f-7e81-4354-bfdc-c651237c5f6e" absoluteBounds="0.51499999999999968, 13.835, 3.2199999999999998, 4.095418294270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="50b24cef-37e7-4c26-acb8-81182c18ca31" absoluteBounds="5.25, 13.375, 3.5, 4.0785139973958326">
+      <DataClassMoniker Name="/BasarLinqDataContext/AttachmentCampFollowUpMediaModel" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1883239c-baca-499f-ad7b-6d56190c6ff1" absoluteBounds="5.265, 13.835, 3.4699999999999998, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="05048ad6-f382-4048-80bb-ff990703e6ba" isExpanded="false" absoluteBounds="8.375, 12.625, 2, 0.45">
+      <DataClassMoniker Name="/BasarLinqDataContext/CampFollowUpMediaModel" />
+      <nestedChildShapes>
+        <elementListCompartment Id="72ab47d2-5715-473d-ac29-600e062bb3af" absoluteBounds="8.39, 13.085, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3a000c9d-5190-4550-9181-1c983f901c42" absoluteBounds="1.125, 13.875, 2, 4.6554182942708326">
+      <DataClassMoniker Name="/BasarLinqDataContext/vwGetCampFollowUpMediaWithAttachmentModel" />
+      <nestedChildShapes>
+        <elementListCompartment Id="19ea3b78-12e0-43bc-a666-be8c69612125" absoluteBounds="1.1400000000000001, 14.335, 1.9700000000000002, 4.095418294270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="31eb1e84-f6b1-4574-8a8b-8a3da79306ab" isExpanded="false" absoluteBounds="5.75, 2.5, 2, 0.45">
+      <DataClassMoniker Name="/BasarLinqDataContext/PlanConfigSponsorShipModel" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6184504a-fd2d-4976-964d-0909afc0b023" absoluteBounds="5.765, 2.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="46126c6f-e076-47e6-8752-b85e577ab4d0" isExpanded="false" absoluteBounds="9, 3.125, 2, 0.45">
+      <DataClassMoniker Name="/BasarLinqDataContext/vwGetPlanConfigSponsorShipLastModel" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f7f54626-cf4b-4673-ac19-ed158d2d98d4" absoluteBounds="9.015, 3.585, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="51ad34c3-a992-42e3-b4d6-005540f3e298" isExpanded="false" absoluteBounds="11.75, 5.375, 2.25, 0.45">
+      <DataClassMoniker Name="/BasarLinqDataContext/xzx" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d7aaa320-947b-4902-8638-fabdba26b268" absoluteBounds="11.765, 5.835, 3.5949999999999998, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e08e4a5c-2d39-4c98-aead-878a87799289" isExpanded="false" absoluteBounds="6.875, 4.5, 2, 0.45">
+      <DataClassMoniker Name="/BasarLinqDataContext/vwGetAxisModel" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e0635e34-4432-49c5-957b-6aa7c017a8d6" absoluteBounds="6.89, 4.96, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
