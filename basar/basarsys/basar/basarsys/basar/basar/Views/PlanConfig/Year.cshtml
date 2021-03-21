@@ -1,0 +1,140 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_LayoutNew.cshtml";
+
+    ViewBag.Title = "البصر عام الخطة ";
+}
+
+<style>
+    .checkbox input:checked ~ label:after {
+        transform: rotate(47deg);
+/*        transform: scale(-1, 1);
+*/    }
+</style>
+
+<div class="content-wrapper">
+    @Html.Partial("Sys/_Breadcrumb")
+
+    <div class="content-body">
+        <div class="row match-height">
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">تسجيل عام الخطة</h4>
+                    </div>
+                    <div class="card-body">
+                        <form class="form form-vertical">
+                            <div class="form-body">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label for="txtYearNameAr">عام الخطة</label>
+                                            <div class="position-relative has-icon-left">
+                                                <input type="text" id="txtYearNameAr" class="form-control" name="fname-icon" placeholder="عام الخطة">
+                                                <div class="form-control-position">
+                                                    <i class="bx bx-user"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label for="txtYearNameEn">EN Year</label>
+                                            <div class="position-relative has-icon-left">
+                                                <input type="email" id="txtYearNameEn" class="form-control" name="txtYearNameEn" placeholder="EN Year">
+                                                <div class="form-control-position">
+                                                    <i class="bx bx-mail-send"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label for="txtYearDesc">الوصف</label>
+                                            <div class="position-relative has-icon-left">
+                                                <input type="number" id="txtYearDesc" class="form-control" name="txtYearDesc" placeholder="الوصف">
+                                                <div class="form-control-position">
+                                                    <i class="bx bx-mobile"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <div class="checkbox">
+                                                <input type="checkbox" class="checkbox-input" id="cbYearStatus">
+                                                <label for="cbYearStatus">الحاله</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 d-flex justify-content-end">
+                                        <button type="submit" class="btn btn-primary mr-1">حفظ</button>
+                                        <button type="button" id="btnSearch" data-toggle="modal" data-target="#modalTable" class="btn btn-primary mr-1">بحث</button>
+                                        <button type="reset" id="btnReset" class="btn btn-light-secondary">مسح</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="container mt-3">
+
+
+
+
+
+
+
+    <!--#region end form -->
+    <!--#region Modal-->
+    <div class="modal fade" id="modalTable" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-xl" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">بحث</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!--#region search-->
+
+                    <div class="form-group">
+                        <table id="tblDataExists" class="table table-hover table-bordered" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th> م </th>
+                                    <th>العام</th>
+                                    <th> Year </th>
+                                    <th>تاريخ التسجيل</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                    <!--#region-->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">اغلاق</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--#endregion Modal-->
+    <div class="text-center small mt-3">يجب مراجعة البيانات <a href="javascript:;">قبل الحفظ</a></div>
+</div>
+
+
+
+@section scripts{
+
+    @Scripts.Render("~/bundles/helper")
+    @Scripts.Render("~/bundles/year")
+}
+

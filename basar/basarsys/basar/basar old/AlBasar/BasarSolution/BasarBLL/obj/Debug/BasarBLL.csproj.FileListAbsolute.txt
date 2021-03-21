@@ -1,0 +1,31 @@
+D:\Sites\Private\AlBasar\BasarSolution\BasarBLL\bin\Debug\BasarBLL.dll
+D:\Sites\Private\AlBasar\BasarSolution\BasarBLL\bin\Debug\BasarBLL.pdb
+D:\Sites\Private\AlBasar\BasarSolution\BasarBLL\bin\Debug\BasarBO.dll
+D:\Sites\Private\AlBasar\BasarSolution\BasarBLL\bin\Debug\BasarDAL.dll
+D:\Sites\Private\AlBasar\BasarSolution\BasarBLL\bin\Debug\BasarBO.pdb
+D:\Sites\Private\AlBasar\BasarSolution\BasarBLL\bin\Debug\BasarDAL.pdb
+D:\Sites\Private\AlBasar\BasarSolution\BasarBLL\obj\Debug\BasarBLL.csprojResolveAssemblyReference.cache
+D:\Sites\Private\AlBasar\BasarSolution\BasarBLL\obj\Debug\BasarBLL.dll
+D:\Sites\Private\AlBasar\BasarSolution\BasarBLL\obj\Debug\BasarBLL.pdb
+E:\Sites\Private\AlBasar\BasarSolution\BasarBLL\bin\Debug\BasarBLL.dll
+E:\Sites\Private\AlBasar\BasarSolution\BasarBLL\bin\Debug\BasarBLL.pdb
+E:\Sites\Private\AlBasar\BasarSolution\BasarBLL\bin\Debug\BasarBO.dll
+E:\Sites\Private\AlBasar\BasarSolution\BasarBLL\bin\Debug\BasarDAL.dll
+E:\Sites\Private\AlBasar\BasarSolution\BasarBLL\bin\Debug\BasarBO.pdb
+E:\Sites\Private\AlBasar\BasarSolution\BasarBLL\bin\Debug\BasarDAL.pdb
+E:\Sites\Private\AlBasar\BasarSolution\BasarBLL\obj\Debug\BasarBLL.csprojAssemblyReference.cache
+E:\Sites\Private\AlBasar\BasarSolution\BasarBLL\obj\Debug\BasarBLL.csproj.CoreCompileInputs.cache
+E:\Sites\Private\AlBasar\BasarSolution\BasarBLL\obj\Debug\BasarBLL.csproj.CopyComplete
+E:\Sites\Private\AlBasar\BasarSolution\BasarBLL\obj\Debug\BasarBLL.dll
+E:\Sites\Private\AlBasar\BasarSolution\BasarBLL\obj\Debug\BasarBLL.pdb
+D:\Data\Programar\Projects\Private\sites\basar\basar old\AlBasar\BasarSolution\BasarBLL\bin\Debug\BasarBLL.dll
+D:\Data\Programar\Projects\Private\sites\basar\basar old\AlBasar\BasarSolution\BasarBLL\bin\Debug\BasarBLL.pdb
+D:\Data\Programar\Projects\Private\sites\basar\basar old\AlBasar\BasarSolution\BasarBLL\bin\Debug\BasarBO.dll
+D:\Data\Programar\Projects\Private\sites\basar\basar old\AlBasar\BasarSolution\BasarBLL\bin\Debug\BasarDAL.dll
+D:\Data\Programar\Projects\Private\sites\basar\basar old\AlBasar\BasarSolution\BasarBLL\bin\Debug\BasarBO.pdb
+D:\Data\Programar\Projects\Private\sites\basar\basar old\AlBasar\BasarSolution\BasarBLL\bin\Debug\BasarDAL.pdb
+D:\Data\Programar\Projects\Private\sites\basar\basar old\AlBasar\BasarSolution\BasarBLL\obj\Debug\BasarBLL.csprojAssemblyReference.cache
+D:\Data\Programar\Projects\Private\sites\basar\basar old\AlBasar\BasarSolution\BasarBLL\obj\Debug\BasarBLL.csproj.CoreCompileInputs.cache
+D:\Data\Programar\Projects\Private\sites\basar\basar old\AlBasar\BasarSolution\BasarBLL\obj\Debug\BasarBLL.csproj.CopyComplete
+D:\Data\Programar\Projects\Private\sites\basar\basar old\AlBasar\BasarSolution\BasarBLL\obj\Debug\BasarBLL.dll
+D:\Data\Programar\Projects\Private\sites\basar\basar old\AlBasar\BasarSolution\BasarBLL\obj\Debug\BasarBLL.pdb

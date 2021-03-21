@@ -1,0 +1,580 @@
+﻿
+@{
+    ViewBag.Title = "المتابعات";
+}
+
+<link href="~/css/bootstrap-datepicker.css" rel="stylesheet" />
+
+
+<style type="text/css">
+    .input-group-text {
+        color: #17a2b8;
+        background-color: #ffffff;
+        border: none
+    }
+
+    .tooltip {
+        font-family: 'Cairo', sans-serif;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: normal;
+        line-height: 1.42857143;
+        text-align: left;
+        text-align: start;
+        text-decoration: none;
+        text-shadow: none;
+        text-transform: none;
+        letter-spacing: normal;
+        word-break: normal;
+        word-spacing: normal;
+        word-wrap: normal;
+        white-space: normal;
+        /* ... */
+    }
+
+    .tooltip-inner {
+        max-width: 200px;
+        padding: 3px 8px;
+        color: #fff;
+        text-align: center;
+        background-color: #000000;
+        border-radius: 4px;
+    }
+
+    table tr {
+        cursor: pointer
+    }
+    /*#region calender*/
+    .datepicker-dropdown {
+        top: 0;
+        left: 0;
+        padding: 4px;
+        background-color: #2C6E8E;
+        border-radius: 10px;
+    }
+
+    .datepicker table {
+        margin: 0;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+        .datepicker table tr td,
+        .datepicker table tr th {
+            text-align: center;
+            width: 30px;
+            height: 30px;
+            border-radius: 4px;
+            border: none;
+            color: #FFFFFF;
+        }
+
+            .datepicker table tr td.day:hover,
+            .datepicker table tr td.focused {
+                background: #555555;
+                cursor: pointer;
+            }
+
+            .datepicker table tr td.old,
+            .datepicker table tr td.new {
+                color: #FF8000;
+            }
+
+            .datepicker table tr td.today {
+                color: #000000;
+                background-color: #FFA953;
+                border-color: #FFB76F;
+            }
+
+                .datepicker table tr td.today:hover {
+                    color: #FFFFFF;
+                    background-color: #884400;
+                    border-color: #f59e00;
+                }
+
+            .datepicker table tr td.active:active,
+            .datepicker table tr td.active.highlighted:active,
+            .datepicker table tr td.active.active,
+            .datepicker table tr td.active.highlighted.active,
+            .open > .dropdown-toggle.datepicker table tr td.active,
+            .open > .dropdown-toggle.datepicker table tr td.active.highlighted {
+                color: #ffffff;
+                background-color: #419841;
+                border-color: #285e8e;
+            }
+
+
+                .datepicker table tr td.active:active:hover,
+                .datepicker table tr td.active.highlighted:active:hover,
+                .datepicker table tr td.active.active:hover,
+                .datepicker table tr td.active.highlighted.active:hover,
+                .open > .dropdown-toggle.datepicker table tr td.active:hover,
+                .open > .dropdown-toggle.datepicker table tr td.active.highlighted:hover,
+                .datepicker table tr td.active:active:focus,
+                .datepicker table tr td.active.highlighted:active:focus,
+                .datepicker table tr td.active.active:focus,
+                .datepicker table tr td.active.highlighted.active:focus,
+                .open > .dropdown-toggle.datepicker table tr td.active:focus,
+                .open > .dropdown-toggle.datepicker table tr td.active.highlighted:focus,
+                .datepicker table tr td.active:active.focus,
+                .datepicker table tr td.active.highlighted:active.focus,
+                .datepicker table tr td.active.active.focus,
+                .datepicker table tr td.active.highlighted.active.focus,
+                .open > .dropdown-toggle.datepicker table tr td.active.focus,
+                .open > .dropdown-toggle.datepicker table tr td.active.highlighted.focus {
+                    color: #ffffff;
+                    background-color: #285e8e;
+                    border-color: #193c5a;
+                }
+
+                .datepicker table tr td.active:active,
+                .datepicker table tr td.active.highlighted:active,
+                .datepicker table tr td.active.active,
+                .datepicker table tr td.active.highlighted.active,
+                .open > .dropdown-toggle.datepicker table tr td.active,
+                .open > .dropdown-toggle.datepicker table tr td.active.highlighted {
+                    color: #ffffff;
+                    background-color: #3071a9;
+                    border-color: #285e8e;
+                }
+
+                    .datepicker table tr td.active:active:hover,
+                    .datepicker table tr td.active.highlighted:active:hover,
+                    .datepicker table tr td.active.active:hover,
+                    .datepicker table tr td.active.highlighted.active:hover,
+                    .open > .dropdown-toggle.datepicker table tr td.active:hover,
+                    .open > .dropdown-toggle.datepicker table tr td.active.highlighted:hover,
+                    .datepicker table tr td.active:active:focus,
+                    .datepicker table tr td.active.highlighted:active:focus,
+                    .datepicker table tr td.active.active:focus,
+                    .datepicker table tr td.active.highlighted.active:focus,
+                    .open > .dropdown-toggle.datepicker table tr td.active:focus,
+                    .open > .dropdown-toggle.datepicker table tr td.active.highlighted:focus,
+                    .datepicker table tr td.active:active.focus,
+                    .datepicker table tr td.active.highlighted:active.focus,
+                    .datepicker table tr td.active.active.focus,
+                    .datepicker table tr td.active.highlighted.active.focus,
+                    .open > .dropdown-toggle.datepicker table tr td.active.focus,
+                    .open > .dropdown-toggle.datepicker table tr td.active.highlighted.focus {
+                        color: #ffffff;
+                        background-color: #285e8e;
+                        border-color: #193c5a;
+                    }
+
+    .datepicker .datepicker-switch {
+        width: 145px;
+    }
+
+        .datepicker .datepicker-switch:hover,
+        .datepicker .prev:hover,
+        .datepicker .next:hover,
+        .datepicker tfoot tr th:hover {
+            background: #50A2C9;
+        }
+
+
+    /*#endregion calender*/
+
+
+
+    .nav .nav-item a {
+        text-decoration: none;
+        color: #27a7a7;
+        font-size: 24px
+    }
+
+    .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+        font-weight: 900;
+    }
+
+    .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+        border-color: #f50f4e #dee2e6 #fff;
+    }
+
+    .nav-tabs .nav-link {
+        border: 2px solid transparent;
+    }
+
+
+    .clear-cache {
+        margin-bottom: 8px;
+        background-color: #eee
+    }
+
+    /*select 2*/
+    .select2-container--bootstrap4 .select2-selection--single .select2-selection__arrow {
+        left: 0;
+    }
+
+    .select2-search--dropdown .select2-search__field {
+        text-align: right;
+        background-color: #f8f9fa
+    }
+</style>
+
+@Html.Partial("Common/_Nav")
+
+<div class="container">
+
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">احصائية العيادات</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">احصائية العمليات</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">احصائية النظارات</a>
+        </li> 
+        <li class="nav-item">
+            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#medcine" role="tab" aria-controls="contact" aria-selected="false">احصائية الأدوية</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#followmedia" role="tab" aria-controls="contact" aria-selected="false">احصائيات مجمعة </a>
+        </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <div class="container mt-3">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <div class="card m-auto">
+                            <form class="needs-validation" novalidate>
+                                <div class="card-header text-center badge-info">
+                                    <p class="lead">احصائية العيادات</p>
+                                </div>
+                                <div class="card-body">
+                                    <div class="form-group row  mt-3">
+                                        <div class="col-md-12">
+                                            <div class="input-group">
+                                                <select id="ddlPlanCampDrugs" class="custom-select" required></select>
+                                                <div class="input-group-append">
+                                                    <label class="input-group-text" data-toggle="tooltip" title="لمتابعة المخيمات وتحديد مدة زمنية لكل مخيم" for="ddlPlanCampDrugs">
+                                                        <i class="fa fa-question fa-flip-horizontal fa-lg fa-border"></i>
+
+                                                    </label>
+                                                    <label class="input-group-text" data-toggle="tooltip" title="اضافة مخيم جديد" for="ddlPlanCampDrugs">
+                                                        <i class="fa fa-plus fa-lg fa-border"></i>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="invalid-feedback"></div>
+                                        </div>
+                                    </div>
+                                    <h2 class="text-center alert alert-warning">جاري المراجعة</h2>
+                                    <div class="row">
+
+                                        <div class="col-md-12">
+                                            <label>ملاحظات</label>
+                                            <div class="form-group">
+                                                <textarea class="form-control" id="txtRegisteNote" placeholder="ملاحظات"></textarea>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 mt-2">
+                                            <div class="form-group">
+                                                <div class="custom-control custom-checkbox mr-sm-2">
+                                                    <input type="checkbox" class="custom-control-input" id="cbPreliminaryStatusmed">
+                                                    <label class="custom-control-label text-primary h4" for="cbPreliminaryStatusmed">تم مراجعة الاعداد نهائيا ولا تحتاج تعديل</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer text-center">
+                                    <button class="btn btn-outline-success" type="submit">حفظ</button>
+                                    <button class="btn btn-outline-info" type="button">بحث</button>
+                                    <button class="btn btn-outline-dark pull-left" type="reset">مسح</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="file-loading">
+                            <input id="fuDrugsFollow" name="fuDrugsFollow[]" type="file" multiple accept="image">
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+                <!--#region end form -->
+
+                <div class="text-center small mt-3">يجب مراجعة البيانات <a href="javascript:;">قبل الحفظ</a></div>
+            </div>
+
+        </div>
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+            <div class="container mt-3">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="card m-auto">
+                            <form class="needs-validation" novalidate>
+                                <div class="card-header text-center badge-danger">
+                                    <p class="lead">احصائية العمليات</p>
+                                </div>
+                                <div class="card-body">
+                                    <div class="form-group row  mt-3">
+                                        <div class="col-md-12">
+                                            <div class="input-group">
+                                                <select id="ddlPlanCampsFinance" class="custom-select" required></select>
+                                                <div class="input-group-append">
+                                                    <label class="input-group-text" data-toggle="tooltip" title="لمتابعة المخيمات وتحديد مدة زمنية لكل مخيم" for="ddlPlanCampsFinance">
+                                                        <i class="fa fa-question fa-flip-horizontal fa-lg fa-border"></i>
+
+                                                    </label>
+                                                    <label class="input-group-text" data-toggle="tooltip" title="اضافة مخيم جديد" for="ddlPlanCampsFinance">
+                                                        <i class="fa fa-plus fa-lg fa-border"></i>
+
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="invalid-feedback"></div>
+                                        </div>
+                                    </div>
+
+                                    <h2 class="text-center alert alert-warning">جاري المراجعة</h2>
+                                    <div class="row">
+
+                                        <div class="col-md-12">
+                                            <label>ملاحظات</label>
+                                            <div class="form-group">
+                                                <textarea class="form-control" id="txtRegisteNote" placeholder="ملاحظات"></textarea>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 mt-2">
+                                            <div class="form-group">
+                                                <div class="custom-control custom-checkbox mr-sm-2">
+                                                    <input type="checkbox" class="custom-control-input" id="cbPreliminaryStatusmed">
+                                                    <label class="custom-control-label text-primary h4" for="cbPreliminaryStatusmed">تم مراجعة الاعداد نهائيا ولا تحتاج تعديل</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="card-footer text-center">
+                                    <button class="btn btn-outline-success" type="submit">حفظ</button>
+                                    <button class="btn btn-outline-info" type="button">بحث</button>
+                                    <button class="btn btn-outline-dark pull-left" type="reset">مسح</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="file-loading">
+                            <input id="inputfinance" name="inputfinance[]" type="file" multiple accept="image">
+                        </div>
+                    </div>
+                </div>
+                <!--#region end form -->
+
+                <div class="text-center small mt-3">يجب مراجعة البيانات <a href="javascript:;">قبل الحفظ</a></div>
+            </div>
+
+        </div>
+        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+            <div class="container mt-3">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="card m-auto">
+                            <form class="needs-validation" novalidate>
+                                <div class="card-header text-center badge-warning">
+                                    <p class="lead">احصائية النظارات</p>
+                                </div>
+                                <div class="card-body">
+                                    <div class="form-group row  mt-3">
+                                        <div class="col-md-12">
+                                            <div class="input-group">
+                                                <select id="ddlPlanCampsManager" class="custom-select" required></select>
+                                                <div class="input-group-append">
+                                                    <label class="input-group-text" data-toggle="tooltip" title="لمتابعة المخيمات وتحديد مدة زمنية لكل مخيم" for="ddlPlanCampsManager">
+                                                        <i class="fa fa-question fa-flip-horizontal fa-lg fa-border"></i>
+                                                    </label>
+                                                    <label class="input-group-text" data-toggle="tooltip" title="اضافة مخيم جديد" for="ddlPlanCampsManager">
+                                                        <i class="fa fa-plus fa-lg fa-border"></i>
+
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="invalid-feedback"></div>
+                                        </div>
+                                    </div>
+                                    <h2 class="text-center alert alert-warning">جاري المراجعة</h2>
+                                    <div class="row">
+
+                                        <div class="col-md-12">
+                                            <label>ملاحظات</label>
+                                            <div class="form-group">
+                                                <textarea class="form-control" id="txtRegisteNote" placeholder="ملاحظات"></textarea>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 mt-2">
+                                            <div class="form-group">
+                                                <div class="custom-control custom-checkbox mr-sm-2">
+                                                    <input type="checkbox" class="custom-control-input" id="cbPreliminaryStatusmed">
+                                                    <label class="custom-control-label text-primary h4" for="cbPreliminaryStatusmed">تم مراجعة الاعداد نهائيا ولا تحتاج تعديل</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="card-footer text-center">
+                                    <button class="btn btn-outline-success" type="submit">حفظ</button>
+                                    <button class="btn btn-outline-info" type="button">بحث</button>
+                                    <button class="btn btn-outline-dark pull-left" type="reset">مسح</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="file-loading">
+                            <input id="inputmanager" name="inputmanager" type="file" multiple accept="image">
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+                <!--#region end form -->
+
+                <div class="text-center small mt-3">يجب مراجعة البيانات <a href="javascript:;">قبل الحفظ</a></div>
+            </div>
+
+        </div>
+        <div class="tab-pane fade" id="medcine" role="tabpanel" aria-labelledby="contact-tab">
+            <div class="container mt-3">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="card m-auto">
+                            <form class="needs-validation" novalidate>
+                                <div class="card-header text-center badge-warning">
+                                    <p class="lead">احصائيةالأدوية</p>
+                                </div>
+                                <div class="card-body">
+                                    <div class="form-group row  mt-3">
+                                        <div class="col-md-12">
+                                            <div class="input-group">
+                                                <select id="ddlPlanCampsManager" class="custom-select" required></select>
+                                                <div class="input-group-append">
+                                                    <label class="input-group-text" data-toggle="tooltip" title="لمتابعة المخيمات وتحديد مدة زمنية لكل مخيم" for="ddlPlanCampsManager">
+                                                        <i class="fa fa-question fa-flip-horizontal fa-lg fa-border"></i>
+                                                    </label>
+                                                    <label class="input-group-text" data-toggle="tooltip" title="اضافة مخيم جديد" for="ddlPlanCampsManager">
+                                                        <i class="fa fa-plus fa-lg fa-border"></i>
+
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="invalid-feedback"></div>
+                                        </div>
+                                    </div>
+                                    <h2 class="text-center alert alert-warning">جاري المراجعة</h2>
+                                    <div class="row">
+
+                                        <div class="col-md-12">
+                                            <label>ملاحظات</label>
+                                            <div class="form-group">
+                                                <textarea class="form-control" id="txtRegisteNote" placeholder="ملاحظات"></textarea>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 mt-2">
+                                            <div class="form-group">
+                                                <div class="custom-control custom-checkbox mr-sm-2">
+                                                    <input type="checkbox" class="custom-control-input" id="cbPreliminaryStatusmed">
+                                                    <label class="custom-control-label text-primary h4" for="cbPreliminaryStatusmed">تم مراجعة الاعداد نهائيا ولا تحتاج تعديل</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="card-footer text-center">
+                                    <button class="btn btn-outline-success" type="submit">حفظ</button>
+                                    <button class="btn btn-outline-info" type="button">بحث</button>
+                                    <button class="btn btn-outline-dark pull-left" type="reset">مسح</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="file-loading">
+                            <input id="inputStatsMedcine" name="inputmanager" type="file" multiple accept="image">
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+                <!--#region end form -->
+
+                <div class="text-center small mt-3">يجب مراجعة البيانات <a href="javascript:;">قبل الحفظ</a></div>
+            </div>
+
+        </div>
+        <div class="tab-pane fade" id="followmedia" role="tabpanel" aria-labelledby="contact-tab">
+
+            @Html.Partial("Common/_StatsSummaryCamps");
+        </div>
+    </div>
+
+
+    <!--#endregion card-->
+    <!--#region Eligibility-->
+    <!--#endregion Eligibility-->
+
+
+
+
+
+
+
+</div>
+
+<script src="~/js/jquery-3.4.1.js"></script>
+@section scripts{
+    @Scripts.Render("~/bundles/datepicker")
+
+<script src="~/js/jsProj/campstatssummary.js"></script>
+
+
+
+
+    @*<script src="~/js/select2.js"></script>*@
+    <script>
+
+
+        $(document).ready(function () {
+            var inputmedia = $("#inputmedia"),
+                inputmanager = $("#inputmanager"),
+                fuDrugsFollow = $("#fuDrugsFollow"),
+                inputCampStatsSummary = $("#inputCampStatsSummary"),
+                inputfinance = $("#inputfinance");
+            getFileInputjs(inputmedia);
+            getFileInputjs(inputmanager);
+            getFileInputjs(inputfinance);
+            getFileInputjs(fuDrugsFollow);
+            getFileInputjs(inputCampStatsSummary);
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+
+
+    </script>
+}

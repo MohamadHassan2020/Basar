@@ -1,0 +1,106 @@
+﻿<div class="row">
+    <div class="col-sm-6">
+        <div class="card m-auto">
+            <form class="needs-validation" novalidate>
+                <div class="card-header text-center">
+                    <h2>متابعة الأدوية وحالتها</h2>
+                </div>
+                <div class="card-body">
+                    <div class="form-group row  mt-3">
+                        <label for="ddlCampFollowUpDrugs" class="control-label col-sm-3">المرحلة</label>
+                        <div class="col-sm-9">
+                            <div class="input-group">
+                                <select id="ddlPlanCampDrugs" class="custom-select select-option" required></select>
+                                <div class="input-group-append">
+                                    <label class="input-group-text" data-toggle="tooltip" title="لمتابعة المخيمات وتحديد مدة زمنية لكل مخيم" for="ddlPlanCampDrugs">
+                                        <i class="fa fa-question fa-flip-horizontal fa-lg fa-border"></i>
+                                    </label>
+                                    <label class="input-group-text" data-toggle="tooltip" title="اضافة مخيم جديد" for="ddlPlanCampDrugs">
+                                        <i class="fa fa-plus fa-lg fa-border"></i>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="invalid-feedback"></div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <label for="ddlCampFollowUpDrugs" class="control-label col-sm-3">المرحلة</label>
+                        <div class="col-sm-8">
+                            <div class="form-group">
+                                <select id="ddlCampFollowUpDrugs" class="form-control" required="required"></select>
+                            </div>
+                        </div>
+                        <label for="txtCampFollowUpDrugsDate" class="control-label col-sm-3">التاريخ</label>
+                        <div class="col-sm-8">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input type="text" id="txtCampFollowUpDrugsDate" required autocomplete="off" placeholder="تاريخ انتهاء المرحلة" class="form-control" />
+                                    <i class="fa fa-calendar fa-2x"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <label for="txtCampFollowUpDrugsNote" class="control-label col-sm-3">ملاحظات</label>
+
+                        <div class="col-md-9">
+
+                            <div class="form-group">
+                                <textarea class="form-control"  id="txtCampFollowUpDrugsNote" required maxlength="200" placeholder="ملاحظات"></textarea>
+
+                            </div>
+                        </div>
+                        <div class="col-md-12 mt-2">
+                            <div class="form-group">
+                                <div class="custom-control custom-checkbox mr-sm-2">
+                                    <input type="checkbox" class="custom-control-input" id="cbCampFollowUpDrugsIsClosed">
+                                    <label class="custom-control-label text-primary h4" for="cbCampFollowUpDrugsIsClosed">تم الانتهاء من اجراءات متابعة الأدوية</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer text-center">
+                    <button class="btn btn-outline-success" type="button" id="btnSaveFollowupsDrug">حفظ</button>
+
+                    <button class="btn btn-outline-dark pull-left" id="btnResetDrugs" type="reset">مسح</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="file-loading">
+            <input id="fuDrugsFollow" name="fuDrugsFollow[]" type="file"  accept="image">
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <table class="table table-bordered table-striped" id="tblFollowupsDrug">
+            <thead class="table-dark">
+                <tr>
+                    <th>#</th>
+                    <th>تاريخ التسجيل</th>
+                    <th>المرحلة</th>
+                    <th>تاريخ الانتهاء</th>
+                    <th>ملاحظات</th>
+                    <th>المستخدم</th>
+                    <th class="text-center">المرفقات</th>
+                </tr>
+            </thead>
+            <tbody class="campfollowupdrugstbody"></tbody>
+        </table>
+        <p id="click-response"></p>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+<!--#region end form -->
+
+<div class="text-center small mt-3">يجب مراجعة البيانات <a href="javascript:;">قبل الحفظ</a></div>
+

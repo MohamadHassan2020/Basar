@@ -1,0 +1,16 @@
+D:\Sites\Private\AlBasar\BasarSolution\BasarBO\bin\Debug\BasarBO.dll
+D:\Sites\Private\AlBasar\BasarSolution\BasarBO\bin\Debug\BasarBO.pdb
+D:\Sites\Private\AlBasar\BasarSolution\BasarBO\obj\Debug\BasarBO.csprojResolveAssemblyReference.cache
+D:\Sites\Private\AlBasar\BasarSolution\BasarBO\obj\Debug\BasarBO.dll
+D:\Sites\Private\AlBasar\BasarSolution\BasarBO\obj\Debug\BasarBO.pdb
+E:\Sites\Private\AlBasar\BasarSolution\BasarBO\bin\Debug\BasarBO.dll
+E:\Sites\Private\AlBasar\BasarSolution\BasarBO\bin\Debug\BasarBO.pdb
+E:\Sites\Private\AlBasar\BasarSolution\BasarBO\obj\Debug\BasarBO.csprojAssemblyReference.cache
+E:\Sites\Private\AlBasar\BasarSolution\BasarBO\obj\Debug\BasarBO.csproj.CoreCompileInputs.cache
+E:\Sites\Private\AlBasar\BasarSolution\BasarBO\obj\Debug\BasarBO.dll
+E:\Sites\Private\AlBasar\BasarSolution\BasarBO\obj\Debug\BasarBO.pdb
+D:\Data\Programar\Projects\Private\sites\basar\basar old\AlBasar\BasarSolution\BasarBO\bin\Debug\BasarBO.dll
+D:\Data\Programar\Projects\Private\sites\basar\basar old\AlBasar\BasarSolution\BasarBO\bin\Debug\BasarBO.pdb
+D:\Data\Programar\Projects\Private\sites\basar\basar old\AlBasar\BasarSolution\BasarBO\obj\Debug\BasarBO.csproj.CoreCompileInputs.cache
+D:\Data\Programar\Projects\Private\sites\basar\basar old\AlBasar\BasarSolution\BasarBO\obj\Debug\BasarBO.dll
+D:\Data\Programar\Projects\Private\sites\basar\basar old\AlBasar\BasarSolution\BasarBO\obj\Debug\BasarBO.pdb

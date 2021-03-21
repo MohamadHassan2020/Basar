@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CD550D47-24DB-42FE-91BF-0A63E6CCBE5A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BasarBLL</RootNamespace>
+    <AssemblyName>BasarBLL</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Helper\AdminHelper\IBanner.cs" />
+    <Compile Include="Helper\AdminHelper\IBannerAttachment.cs" />
+    <Compile Include="Helper\AdminHelper\ICamp.cs" />
+    <Compile Include="Helper\AdminHelper\ICampMembers.cs" />
+    <Compile Include="Helper\AdminHelper\ICountry.cs" />
+    <Compile Include="Helper\AdminHelper\IEquipment.cs" />
+    <Compile Include="Helper\AdminHelper\IIndicator.cs" />
+    <Compile Include="Helper\AdminHelper\IMedicines.cs" />
+    <Compile Include="Helper\AdminHelper\INationality.cs" />
+    <Compile Include="Helper\AdminHelper\IProcedureType.cs" />
+    <Compile Include="Helper\AdminHelper\ISpecialization.cs" />
+    <Compile Include="Helper\AdminHelper\ISponsor.cs" />
+    <Compile Include="Helper\AdminHelper\ISupportAssistance.cs" />
+    <Compile Include="Helper\AdminHelper\ISurveyCategory.cs" />
+    <Compile Include="Helper\AdminHelper\ITeam.cs" />
+    <Compile Include="Helper\AdminHelper\ITeamCategory.cs" />
+    <Compile Include="Helper\AdminHelper\ITeamClass.cs" />
+    <Compile Include="Helper\AdminHelper\ITeamMember.cs" />
+    <Compile Include="Helper\AdminHelper\ITours.cs" />
+    <Compile Include="Helper\AdminHelper\IUsers.cs" />
+    <Compile Include="Helper\AdminHelper\IYears.cs" />
+    <Compile Include="Helper\IHelper.cs" />
+    <Compile Include="Helper\PlanHelper\IAnnualPlan.cs" />
+    <Compile Include="Helper\PlanHelper\ICampEquipment.cs" />
+    <Compile Include="Helper\PlanHelper\ICampSupportAssistance.cs" />
+    <Compile Include="Helper\PlanHelper\IPreliminary.cs" />
+    <Compile Include="Helper\SharedHelper\IShared.cs" />
+    <Compile Include="Operation\AdminOperation\BannerAttachmentOperation.cs" />
+    <Compile Include="Operation\AdminOperation\BannerOperation.cs" />
+    <Compile Include="Operation\AdminOperation\CampMembersOperation.cs" />
+    <Compile Include="Operation\AdminOperation\CampOperation.cs" />
+    <Compile Include="Operation\AdminOperation\CountryOperation.cs" />
+    <Compile Include="Operation\AdminOperation\EquipmentOperation.cs" />
+    <Compile Include="Operation\AdminOperation\IndicatorOperation.cs" />
+    <Compile Include="Operation\AdminOperation\MedicinesOperation.cs" />
+    <Compile Include="Operation\AdminOperation\NationalityOperation.cs" />
+    <Compile Include="Operation\AdminOperation\ProcedureTypeOperation.cs" />
+    <Compile Include="Operation\AdminOperation\SpecializationOperation.cs" />
+    <Compile Include="Operation\AdminOperation\SponsorOperation.cs" />
+    <Compile Include="Operation\AdminOperation\SupportAssistanceOperation.cs" />
+    <Compile Include="Operation\AdminOperation\SurveyCategoryOperation.cs" />
+    <Compile Include="Operation\AdminOperation\TeamCategoryOperation.cs" />
+    <Compile Include="Operation\AdminOperation\TeamClassOperation.cs" />
+    <Compile Include="Operation\AdminOperation\TeamMemberOperation.cs" />
+    <Compile Include="Operation\AdminOperation\TeamOperation.cs" />
+    <Compile Include="Operation\AdminOperation\ToursOperation.cs" />
+    <Compile Include="Operation\AdminOperation\UserOperation.cs" />
+    <Compile Include="Operation\AdminOperation\YearsOperation.cs" />
+    <Compile Include="Operation\HelperOperation.cs" />
+    <Compile Include="Operation\PlanOperation\AnnualPlanOperation.cs" />
+    <Compile Include="Operation\PlanOperation\CampEquipmentOperation.cs" />
+    <Compile Include="Operation\PlanOperation\CampSupportAssistanceOperation.cs" />
+    <Compile Include="Operation\PlanOperation\PreliminaryOperation.cs" />
+    <Compile Include="Operation\SharedOperation\SharedOp.cs" />
+    <Compile Include="Operation\SharedOperation\SMSObject.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BasarBO\BasarBO.csproj">
+      <Project>{d1d3505d-9b83-4b9a-a5c1-8dc51de232a6}</Project>
+      <Name>BasarBO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BasarDAL\BasarDAL.csproj">
+      <Project>{3edc2286-1dc9-467f-bdfc-2ff56f0643df}</Project>
+      <Name>BasarDAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

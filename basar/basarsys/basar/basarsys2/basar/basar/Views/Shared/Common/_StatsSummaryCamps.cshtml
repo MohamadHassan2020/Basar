@@ -1,0 +1,148 @@
+﻿<div class="container mt-3">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card m-auto">
+                <form class="needs-validation campstatssummary" novalidate>
+                    <div class="card-header text-center badge-primary">
+                        <p class="lead">احصائيات مجمعة</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group row  mt-3">
+                            <div class="col-md-12">
+                                <div class="input-group">
+                                    <select id="ddlStatsSummaryCamps" class="custom-select select-option" required></select>
+                                    <div class="input-group-append">
+                                        <label class="input-group-text" data-toggle="tooltip" title="لاختيار المخيم وتسجيل احصائية مجمعة" for="ddlPlanCampsManager">
+                                            <i class="fa fa-question fa-flip-horizontal fa-lg fa-border"></i>
+
+                                        </label>
+                                        <label class="input-group-text" data-toggle="tooltip" title="اضافة مخيم جديد" for="ddlStatsSummaryCamps">
+                                            <i class="fa fa-plus fa-lg fa-border"></i>
+
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="invalid-feedback"></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <label class="col-sm-3 control-label">العيادات</label>
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input type="number" id="txtOPDCount" required autocomplete="off" placeholder=" العيادات" class="form-control" />
+                                        <label class="input-group-text" data-toggle="tooltip" title="عدد مراجعي العيادات  في المخيم" for="txtOPDCount">
+                                            <i class="fa fa-question fa-flip-horizontal fa-lg fa-border"></i>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <label class="col-sm-3 control-label">العمليات</label>
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input type="number" id="txtORCount" required autocomplete="off" placeholder="العمليات" class="form-control" />
+                                        <label class="input-group-text" data-toggle="tooltip" title="عدد العمليات في المخيم" for="txtORCount">
+                                            <i class="fa fa-question fa-flip-horizontal fa-lg fa-border"></i>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <label class="col-sm-3 control-label">النظارات</label>
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input type="number" id="txtGlassesCount" required autocomplete="off" placeholder="عدد النظارات" class="form-control" />
+                                        <label class="input-group-text" data-toggle="tooltip" title="عدد النظارات في المخيم" for="txtGlassesCount">
+                                            <i class="fa fa-question fa-flip-horizontal fa-lg fa-border"></i>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <label for="txtCampStatsSummaryNote" class="col-sm-3 control-label">ملاحظات</label>
+                            <div class="col-md-9">
+                                <div class="form-group">
+                                    <textarea class="form-control" id="txtCampStatsSummaryNote" placeholder="ملاحظات"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-12 mt-2">
+                                <div class="form-group">
+                                    <div class="custom-control custom-checkbox mr-sm-2">
+                                        <input type="checkbox" class="custom-control-input" id="cbCampStatsSummaryIsClosed">
+                                        <label class="custom-control-label text-dark h4" for="cbCampStatsSummaryIsClosed">تم مراجعة العدد ولا يحتاج تعديل لاحقا</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12 mt-2">
+                                <div class="form-group">
+                                    <div class="custom-control custom-checkbox mr-sm-2">
+                                        <input type="checkbox" checked class="custom-control-input" id="cbCampStatsSummaryStatus">
+                                        <label class="custom-control-label text-secondary h4" for="cbCampStatsSummaryStatus">اظهار احصائية المخيم</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer text-center">
+                        <button class="btn btn-outline-success" type="submit">حفظ</button>
+                        <button class="btn btn-outline-info" id="btnCampStatsSummarySearch" type="button">بحث</button>
+                        <button class="btn btn-outline-dark pull-left" type="reset">مسح</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="file-loading">
+                <input id="inputCampStatsSummary" name="inputmedia[]" type="file" multiple accept="image">
+            </div>
+        </div>
+    </div>
+    <!--#region end form -->
+
+    <div class="text-center small mt-3">يجب مراجعة البيانات <a href="javascript:;">قبل الحفظ</a></div>
+</div>
+
+<div class="modal fade" id="campStatSummaryTable" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">بحث</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!--#region search-->
+
+                <div class="form-group">
+                    <table id="tblCampStatsSummary" class="table table-hover table-bordered" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th> م </th>
+                                <th class="hidden-xs hidden-sm"> العام </th>
+                                <th> الجولة</th>
+                                <th> الدولة</th>
+                                <th>المدينة</th>
+                                <th>الفريق</th>
+                                <th>الراعي</th>
+                                <th>بداية المخيم</th>
+                                <th>نهاية المخيم</th>
+                                <th>عمليات</th>
+                                <th>عيادات</th>
+                                <th>نظارات</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+
+                <!--#region-->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">اغلاق</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+

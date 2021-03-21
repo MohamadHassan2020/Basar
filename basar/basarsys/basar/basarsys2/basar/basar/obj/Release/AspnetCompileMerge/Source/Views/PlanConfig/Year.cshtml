@@ -1,0 +1,159 @@
+﻿
+@{
+    ViewBag.Title = "البصر عام الخطة ";
+}
+
+
+<style type="text/css">
+    .tooltip {
+        font-family: 'Cairo', sans-serif;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: normal;
+        line-height: 1.42857143;
+        text-align: left;
+        text-align: start;
+        text-decoration: none;
+        text-shadow: none;
+        text-transform: none;
+        letter-spacing: normal;
+        word-break: normal;
+        word-spacing: normal;
+        word-wrap: normal;
+        white-space: normal;
+        /* ... */
+    }
+
+    .tooltip-inner {
+        max-width: 200px;
+        padding: 3px 8px;
+        color: #fff;
+        text-align: center;
+        background-color: #000000;
+        border-radius: 4px;
+    }
+
+    table tr {
+        cursor: pointer
+    }
+
+    .custom-control-label::after {
+        right: -0.6rem;
+    }
+</style>
+@Html.Partial("Common/_Nav")
+
+<div class="container mt-3">
+
+    <div class="row">
+        <div class="col-md-6 offset-md-3 offset-sm-0">
+            <div class="card m-auto">
+                <form class="needs-validation" novalidate>
+                    <div class="card-header text-center badge-info">
+                        <h2>عام الخطة</h2>
+                        <p class="text-muted">تسجيل العام أو التعديل</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input type="text" id="txtYearNameAr" placeholder="العام" maxlength="50" required class="form-control" />
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input type="text" id="txtYearNameEn" placeholder="year" maxlength="50" required class="form-control" />
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input type="text" id="txtYearDesc" placeholder="وصف العام" maxlength="50" class="form-control" />
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <div class="custom-control custom-switch">
+                                        <input type="checkbox" checked class="custom-control-input" id="cbYearStatus">
+                                        <label class="custom-control-label" for="cbYearStatus">نشط</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer text-center">
+                        <button type="submit" class="btn btn-outline-success">حفظ</button>
+                        <button type="button" id="btnSearch" data-toggle="modal" data-target="#modalTable" class="btn btn-outline-primary">بحث</button>
+                        <button type="reset" id="btnReset" data-toggle="modal" class="btn btn-outline-warning pull-left">مسح</button>
+
+                    </div>
+                </form>
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+
+
+
+    <!--#region end form -->
+    <!--#region Modal-->
+    <div class="modal fade" id="modalTable" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-xl" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">بحث</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!--#region search-->
+
+                    <div class="form-group">
+                        <table id="tblDataExists" class="table table-hover table-bordered" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th> م </th>
+                                    <th>العام</th>
+                                    <th> Year </th>
+                                    <th>تاريخ التسجيل</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                    <!--#region-->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">اغلاق</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--#endregion Modal-->
+    <div class="text-center small mt-3">يجب مراجعة البيانات <a href="javascript:;">قبل الحفظ</a></div>
+</div>
+
+ 
+
+@section scripts{
+
+    @Scripts.Render("~/bundles/helper")
+    @Scripts.Render("~/bundles/year")
+
+    <script>
+
+
+
+        $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+
+
+    </script>
+}
+

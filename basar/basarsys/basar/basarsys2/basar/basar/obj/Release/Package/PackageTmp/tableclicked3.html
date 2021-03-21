@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>table row onclick</title>
+</head>
+<body>
+    <table id="my-table-id" border=1>
+        <tbody style="cursor:pointer">
+            <tr>
+                <td hidden>Mohamad</td>
+                <td>20</td>
+                <td>Male</td>
+            </tr> 
+            <tr>
+                <td>Nora</td>
+                <td>5</td>
+                <td>Female</td>
+            </tr>  
+            <tr>
+                <td>Hassan</td>
+                <td>10</td>
+                <td>Male</td>
+            </tr>
+
+        </tbody>
+    </table>
+    <p id="click-response"></p>
+
+    <script type="text/javascript">
+        function onRowClick(tableId, callback) {
+            var table = document.getElementById(tableId),
+                rows = table.getElementsByTagName("tr"),
+                i;
+            for (i = 0; i < rows.length; i++) {
+                table.rows[i].onclick = function (row) {
+                    return function () {
+                        callback(row);
+                    };
+                }(table.rows[i]);
+            }
+        };
+
+        onRowClick("my-table-id", function (row) {
+            var value = row.getElementsByTagName("td")[0].innerHTML;
+            document.getElementById('click-response').innerHTML = value + " clicked!";
+            console.log("value>>", value);
+        });
+    </script>
+</body>
+</html>

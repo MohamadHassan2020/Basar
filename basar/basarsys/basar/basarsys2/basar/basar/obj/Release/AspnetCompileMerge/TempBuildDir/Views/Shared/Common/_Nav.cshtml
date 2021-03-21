@@ -1,0 +1,91 @@
+﻿<style>
+    nav.navbar {
+        background-color: #30336b !important;
+    }
+
+        nav.navbar a.navbar-brand {
+            color: #f6e58d
+        }
+
+    ul.navbar-nav li.nav-item a.nav-link {
+        color: #f6e58d;
+        font-size: 1.6em
+    }
+
+    ul.navbar-nav li.nav-item.active a.nav-link {
+        color: #ffffff
+    }
+
+    .nav.navbar-nav.navbar-right .dropdown-menu {
+        margin-right: -105px;
+    }
+</style>
+
+<nav class="navbar navbar-expand-lg">
+    
+        @*<a class="navbar-brand" href="#">البصر العالمية</a>*@
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="container">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="~/Home/Index">الرئيسية <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link hidden" data-permission="viewplanmenu" href="~/PlanConfig/Index">الخطة</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" data-permission="viewfollowupsmenu" href="~/PlanConfig/FollowUp">المتابعات</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-permission="viewstatisticsmenu" href="~/PlanConfig/Stats">الاحصائيات</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-permission="systemadministrationmenu" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            إدارة النظام
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" data-permission="planyear" href="~/PlanConfig/Year">عام الخطة</a>
+                            <a class="dropdown-item" data-permission="plancountry" href="~/PlanConfig/Country">الدول</a>
+                            <a class="dropdown-item" data-permission="plancity" href="~/PlanConfig/Camp">مدن المخيمات</a>
+                            <a class="dropdown-item" data-permission="campstatus" href="~/PlanConfig/CampStatus">حالة المخيم</a>
+                            <a class="dropdown-item" data-permission="plantour" href="~/PlanConfig/Tour">الجولات</a>
+                            <a class="dropdown-item" data-permission="planteam" href="~/PlanConfig/Team">الفريق</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" data-permission="plansponsor" href="~/PlanConfig/Sponsor">الرعاة والمتبرعين</a>
+                            <a class="dropdown-item" data-permission="plansponsor" href="~/PlanConfig/SponsorShip">أسماء المتبرعين</a>
+                        </div>
+                    </li>
+                    <!--#region search-->
+
+                    @Html.Partial("Common/_NavItemSearch")
+
+                    <!--#endregion-->
+                </ul>
+            </div>
+                <ul class="nav navbar-nav navbar-right ml-auto">
+                    @*<li class="nav-item"><a href="#" class="nav-link notifications"><i class="fa fa-bell-o"></i><span class="badge">1</span></a></li>
+                <li class="nav-item"><a href="#" class="nav-link messages"><i class="fa fa-envelope-o"></i><span class="badge">10</span></a></li>*@
+                    <li class="nav-item dropdown">
+                        <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle user-action username"><img src="https://www.tutorialrepublic.com/examples/images/avatar/3.jpg" class="avatar" alt="Avatar" />  <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="~/Home/NewUser" data-permission="newuser" class="dropdown-item"><i class="fa fa-user-plus"></i> مستخدم جديد</a></li>
+                            <li><a href="~/Home/RoleDivider" data-permission="roledivider" class="dropdown-item"><i class="fa fa-user-plus"></i> فئة الصلاحية</a></li>
+                            <li><a href="~/Home/roles" data-permission="roles" class="dropdown-item"><i class="fa fa-user-plus"></i> الصلاحية</a></li>
+                            <li><a href="~/Home/RolesGroup" data-permission="rolesgroup" class="dropdown-item"><i class="fa fa-user-plus"></i> مجموعة الصلاحية</a></li>
+                            <li><a href="~/Home/UserRoles" data-permission="usersroles" class="dropdown-item"><i class="fa fa-user-plus"></i> صلاحيات المستخدمين</a></li>
+                            <li><a href="javascript:;" id="aChangePwd" data-permission="changepassword" class="dropdown-item"><i class="fa fa-key"></i> تغيير كلمة المرور</a></li>
+                            @*<li><a href="#" class="dropdown-item"><i class="fa fa-calendar-o"></i> Calendar</a></li>
+                        <li><a href="#" class="dropdown-item"><i class="fa fa-sliders"></i> Settings</a></li>*@
+                            <li class="divider dropdown-divider"></li>
+                            <li><a href="#" data-event="logout" class="dropdown-item"><i class="material-icons">&#xE8AC;</i> خروج</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+       
+</nav>

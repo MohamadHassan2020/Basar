@@ -1,0 +1,167 @@
+﻿
+
+<h2>Upload Files</h2>
+<div>
+    <div class="form-group">
+        <div id="updatePanelFile" class="alert" role="alert" style="display:none"></div>
+        <div class="form-group">
+
+            <div class="file-loading">
+                <input id="file1" name="inputfinance[]" type="file" multiple accept="image">
+            </div>
+        </div>
+        <input id="btnPostFile" class="btn btn-default" type="button" value="upload" />
+
+
+    </div>
+    <div class="form-group">
+        <input type="button" id="btnUpload" value="Upload Files" />
+
+        <input type="file" id="FileUpload1" multiple />
+    </div>
+</div>
+
+@section scripts {
+
+    <script>
+        //test2 
+        $('#btnUpload').click(function () {
+
+            // Checking whether FormData is available in browser  
+            if (window.FormData !== undefined) {
+
+                //var fileUpload = $("#FileUpload1").get(0);
+                var fileUpload = file1.get(0);
+                var files = fileUpload.files;
+
+                // Create FormData object  
+                var fileData = new FormData();
+
+                // Looping over all files and add it to FormData object  
+                for (var i = 0; i < files.length; i++) {
+                    fileData.append(files[i].name, files[i]);
+                }
+
+                // Adding one more key to FormData object  
+                fileData.append('username', "Manas");
+
+                $.ajax({
+                    url: '/Home/UploadFiles',
+                    type: "POST",
+                    contentType: false, // Not to set any content header  
+                    processData: false, // Not to process data  
+                    data: fileData,
+                    success: function (result) {
+                        alert(result);
+                    },
+                    error: function (err) {
+                        alert(err.statusText);
+                    }
+                });
+            } else {
+                alert("FormData is not supported.");
+            }
+        });  
+
+        /* */
+
+        function addExtraComplaintByElementText() {
+            var self = this, $el = self.$element, $cont, t, tmp;
+            inputid = $el.attr('id');
+            complaintNumber = $el.attr('id');
+            formid = $el.closest("form").attr('id');
+            return {
+                id: '2210213902',
+                complaintNumber: '2020',
+                form: formid,
+                t: 'userfile'
+            };
+        }
+        //
+        function uploadFileInput(file, url, addExtraFunc) {
+            $(file).fileinput({
+                uploadUrl: url,
+                language: 'ar',
+                maxFileCount: 1,
+                allowedFileExtensions: ['PDF', 'pdf'],
+                showBrowse: true,
+                browseOnZoneClick: true,
+                uploadExtraData: addExtraFunc
+            });
+
+            /*function getInitialPreview() {
+                return ['<object data="../Uploads/2210213925/252001/468c9216-6b44-48d4-9e44-32c728b0590d.pdf" type="application/pdf"></object>']
+
+            }*/
+        }
+
+
+
+
+        var file1 = $("#file1"),
+            fixedUrl = getUrl() + "/uploadfiles/",
+
+            initial = [
+                fixedUrl + 'BodyPart_199d4d58-a7c8-4eeb-84bb-f7926f0bc299.pdf'
+            ];
+        getFileInputjsPreview(file1, initial);
+
+
+        $(function () {
+
+            $("#btnPostFile").on('click', function () {
+                
+                uploadFileInClick();
+            });
+
+
+        });
+
+        function uploadFileInClick() {
+            if (file1.val() == '') {
+                alert('please select file');
+            }
+            var formData = new FormData();
+            var file = file1[0];
+            //single image
+            formData.append('file', file.files[0]);
+            //multi image
+            for (var i = 0; i < file.files.length - 1; i++) {
+                formData.append('file', file.files[i]);
+            }
+
+            $.ajax({
+                //url: 'api/Upload/',
+                url: getUrl() + '/basar/upload/',
+                // url: getUrl() + '/basar/upload/Test',
+                //url: '../Home/About',
+                type: 'post',
+                data: formData,
+                contentType: false,
+                processData: false,
+                headers: {
+                    'Authorization': 'Bearer '
+                        + getAccessInfo().access_token
+                },
+                success: function (d) {
+                    //var str = 'BodyPart_';
+                    //single file
+                    //$('#updatePanelFile').addClass('alert-success').append('<strong> Success! <a href="' + d + '" target="_blank" >Open File </a> </strong>').show();
+
+                    //multi files
+                    $('#updatePanelFile').addClass('alert-success');
+                    $('#updatePanelFile').html('');
+                    $.each(d, function (i, value) {
+                        console.log("data " + i + " ==> " + value);
+                        $('#updatePanelFile').append('<strong> Success! <a href="' +  value + '" target="_blank" >Open File </a> </strong> <br />');
+                    });
+                    $('#updatePanelFile').show();
+                },
+                error: function (jqxhr) {
+                    console.log(jqxhr)
+                }
+
+            });
+        }
+    </script>
+}
