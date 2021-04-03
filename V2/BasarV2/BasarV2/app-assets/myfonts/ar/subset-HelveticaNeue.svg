@@ -1,0 +1,41 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+<metadata>
+Created by FontForge 20170731 at Tue Mar 30 16:15:39 2021
+ By Aleksey,,,
+Copyright (c) 1981, 1982, 1983, 1989 and 1993, Linotype Library GmbH or its affiliated Linotype-Hell companies. All rights reserved.
+
+The digitally encoded machine readable software for producing the Typefaces licensed to you is now the property of Heidelberger Druckmaschinen AG and its licensors, and may not be reproduced, used, displayed, modified, disclosed or transferred without the express written approval of Heidelberger Druckmaschinen AG.
+
+Copyright (c) 1988, 1990, 1993 Adobe Systems Incorporated. All Rights Reserved.
+</metadata>
+<defs>
+<font id="HelveticaNeue" horiz-adv-x="0" >
+  <font-face 
+    font-family="Helvetica Neue"
+    font-weight="400"
+    font-stretch="normal"
+    units-per-em="1000"
+    panose-1="2 0 5 3 0 0 0 2 0 4"
+    ascent="800"
+    descent="-200"
+    bbox="50 0 450 512"
+    underline-thickness="50"
+    underline-position="-175"
+    unicode-range="U+0020-0020"
+  />
+<missing-glyph horiz-adv-x="500" 
+d="M442 8h-384v496h384v-496zM50 512v-512h400v512h-400z" />
+    <glyph glyph-name=".notdef" horiz-adv-x="500" 
+d="M442 8h-384v496h384v-496zM50 512v-512h400v512h-400z" />
+    <glyph glyph-name=".null" 
+ />
+    <glyph glyph-name="nonmarkingreturn" horiz-adv-x="333" 
+ />
+    <glyph glyph-name="controlBS" 
+ />
+    <glyph glyph-name="space" unicode=" " horiz-adv-x="278" 
+ />
+  </font>
+</defs></svg>

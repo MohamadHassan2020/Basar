@@ -1,0 +1,51 @@
+/*================================================================================
+	Item Name: Frest HTML Admin Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+================================================================================
+
+NOTE:
+------
+PLACE HERE YOUR OWN SCSS CODES AND IF NEEDED, OVERRIDE THE STYLES FROM THE OTHER STYLESHEETS.
+WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BETTER LIKE THIS.  */
+
+
+body,
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6,
+a, i, span, strong, tr, th, td,
+.dataTables_wrapper {
+	font-family: 'Droid Arabic Kufi','Droid Sans Arabic', 'Open Sans', sans-serif !important;
+}
+
+.checkbox input:checked ~ label:after {
+	transform: rotate(47deg);
+	/*        transform: scale(-1, 1);
+    */
+}
+
+.dt-buttons {
+	float: left
+}
+
+	.dt-buttons button {
+		background-color: #1a233a;
+		height: 35px;
+		border: 2px solid #585e75;
+		border-radius: 14px;
+		margin-bottom: 5px;
+		margin-top: -5px;
+	}
+
+.dataTables_filter label {
+	float: left
+}
+
+.dataTables_filter input {
+	height: 35px;
+	margin-bottom: 3px;
+	margin-top: -3px;
+}
+
+

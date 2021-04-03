@@ -1,0 +1,36 @@
+﻿    <!-- BEGIN: Header-->
+<nav class="header-navbar navbar-expand-lg navbar navbar-with-menu navbar-static-top bg-primary navbar-brand-center">
+    <div class="navbar-header d-xl-block d-none">
+        <ul class="nav navbar-nav flex-row">
+            <li class="nav-item">
+                <a class="navbar-brand" href="~/html/rtl/horizontal-menu-template-dark/index.html">
+                    <div class="brand-logo"><img class="logo" src="~/app-assets/images/logo/logo-light.png"></div>
+                    <h2 class="brand-text mb-0">دوروب</h2>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="navbar-wrapper">
+        <div class="navbar-container content">
+            <div class="navbar-collapse" id="navbar-mobile">
+
+                @{Html.RenderPartial("Header/_Bookmark");}
+
+                <ul class="nav navbar-nav float-right d-flex align-items-center">
+                    @{ Html.RenderPartial("Header/_Language");}
+
+                    <li class="nav-item d-none d-lg-block"><a class="nav-link nav-link-expand"><i class="ficon bx bx-fullscreen"></i></a></li>
+
+                    @{ Html.RenderPartial("Header/_NavSearch");}
+
+                     
+                    @{ Html.RenderPartial("Header/_Notification");}
+                      
+                    @{ Html.RenderPartial("Header/_User");}
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+<!-- END: Header-->

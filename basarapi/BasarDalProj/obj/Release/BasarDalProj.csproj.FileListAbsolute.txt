@@ -10,3 +10,9 @@ D:\projects\src\basarapi\BasarDalProj\obj\Release\BasarDalProj.csprojAssemblyRef
 D:\projects\src\basarapi\BasarDalProj\obj\Release\BasarDalProj.csproj.CoreCompileInputs.cache
 D:\projects\src\basarapi\BasarDalProj\obj\Release\BasarDalProj.dll
 D:\projects\src\basarapi\BasarDalProj\obj\Release\BasarDalProj.pdb
+D:\projects\src\Al Basar\basarapi\BasarDalProj\bin\Release\BasarDalProj.dll
+D:\projects\src\Al Basar\basarapi\BasarDalProj\bin\Release\BasarDalProj.pdb
+D:\projects\src\Al Basar\basarapi\BasarDalProj\obj\Release\BasarDalProj.csprojAssemblyReference.cache
+D:\projects\src\Al Basar\basarapi\BasarDalProj\obj\Release\BasarDalProj.csproj.CoreCompileInputs.cache
+D:\projects\src\Al Basar\basarapi\BasarDalProj\obj\Release\BasarDalProj.dll
+D:\projects\src\Al Basar\basarapi\BasarDalProj\obj\Release\BasarDalProj.pdb

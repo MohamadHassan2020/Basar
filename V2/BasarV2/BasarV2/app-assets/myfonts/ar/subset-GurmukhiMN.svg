@@ -1,0 +1,39 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+<metadata>
+Created by FontForge 20170731 at Tue Mar 30 16:15:27 2021
+ By Aleksey,,,
+Copyright (c) 2003 by Murasu Systems Sdn. Bhd. Malaysia. All rights reserved.
+</metadata>
+<defs>
+<font id="GurmukhiMN" horiz-adv-x="0" >
+  <font-face 
+    font-family="Gurmukhi MN"
+    font-weight="250"
+    font-stretch="normal"
+    units-per-em="2048"
+    panose-1="2 2 6 0 5 4 5 2 3 4"
+    ascent="1638"
+    descent="-410"
+    bbox="60 0 1286 1502"
+    underline-thickness="50"
+    underline-position="-150"
+    unicode-range="U+0020-200D"
+  />
+<missing-glyph horiz-adv-x="1406" 
+d="M60 0v1502h1226v-1502h-1226zM132 57h1081v1388h-1081v-1388z" />
+    <glyph glyph-name=".notdef" horiz-adv-x="1406" 
+d="M60 0v1502h1226v-1502h-1226zM132 57h1081v1388h-1081v-1388z" />
+    <glyph glyph-name=".null" 
+ />
+    <glyph glyph-name="nonmarkingreturn" horiz-adv-x="682" 
+ />
+    <glyph glyph-name="space" unicode=" " horiz-adv-x="600" 
+ />
+    <glyph glyph-name="ZWNJ" unicode="&#x200c;" 
+ />
+    <glyph glyph-name="ZWJ" unicode="&#x200d;" 
+ />
+  </font>
+</defs></svg>
