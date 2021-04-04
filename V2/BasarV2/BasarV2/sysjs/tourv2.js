@@ -2,10 +2,11 @@
     const app = {
         id: 0,
         tblDataExists: document.getElementById('tblDataExists'),
-        txtCountryDsecAr: document.getElementById('txtCountryDsecAr'),
-        txtCountryDsecEn: document.getElementById('txtCountryDsecEn'),
+        txtTourDsecAr: document.getElementById('txtTourDsecAr'),
+        txtTourDsecEn: document.getElementById('txtTourDsecEn'),
+        txtTourDescHint: document.getElementById('txtTourDescHint'),
         btnSave: document.getElementById('btnSave'),
-        cbCountryStatus: document.getElementById('cbCountryStatus'),
+        cbTourStatus: document.getElementById('cbTourStatus'),
         shared: new Shared(),
         msg: new SharedSweetAlert(),
         init: () => document.addEventListener('DOMConentLoaded', app.load()),
@@ -24,8 +25,8 @@
             //Save data
             if (app.btnSave) {
                 app.btnSave.addEventListener('click', () => {
-                    if (!app.shared.checkValidation(app.txtCountryDsecAr, 'وصف الدولة بالعربية')) { }
-                    if (!app.shared.checkValidation(app.txtCountryDsecEn, 'وصف الدولة بالانجليزية')) { }
+                    if (!app.shared.checkValidation(app.txtTourDsecAr, 'وصف الجولة المخيم')) { }
+                    if (!app.shared.checkValidation(app.txtTourDsecEn, 'وصف الجولة بالانجليزية')) { }
                     else {
                         app.msg.confirmMsg('هل تريد الحفظ', 'البرنامج', 'warning', app.add, () => {
                             app.msg.autoCloseMsg('البصر', 'البصر العالمية');
@@ -36,36 +37,39 @@
         },
         add: () => {
             const obj = {
-                CountryId: app.id,
-                CountryDsecAr: app.txtCountryDsecAr.value.trim(),
-                CountryDsecEn: app.txtCountryDsecEn.value.trim(),
-                CountryStatus: app.cbCountryStatus.getAttribute("checked") === true
-                    ? true : false ? false : false//approach 1
+                TourId: app.id,
+                TourDescHint: app.txtTourDescHint.value.trim(),
+                TourDsecAr: app.txtTourDsecAr.value.trim(),
+                TourDsecEn: app.txtTourDsecEn.value.trim(),
+                TourStatus: app.cbTourStatus.getAttribute("checked") === true
+                    ? true : false //approach 1
             }
-            app.shared.addAuth(obj, '/basar/country/new', succ => {
-                app.id = succ.CountryId;
+            app.shared.addAuth(obj, '/basar/tour/new', succ => {
+                app.id = succ.TourId;
                 app.shared.delay(50).then(() => {
+                    //msg 
                     app.msg.typeMsg();
+                    //reload data
                     app.reloaddt();
                 }).catch(err => err);
             }, err => err)
         },
         getBook: () => {
             app.shared.getBookDataTable(tblDataExists,
-                '/basar/country/Get',
+                '/basar/tour/Get',
                 [
                     {
                         data: "SN",
                         render: app.shared.getRowNumberDataTable
                     },
                     {
-                        data: 'CountryDsecAr',
+                        data: 'TourDsecAr',
                         className: "text-danger"
                     },
-                    { data: 'CountryDsecEn' },
+                    { data: 'TourDsecEn' },
                     { data: 'CreationDate' },
                     {
-                        data: "CountryStatus",
+                        data: "TourStatus",
                         className: 'text-center',
                         render: status => {
                             return app.shared.getStatusTextDataTable(status);
@@ -79,7 +83,7 @@
                         }
                     }
                 ],
-                { CountryStatus: null }
+                { TourStatus: null }
             );
 
         },
@@ -91,11 +95,12 @@
 
                 //return select row data
                 app.shared.delay(10).then(() => {
-                    app.id = data.CountryId;
-                    app.txtCountryDsecAr.value = data.CountryDsecAr;
-                    app.txtCountryDsecEn.value = data.CountryDsecEn;
-                    data.CountryStatus === true ? app.cbCountryStatus.setAttribute('checked', true) :
-                        app.cbCountryStatus.setAttribute('checked', false)
+                    app.id = data.TourId;
+                    app.txtTourDescHint.value = data.TourDescHint;
+                    app.txtTourDsecAr.value = data.TourDsecAr;
+                    app.txtTourDsecEn.value = data.TourDsecEn;
+                    data.TourStatus === true ? app.cbTourStatus.setAttribute('checked', true) :
+                        app.cbTourStatus.setAttribute('checked', false)
 
                 }).catch(err => err);
             }, '#tblDataExists')
@@ -104,29 +109,31 @@
         },
         deleteRow: () => {
             $(tblDataExists).on("click", ".delete-record", function () {
-                const row = $(this).closest("tr");
-                const data = $(tblDataExists).dataTable().fnGetData(row);
+                const row = $(this).closest("tr"),
+                    data = $(tblDataExists).dataTable().fnGetData(row);
                 app.msg.confirmMsg('هل تريد الحذف؟', '', 'warning', () => {
-                    app.del(data.CountryId);
+                    app.del(data.TourId);
                 }, () => {
                     app.msg.autoCloseMsg('البصر', 'البصر العالمية');
                 });
             });
         },
         del: id => {
-            const obj = { CountryId: id };
-            app.shared.addAuth(obj, '/basar/country/del', () => {
+            const obj = { TourId: id };
+            app.shared.addAuth(obj, '/basar/tour/del', () => {
                 app.shared.delay(10).then(() => {
                     app.msg.typeMsg('تم الحذف', '', 'success');
+                    //reload data
                     app.reloaddt();
                 }).catch(err => err);
             }, err => err);
         },
         clear: () => {
             app.id = 0;
-            app.txtCountryDsecAr.value = "";
-            app.txtCountryDsecEn.value = "";
-            app.cbCountryStatus.setAttribute('checked', false);
+            app.txtTourDescHint.value = "";
+            app.txtTourDsecAr.value = "";
+            app.txtTourDsecEn.value = "";
+            app.cbTourStatus.setAttribute('checked', true);
         },
         reloaddt: () => {
             const tbl = $(tblDataExists).DataTable();

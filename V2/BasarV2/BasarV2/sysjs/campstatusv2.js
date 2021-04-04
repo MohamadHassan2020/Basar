@@ -2,10 +2,10 @@
     const app = {
         id: 0,
         tblDataExists: document.getElementById('tblDataExists'),
-        txtCountryDsecAr: document.getElementById('txtCountryDsecAr'),
-        txtCountryDsecEn: document.getElementById('txtCountryDsecEn'),
+        txtCampStatusDescAR: document.getElementById('txtCampStatusDescAR'),
+        txtCampStatusDescEN: document.getElementById('txtCampStatusDescEN'),
         btnSave: document.getElementById('btnSave'),
-        cbCountryStatus: document.getElementById('cbCountryStatus'),
+        cbCampStatusEnabled: document.getElementById('cbCampStatusEnabled'),
         shared: new Shared(),
         msg: new SharedSweetAlert(),
         init: () => document.addEventListener('DOMConentLoaded', app.load()),
@@ -24,8 +24,8 @@
             //Save data
             if (app.btnSave) {
                 app.btnSave.addEventListener('click', () => {
-                    if (!app.shared.checkValidation(app.txtCountryDsecAr, 'وصف الدولة بالعربية')) { }
-                    if (!app.shared.checkValidation(app.txtCountryDsecEn, 'وصف الدولة بالانجليزية')) { }
+                    if (!app.shared.checkValidation(app.txtCampStatusDescAR, 'وصف حالة المخيم')) { }
+                    if (!app.shared.checkValidation(app.txtCampStatusDescEN, 'وصف حالة المخيم بالنجليزية')) { }
                     else {
                         app.msg.confirmMsg('هل تريد الحفظ', 'البرنامج', 'warning', app.add, () => {
                             app.msg.autoCloseMsg('البصر', 'البصر العالمية');
@@ -36,36 +36,38 @@
         },
         add: () => {
             const obj = {
-                CountryId: app.id,
-                CountryDsecAr: app.txtCountryDsecAr.value.trim(),
-                CountryDsecEn: app.txtCountryDsecEn.value.trim(),
-                CountryStatus: app.cbCountryStatus.getAttribute("checked") === true
+                CampStatusId: app.id,
+                CampStatusDescAR: app.txtCampStatusDescAR.value.trim(),
+                CampStatusDescEN: app.txtCampStatusDescEN.value.trim(),
+                CampStatusEnabled: app.cbCampStatusEnabled.getAttribute("checked") === true
                     ? true : false ? false : false//approach 1
             }
-            app.shared.addAuth(obj, '/basar/country/new', succ => {
-                app.id = succ.CountryId;
+            app.shared.addAuth(obj, '/basar/campstatus/new', succ => {
+                app.id = succ.CampStatusId;
                 app.shared.delay(50).then(() => {
+                    //msg 
                     app.msg.typeMsg();
+                    //reload data
                     app.reloaddt();
                 }).catch(err => err);
             }, err => err)
         },
         getBook: () => {
             app.shared.getBookDataTable(tblDataExists,
-                '/basar/country/Get',
+                '/basar/campstatus/Get',
                 [
                     {
                         data: "SN",
                         render: app.shared.getRowNumberDataTable
                     },
                     {
-                        data: 'CountryDsecAr',
+                        data: 'CampStatusDescAR',
                         className: "text-danger"
                     },
-                    { data: 'CountryDsecEn' },
+                    { data: 'CampStatusDescEN' },
                     { data: 'CreationDate' },
                     {
-                        data: "CountryStatus",
+                        data: "CampStatusEnabled",
                         className: 'text-center',
                         render: status => {
                             return app.shared.getStatusTextDataTable(status);
@@ -79,7 +81,7 @@
                         }
                     }
                 ],
-                { CountryStatus: null }
+                { CampStatusEnabled: null }
             );
 
         },
@@ -91,11 +93,11 @@
 
                 //return select row data
                 app.shared.delay(10).then(() => {
-                    app.id = data.CountryId;
-                    app.txtCountryDsecAr.value = data.CountryDsecAr;
-                    app.txtCountryDsecEn.value = data.CountryDsecEn;
-                    data.CountryStatus === true ? app.cbCountryStatus.setAttribute('checked', true) :
-                        app.cbCountryStatus.setAttribute('checked', false)
+                    app.id = data.CampStatusId;
+                    app.txtCampStatusDescAR.value = data.CampStatusDescAR;
+                    app.txtCampStatusDescEN.value = data.CampStatusDescEN;
+                    data.CampStatusEnabled === true ? app.cbCampStatusEnabled.setAttribute('checked', true) :
+                        app.cbCampStatusEnabled.setAttribute('checked', false)
 
                 }).catch(err => err);
             }, '#tblDataExists')
@@ -104,18 +106,18 @@
         },
         deleteRow: () => {
             $(tblDataExists).on("click", ".delete-record", function () {
-                const row = $(this).closest("tr");
-                const data = $(tblDataExists).dataTable().fnGetData(row);
+                const row = $(this).closest("tr"),
+                    data = $(tblDataExists).dataTable().fnGetData(row);
                 app.msg.confirmMsg('هل تريد الحذف؟', '', 'warning', () => {
-                    app.del(data.CountryId);
+                    app.del(data.CampStatusId);
                 }, () => {
                     app.msg.autoCloseMsg('البصر', 'البصر العالمية');
                 });
             });
         },
         del: id => {
-            const obj = { CountryId: id };
-            app.shared.addAuth(obj, '/basar/country/del', () => {
+            const obj = { CampStatusId: id };
+            app.shared.addAuth(obj, '/basar/campstatus/del', () => {
                 app.shared.delay(10).then(() => {
                     app.msg.typeMsg('تم الحذف', '', 'success');
                     app.reloaddt();
@@ -124,9 +126,9 @@
         },
         clear: () => {
             app.id = 0;
-            app.txtCountryDsecAr.value = "";
-            app.txtCountryDsecEn.value = "";
-            app.cbCountryStatus.setAttribute('checked', false);
+            app.txtCampStatusDescAR.value = "";
+            app.txtCampStatusDescEN.value = "";
+            app.cbCampStatusEnabled.setAttribute('checked', true);
         },
         reloaddt: () => {
             const tbl = $(tblDataExists).DataTable();
