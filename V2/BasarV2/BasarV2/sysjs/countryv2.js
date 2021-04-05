@@ -39,8 +39,7 @@
                 CountryId: app.id,
                 CountryDsecAr: app.txtCountryDsecAr.value.trim(),
                 CountryDsecEn: app.txtCountryDsecEn.value.trim(),
-                CountryStatus: app.cbCountryStatus.getAttribute("checked") === true
-                    ? true : false ? false : false//approach 1
+                CountryStatus: app.cbCountryStatus.checked === true ? true : false
             }
             app.shared.addAuth(obj, '/basar/country/new', succ => {
                 app.id = succ.CountryId;
@@ -94,8 +93,7 @@
                     app.id = data.CountryId;
                     app.txtCountryDsecAr.value = data.CountryDsecAr;
                     app.txtCountryDsecEn.value = data.CountryDsecEn;
-                    data.CountryStatus === true ? app.cbCountryStatus.setAttribute('checked', true) :
-                        app.cbCountryStatus.setAttribute('checked', false)
+                    data.CountryStatus === true ? app.cbCountryStatus.checked = true : app.cbCountryStatus.checked = false
 
                 }).catch(err => err);
             }, '#tblDataExists')
@@ -126,7 +124,7 @@
             app.id = 0;
             app.txtCountryDsecAr.value = "";
             app.txtCountryDsecEn.value = "";
-            app.cbCountryStatus.setAttribute('checked', false);
+            app.cbCountryStatus.checked = true;
         },
         reloaddt: () => {
             const tbl = $(tblDataExists).DataTable();

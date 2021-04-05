@@ -2,11 +2,10 @@
     const app = {
         id: 0,
         tblDataExists: document.getElementById('tblDataExists'),
-        txtYearNameAr: document.getElementById('txtYearNameAr'),
-        txtYearOrder: document.getElementById('txtYearOrder'),
-        txtYearDesc: document.getElementById('txtYearDesc'),
+        txtTeamDsecAr: document.getElementById('txtTeamDsecAr'),
+        txtTeamDsecEn: document.getElementById('txtTeamDsecEn'),
         btnSave: document.getElementById('btnSave'),
-        cbYearStatus: document.getElementById('cbYearStatus'),
+        cbTeamStatus: document.getElementById('cbTeamStatus'),
         shared: new Shared(),
         msg: new SharedSweetAlert(),
         init: () => document.addEventListener('DOMConentLoaded', app.load()),
@@ -25,9 +24,8 @@
             //Save data
             if (app.btnSave) {
                 app.btnSave.addEventListener('click', () => {
-                    if (!app.shared.checkValidation(app.txtYearNameAr, 'عام الخطة')) {
-
-                    }
+                    if (!app.shared.checkValidation(app.txtTeamDsecAr, 'اسم الفريق عربي')) { }
+                    if (!app.shared.checkValidation(app.txtTeamDsecEn, 'اسم الفريق انجليزي')) { }
                     else {
                         app.msg.confirmMsg('هل تريد الحفظ', 'البرنامج', 'warning', app.add, () => {
                             app.msg.autoCloseMsg('البصر', 'البصر العالمية');
@@ -38,39 +36,37 @@
         },
         add: () => {
             const obj = {
-                yearId: app.id,
-                yearNameAr: app.txtYearNameAr.value.trim(),
-                yearNameEn: app.txtYearNameAr.value.trim(),
-                yearDesc: app.txtYearDesc.value.trim(),
-                yearOrder: app.txtYearOrder.value.trim(),
-                yearStatus: app.cbYearStatus.checked === true ? true : false
+                TeamId: app.id,
+                TeamDsecAr: app.txtTeamDsecAr.value.trim(),
+                TeamDsecEn: app.txtTeamDsecEn.value.trim(),
+                TeamStatus: app.cbTeamStatus.checked === true ? true : false
             }
-            app.shared.addAuth(obj, '/basar/year/new', succ => {
-                app.id = succ.YearId;
+            app.shared.addAuth(obj, '/basar/teams/new', succ => {
+                app.id = succ.TeamId;
                 app.shared.delay(50).then(() => {
+                    //msg 
                     app.msg.typeMsg();
+                    //reload data
                     app.reloaddt();
                 }).catch(err => err);
             }, err => err)
         },
         getBook: () => {
             app.shared.getBookDataTable(tblDataExists,
-                '/basar/year/Get',
+                '/basar/teams/Get',
                 [
                     {
                         data: "SN",
-                        render: function (data, type, row, meta) {
-                            return meta.row + meta.settings._iDisplayStart + 1;
-                        }
+                        render: app.shared.getRowNumberDataTable
                     },
                     {
-                        data: 'YearNameAr',
+                        data: 'TeamDsecAr',
                         className: "text-danger"
                     },
-                    { data: 'YearNameEn' },
+                    { data: 'TeamDsecEn' },
                     { data: 'CreationDate' },
                     {
-                        data: "YearStatus",
+                        data: "TeamStatus",
                         className: 'text-center',
                         render: status => {
                             return app.shared.getStatusTextDataTable(status);
@@ -84,7 +80,7 @@
                         }
                     }
                 ],
-                { YearStatus: null }
+                { TeamStatus: null }
             );
 
         },
@@ -96,10 +92,10 @@
 
                 //return select row data
                 app.shared.delay(10).then(() => {
-                    app.id = data.YearId;
-                    app.txtYearNameAr.value = data.YearNameAr;
-                    app.txtYearDesc.value = data.YearDesc;
-                    data.YearStatus === true ? app.cbYearStatus.checked = true : app.cbYearStatus.checked = false
+                    app.id = data.TeamId;
+                    app.txtTeamDsecAr.value = data.TeamDsecAr;
+                    app.txtTeamDsecEn.value = data.TeamDsecEn;
+                    data.TeamStatus === true ? app.cbTeamStatus.checked = true : app.cbTeamStatus.checked = false
 
                 }).catch(err => err);
             }, '#tblDataExists')
@@ -108,18 +104,18 @@
         },
         deleteRow: () => {
             $(tblDataExists).on("click", ".delete-record", function () {
-                const row = $(this).closest("tr");
-                const data = $(tblDataExists).dataTable().fnGetData(row);
+                const row = $(this).closest("tr"),
+                    data = $(tblDataExists).dataTable().fnGetData(row);
                 app.msg.confirmMsg('هل تريد الحذف؟', '', 'warning', () => {
-                    app.del(data.YearId, data.YearNameEn);
+                    app.del(data.TeamId);
                 }, () => {
                     app.msg.autoCloseMsg('البصر', 'البصر العالمية');
                 });
             });
         },
-        del: (id, yearNameEn) => {
-            const obj = { YearId: id, YearNameEn: yearNameEn };
-            app.shared.addAuth(obj, '/basar/year/del', () => {
+        del: id => {
+            const obj = { TeamId: id };
+            app.shared.addAuth(obj, '/basar/teams/del', () => {
                 app.shared.delay(10).then(() => {
                     app.msg.typeMsg('تم الحذف', '', 'success');
                     app.reloaddt();
@@ -128,11 +124,9 @@
         },
         clear: () => {
             app.id = 0;
-            app.txtYearNameAr.value = "";
-            app.txtYearNameAr.value = "";
-            app.txtYearDesc.value = "";
-            app.txtYearOrder.value = "";
-            app.cbYearStatus.checked = true;
+            app.txtTeamDsecAr.value = "";
+            app.txtTeamDsecEn.value = "";
+            app.cbTeamStatus.checked = true;
         },
         reloaddt: () => {
             const tbl = $(tblDataExists).DataTable();

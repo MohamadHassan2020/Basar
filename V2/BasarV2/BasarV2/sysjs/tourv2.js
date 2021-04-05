@@ -99,8 +99,7 @@
                     app.txtTourDescHint.value = data.TourDescHint;
                     app.txtTourDsecAr.value = data.TourDsecAr;
                     app.txtTourDsecEn.value = data.TourDsecEn;
-                    data.TourStatus === true ? app.cbTourStatus.setAttribute('checked', true) :
-                        app.cbTourStatus.setAttribute('checked', false)
+                    data.TourStatus === true ? app.cbTourStatus.checked = true : app.cbTourStatus.checked = false
 
                 }).catch(err => err);
             }, '#tblDataExists')
@@ -133,7 +132,7 @@
             app.txtTourDescHint.value = "";
             app.txtTourDsecAr.value = "";
             app.txtTourDsecEn.value = "";
-            app.cbTourStatus.setAttribute('checked', true);
+            app.cbTourStatus.checked = true;
         },
         reloaddt: () => {
             const tbl = $(tblDataExists).DataTable();

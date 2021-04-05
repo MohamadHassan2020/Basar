@@ -39,8 +39,7 @@
                 CampStatusId: app.id,
                 CampStatusDescAR: app.txtCampStatusDescAR.value.trim(),
                 CampStatusDescEN: app.txtCampStatusDescEN.value.trim(),
-                CampStatusEnabled: app.cbCampStatusEnabled.getAttribute("checked") === true
-                    ? true : false ? false : false//approach 1
+                CampStatusEnabled: app.cbCampStatusEnabled.checked === true ? true : false
             }
             app.shared.addAuth(obj, '/basar/campstatus/new', succ => {
                 app.id = succ.CampStatusId;
@@ -96,9 +95,7 @@
                     app.id = data.CampStatusId;
                     app.txtCampStatusDescAR.value = data.CampStatusDescAR;
                     app.txtCampStatusDescEN.value = data.CampStatusDescEN;
-                    data.CampStatusEnabled === true ? app.cbCampStatusEnabled.setAttribute('checked', true) :
-                        app.cbCampStatusEnabled.setAttribute('checked', false)
-
+                    data.CampStatusEnabled === true ? app.cbCampStatusEnabled.checked = true : app.cbCampStatusEnabled.checked = false;
                 }).catch(err => err);
             }, '#tblDataExists')
 
@@ -128,7 +125,7 @@
             app.id = 0;
             app.txtCampStatusDescAR.value = "";
             app.txtCampStatusDescEN.value = "";
-            app.cbCampStatusEnabled.setAttribute('checked', true);
+            app.cbCampStatusEnabled.checked = true;
         },
         reloaddt: () => {
             const tbl = $(tblDataExists).DataTable();
