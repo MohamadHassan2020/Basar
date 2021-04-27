@@ -72,8 +72,8 @@ D:\projects\src\Al Basar\V2\BasarV2\BasarV2\bin\System.Web.WebPages.Razor.xml
 D:\projects\src\Al Basar\V2\BasarV2\BasarV2\bin\Newtonsoft.Json.xml
 D:\projects\src\Al Basar\V2\BasarV2\BasarV2\bin\Antlr3.Runtime.pdb
 D:\projects\src\Al Basar\V2\BasarV2\BasarV2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\projects\src\Al Basar\V2\BasarV2\BasarV2\obj\Debug\BasarV2.csprojAssemblyReference.cache
 D:\projects\src\Al Basar\V2\BasarV2\BasarV2\obj\Debug\BasarV2.csproj.CoreCompileInputs.cache
 D:\projects\src\Al Basar\V2\BasarV2\BasarV2\obj\Debug\BasarV2.csproj.CopyComplete
 D:\projects\src\Al Basar\V2\BasarV2\BasarV2\obj\Debug\BasarV2.dll
 D:\projects\src\Al Basar\V2\BasarV2\BasarV2\obj\Debug\BasarV2.pdb
+D:\projects\src\Al Basar\V2\BasarV2\BasarV2\obj\Debug\BasarV2.csprojAssemblyReference.cache

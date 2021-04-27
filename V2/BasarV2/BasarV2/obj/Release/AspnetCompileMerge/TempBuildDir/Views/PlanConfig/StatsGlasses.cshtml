@@ -1,0 +1,169 @@
+﻿
+@{
+    ViewBag.Title = "احصائية النظارات لمخيمات البصر العالمية";
+}
+
+<link rel="stylesheet" type="text/css" href="~/app-assets/vendors/css/animate/animate.css">
+<link rel="stylesheet" type="text/css" href="~/app-assets/vendors/css/extensions/sweetalert2.min.css">
+
+<!--my css-->
+<link href="~/app-assets/css/sys/shared.css" rel="stylesheet" />
+<link href="~/app-assets/css/sys/mydatatable.css" rel="stylesheet" />
+<!--my css-->
+<link href="~/app-assets/css/all.css" rel="stylesheet" />
+
+<link href="~/app-assets/others/fileinput/css/fileinput.css" rel="stylesheet" />
+<link href="~/app-assets/others/fileinput/themes/explorer-fa/theme.css" rel="stylesheet" />
+
+<div class="content-wrapper">
+    <div class="content-body">
+        <div class="card">
+            <div class="card-header"><p class="text-muted">احصائية النظارات لمخيمات مؤسسة البصر العالمية</p></div>
+            <div class="card-body">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="first-tab" data-toggle="tab" href="#first" aria-controls="first" role="tab" aria-selected="true">
+                            <i class="bx bx-edit align-middle"></i>
+                            <span class="align-middle">جديد</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="second-tab" data-toggle="tab" href="#second" aria-controls="second" role="tab" aria-selected="false">
+                            <i class="bx bx-search align-middle"></i>
+                            <span class="align-middle">بحث</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="third-tab" data-toggle="tab" href="#third" aria-controls="third" role="tab" aria-selected="false">
+                            <i class="bx bx-list-check align-middle"></i>
+                            <span class="align-middle">تفاصيل </span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="first" aria-labelledby="first-tab" role="tabpanel">
+                        <div class="row">
+                            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">احصائية النظارات</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <p>احصائية النظارات ل مخيمات البصر العالمية</p>
+                                        <form class="form form-vertical">
+                                            <div class="form-body">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="form-group">
+                                                            <label for="ddlPlanConfig">المخيم</label>
+                                                            <div class="position-relative has-icon-left">
+                                                                <select id="ddlPlanConfig" class="form-control" required="required"></select>
+                                                                <div class="form-control-position">
+                                                                    <i class="bx bx-user"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="form-group">
+                                                            <label for="txtNote">بيان الاحصائية او ملاحظات</label>
+                                                            <div class="position-relative has-icon-left">
+                                                                <textarea class="form-control" id="txtNote" required maxlength="200" placeholder="بيان الاحصائية او ملاحظات"></textarea>
+                                                                <div class="form-control-position">
+                                                                    <i class="bx bx-mobile"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="form-group">
+                                                            <div class="checkbox">
+                                                                <input type="checkbox" class="checkbox-input" checked id="cStatusIsClosed">
+                                                                <label for="cStatusIsClosed">تم مراجعة احصائية النظارات ولا تحتاج الى تعديل</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 d-flex justify-content-end">
+                                                        <button type="button" id="btnSave" class="btn btn-primary mr-1">حفظ</button>
+                                                        <button type="button" id="btnSearch" data-toggle="modal" data-target="#modalTable" class="btn btn-primary mr-1">بحث</button>
+                                                        <button type="reset" id="btnReset" class="btn btn-light-secondary">مسح</button>
+                                                    </div>
+                                                </div>
+                                                <p class="text-muted">مؤسسة البصر العالمية لعيون تبصر الأمل</p>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-8 col-lg-8 col-md-6 col-sm-12 col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="file-loading">
+                                            <input id="fuStats" name="fiStats[]" multiple type="file" accept="image">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="second" aria-labelledby="second-tab" role="tabpanel">
+                        <div class="table-responsive">
+                            <table id="tblDataExists" class="table table-striped table-bordered dataex-html5-selectors">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center"> م </th>
+                                        <th> تاريخ التسجيل </th>
+                                        <th> </th>
+                                        <th> </th>
+                                        <th>ملاحظات</th>
+                                        <th>المستخدم</th>
+                                        <th>المرفقات</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="third" aria-labelledby="third-tab" role="tabpanel">
+                        <p>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+
+    <!-- Data Tables -->
+    <script src="~/dist/vendor/datatables/dataTables.min.js"></script>
+    <script src="~/dist/vendor/datatables/dataTables.bootstrap.min.js"></script>
+
+    <!-- Custom Data tables -->
+    @*<script src="~/dist/vendor/datatables/custom/custom-datatables.js"></script>*@
+    <script src="~/dist/vendor/datatables/custom/fixedHeader.js"></script>
+
+    <!-- Download / CSV / Copy / Print -->
+    <script src="~/dist/vendor/datatables/buttons.min.js"></script>
+    <script src="~/dist/vendor/datatables/jszip.min.js"></script>
+    <script type="text/javascript" src="~/dist/vendor/datatables/pdfmake.min.js"></script>
+    <script src="~/dist/vendor/datatables/vfs_fonts.js"></script>
+    <script src="~/dist/vendor/datatables/html5.min.js"></script>
+    <script src="~/dist/vendor/datatables/buttons.print.min.js"></script>
+
+    <!--file input js-->
+
+    <script src="~/app-assets/others/fileinput/js/plugins/piexif.js"></script>
+    <script src="~/app-assets/others/fileinput/js/plugins/sortable.js"></script>
+
+    <script src="~/app-assets/others/fileinput/js/fileinput.js"></script>
+    <script src="~/app-assets/others/fileinput/themes/explorer-fa/theme.js"></script>
+    <script src="~/app-assets/others/fileinput/js/locales/LANG.js"></script>
+    <script src="~/app-assets/others/fileinput/js/locales/ar.js"></script>
+
+    <script src="~/sysjs/shared/helper.js"></script>
+    <script src="~/sysjs/statsglasses.js"></script>
+    <!--file input js-->
+
+}

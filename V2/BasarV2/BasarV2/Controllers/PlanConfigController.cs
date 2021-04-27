@@ -19,6 +19,22 @@ namespace BasarV2.Controllers
         {
             return View();
         }
+        public ActionResult DrugsFollowUp()
+        {
+            return View();
+        }
+        public ActionResult FinanceFollowUp()
+        {
+            return View();
+        }
+        public ActionResult MediaFollowUp()
+        {
+            return View();
+        }
+        public ActionResult AdminFollowUp()
+        {
+            return View();
+        }
         #endregion
         #region 19-4-2020 camps
 
@@ -65,6 +81,31 @@ namespace BasarV2.Controllers
             return View();
         }
         public ActionResult Stats()
+        {
+            return View();
+        }
+
+        public ActionResult StatsOPD()
+        {
+            return View();
+        }
+        public ActionResult StatsOR()
+        {
+            return View();
+        }
+        public ActionResult StatsGlasses()
+        {
+            return View();
+        }
+        public ActionResult StatsDruges()
+        {
+            return View();
+        }
+        public ActionResult StatsSummary()
+        {
+            return View();
+        }
+        public ActionResult StatsCamps()
         {
             return View();
         }

@@ -1,0 +1,5 @@
+﻿.checkbox input:checked ~ label:after {
+    transform: rotate(47deg);
+    /*        transform: scale(-1, 1);
+    */
+}

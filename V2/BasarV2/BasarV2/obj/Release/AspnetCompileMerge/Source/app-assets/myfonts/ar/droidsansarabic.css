@@ -1,0 +1,117 @@
+@font-face {
+    font-family: 'Droid Sans Arabic';
+    src: url('DroidSansArabic.eot');
+    src: url('DroidSansArabic.eot?#iefix') format('embedded-opentype'),
+        url('DroidSansArabic.woff2') format('woff2'),
+        url('DroidSansArabic.woff') format('woff'),
+        url('DroidSansArabic.ttf') format('truetype'),
+        url('DroidSansArabic.svg#DroidSansArabic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Droid Arabic Kufi';
+    src: url('DroidArabicKufi-Bold.eot');
+    src: url('DroidArabicKufi-Bold.eot?#iefix') format('embedded-opentype'),
+        url('DroidArabicKufi-Bold.woff2') format('woff2'),
+        url('DroidArabicKufi-Bold.woff') format('woff'),
+        url('DroidArabicKufi-Bold.ttf') format('truetype'),
+        url('DroidArabicKufi-Bold.svg#DroidArabicKufi-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Droid Arabic Kufi';
+    src: url('DroidArabicKufi.eot');
+    src: url('DroidArabicKufi.eot?#iefix') format('embedded-opentype'),
+        url('DroidArabicKufi.woff2') format('woff2'),
+        url('DroidArabicKufi.woff') format('woff'),
+        url('DroidArabicKufi.ttf') format('truetype'),
+        url('DroidArabicKufi.svg#DroidArabicKufi') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Droid Arabic Kufi';
+    src: url('DroidArabicKufi-Bold_1.eot');
+    src: url('DroidArabicKufi-Bold_1.eot?#iefix') format('embedded-opentype'),
+        url('DroidArabicKufi-Bold_1.woff2') format('woff2'),
+        url('DroidArabicKufi-Bold_1.woff') format('woff'),
+        url('DroidArabicKufi-Bold_1.ttf') format('truetype'),
+        url('DroidArabicKufi-Bold_1.svg#DroidArabicKufi-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Droid Arabic Kufi';
+    src: url('DroidArabicKufi_1.eot');
+    src: url('DroidArabicKufi_1.eot?#iefix') format('embedded-opentype'),
+        url('DroidArabicKufi_1.woff2') format('woff2'),
+        url('DroidArabicKufi_1.woff') format('woff'),
+        url('DroidArabicKufi_1.ttf') format('truetype'),
+        url('DroidArabicKufi_1.svg#DroidArabicKufi') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Droid Arabic Kufi';
+    src: url('DroidArabicKufi_2.eot');
+    src: url('DroidArabicKufi_2.eot?#iefix') format('embedded-opentype'),
+        url('DroidArabicKufi_2.woff2') format('woff2'),
+        url('DroidArabicKufi_2.woff') format('woff'),
+        url('DroidArabicKufi_2.ttf') format('truetype'),
+        url('DroidArabicKufi_2.svg#DroidArabicKufi') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Droid Arabic Kufi';
+    src: url('DroidArabicKufi_3.eot');
+    src: url('DroidArabicKufi_3.eot?#iefix') format('embedded-opentype'),
+        url('DroidArabicKufi_3.woff2') format('woff2'),
+        url('DroidArabicKufi_3.woff') format('woff'),
+        url('DroidArabicKufi_3.ttf') format('truetype'),
+        url('DroidArabicKufi_3.svg#DroidArabicKufi') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Droid Arabic Kufi';
+    src: url('DroidArabicKufi-Bold_2.eot');
+    src: url('DroidArabicKufi-Bold_2.eot?#iefix') format('embedded-opentype'),
+        url('DroidArabicKufi-Bold_2.woff2') format('woff2'),
+        url('DroidArabicKufi-Bold_2.woff') format('woff'),
+        url('DroidArabicKufi-Bold_2.ttf') format('truetype'),
+        url('DroidArabicKufi-Bold_2.svg#DroidArabicKufi-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Droid Arabic Kufi';
+    src: url('DroidArabicKufi-Bold_3.eot');
+    src: url('DroidArabicKufi-Bold_3.eot?#iefix') format('embedded-opentype'),
+        url('DroidArabicKufi-Bold_3.woff2') format('woff2'),
+        url('DroidArabicKufi-Bold_3.woff') format('woff'),
+        url('DroidArabicKufi-Bold_3.ttf') format('truetype'),
+        url('DroidArabicKufi-Bold_3.svg#DroidArabicKufi-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+

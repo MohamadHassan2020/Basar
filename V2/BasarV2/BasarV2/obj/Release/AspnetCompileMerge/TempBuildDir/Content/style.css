@@ -1,0 +1,28 @@
+﻿.checkbox input:checked ~ label:after {
+    transform: rotate(47deg);
+    /*        transform: scale(-1, 1);
+    */
+}
+
+.dt-buttons {
+    float: left
+}
+
+    .dt-buttons button {
+        background-color: #1a233a;
+        height: 35px;
+        border: 2px solid #585e75;
+        border-radius: 14px;
+        margin-bottom: 5px;
+        margin-top: -5px;
+    }
+
+.dataTables_filter label {
+    float: left
+}
+
+.dataTables_filter input {
+    height: 35px;
+    margin-bottom: 3px;
+    margin-top: -3px;
+}
